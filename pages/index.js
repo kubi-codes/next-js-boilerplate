@@ -3,8 +3,6 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -19,11 +17,6 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Stack spacing={2} direction="row">
-          <Button variant="text">Text</Button>
-          <Button variant="contained">Contained</Button>
-          <Button variant="outlined">Outlined</Button>
-        </Stack>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
