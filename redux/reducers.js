@@ -1,9 +1,17 @@
 import { combineReducers } from "redux";
-import sampleReducer from "./sample-reducer";
+import { persistReducer } from "redux-persist";
+import session from "redux-persist/lib/storage/session";
+import sampleReducer from "./sample-reducer/index";
+
+const persistConfig = {
+  key: "root",
+  storage: session,
+};
 
 const rootReducer = combineReducers({
-  // list of reducers
   sampleReducer,
 });
 
-export default rootReducer;
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export default persistedReducer;

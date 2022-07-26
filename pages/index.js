@@ -2,10 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 export default function Home() {
-  // const dispatch = useDispatch();
-  // const redux = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const redux = useSelector((state) => state);
 
   return (
     <div className={styles.container}>
@@ -16,6 +19,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Stack spacing={2} direction="row">
+          <Button variant="text">Text</Button>
+          <Button variant="contained">Contained</Button>
+          <Button variant="outlined">Outlined</Button>
+        </Stack>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -26,10 +34,12 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <Link href="/index-copy" passHref>
+            <a className={styles.card}>
+              <h2>Documentation &rarr;</h2>
+              <p>Find in-depth information about Next.js features and API.</p>
+            </a>
+          </Link>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>Learn &rarr;</h2>
