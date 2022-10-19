@@ -63,7 +63,7 @@ const theme = createTheme({
       styleOverrides: {
         contained: {
           borderRadius: "0px",
-          padding: "16px 32px",
+          padding: "8px 16px",
         },
       },
     },

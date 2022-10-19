@@ -1,17 +1,10 @@
 import { combineReducers } from "redux";
-import { persistReducer } from "redux-persist";
-import session from "redux-persist/lib/storage/session";
+
 import sampleReducer from "./sample-reducer/index";
 
-const persistConfig = {
-  key: "root",
-  storage: session,
-};
-
+// you can add your reducer in here
 const rootReducer = combineReducers({
   sampleReducer,
 });
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-export default persistedReducer;
+export default rootReducer;
