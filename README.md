@@ -29,7 +29,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Next JS Boilerplate for your Next JS Project with zero config and make easier built website and responsive problem
+So if you are building a website using Next JS, and Material UI and have pixel perfect requirements on every device in the boilerplate I have provided, also for your seo it will be optimized as well as possible here. Finally, for security, every redux data that is persisted will be encrypted for more safety and also every feature here is based on ENV so you can activate / deactivate it without touching the core code. Have fun Cheerss.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
