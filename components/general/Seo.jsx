@@ -4,6 +4,7 @@ import seo from "seo.json";
 function Seo() {
   return (
     <>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta name="description" content={seo?.description} />
       <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL} />
 
@@ -12,6 +13,10 @@ function Seo() {
       <meta property="og:description" content={seo?.og_desc} />
       <meta property="og:url" content={process.env.NEXT_PUBLIC_SITE_UR} />
       <meta property="og:type" content="website"></meta>
+      <meta
+        property="og:image"
+        content="https://ia.media-imdb.com/images/rock.jpg"
+      />
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />

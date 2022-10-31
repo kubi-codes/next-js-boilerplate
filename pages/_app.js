@@ -12,9 +12,11 @@ import { PersistGate } from "redux-persist/integration/react";
 import { ThemeProvider } from "@mui/material/styles";
 import { CacheProvider } from "@emotion/react";
 import { store, persistor } from "../redux/store";
+import { getAnalytics } from "firebase/analytics";
 import { Provider } from "react-redux";
 import NProgress from "nprogress";
 import Router from "next/router";
+import firebase from "firebaseConfig";
 import "styles/globals.scss";
 import "aos/dist/aos.css";
 
@@ -32,6 +34,10 @@ Router.events.on("routeChangeError", () => NProgress.done());
 export default class MyApp extends App {
   componentDidMount() {
     console.log(`APP VERSION : v${process.env.NEXT_PUBLIC_APP_VERSION}`);
+
+    getAnalytics(firebase);
+
+    // firebase.analytics();
     AOS.init({
       delay: 10,
       duration: 1500,
@@ -60,7 +66,6 @@ export default class MyApp extends App {
     return (
       <CacheProvider value={emotionCache}>
         <Head>
-          <meta name="viewport" content="initial-scale=1, width=device-width" />
           <title>{pageTitle}</title>
         </Head>
         <ThemeProvider theme={theme}>
