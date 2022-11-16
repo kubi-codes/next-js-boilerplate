@@ -1,22 +1,23 @@
 import React from "react";
 import seo from "seo.json";
 
-function Seo() {
+function Seo(props) {
+  const { url } = props ?? {};
+  const pageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${url}`;
+
   return (
     <>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta name="description" content={seo?.description} />
-      <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL} />
+      <link rel="canonical" href={pageUrl} />
+      <meta name="robots" content="index, follow" />
 
       {/* OpenGraph tags */}
       <meta property="og:title" content={seo?.og_title} />
       <meta property="og:description" content={seo?.og_desc} />
-      <meta property="og:url" content={process.env.NEXT_PUBLIC_SITE_UR} />
+      <meta property="og:url" content={pageUrl} />
       <meta property="og:type" content="website"></meta>
-      <meta
-        property="og:image"
-        content="https://ia.media-imdb.com/images/rock.jpg"
-      />
+      <meta property="og:image" content={seo?.og_image} />
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />

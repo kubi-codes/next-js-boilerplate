@@ -4,6 +4,7 @@ import App from "next/app";
 import Head from "next/head";
 import theme from "styles/theme";
 import PropTypes from "prop-types";
+import Seo from "components/general/Seo";
 import MainLayout from "components/layouts/MainLayout";
 import CssBaseline from "@mui/material/CssBaseline";
 import Maintenance from "components/layouts/Maintenance";
@@ -52,21 +53,22 @@ export default class MyApp extends App {
       pageProps,
       emotionCache = clientSideEmotionCache,
     } = this.props;
+    const { url, title } = pageProps ?? {};
 
     const isMaintenance =
       process.env.NEXT_PUBLIC_MAINTENANCE &&
       process.env.NEXT_PUBLIC_MAINTENANCE?.toLocaleLowerCase() === "true";
 
-    const isUseLayout = Component.useMainLayout;
     const pageApp = process.env.NEXT_PUBLIC_APP_NAME;
-    const pageTitle = Component.title
-      ? `${pageApp} | ${Component.title}`
-      : pageApp;
+    const pageTitle = title ? `${pageApp} | ${title}` : pageApp;
+
+    const isDisabledLayout = Component.disabledLayout;
 
     return (
       <CacheProvider value={emotionCache}>
         <Head>
           <title>{pageTitle}</title>
+          <Seo url={url} />
         </Head>
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
@@ -77,7 +79,7 @@ export default class MyApp extends App {
           ) : (
             <Provider store={store}>
               <PersistGate loading={null} persistor={persistor}>
-                {isUseLayout ? (
+                {!isDisabledLayout ? (
                   <MainLayout {...pageProps}>
                     <Component {...pageProps} />
                   </MainLayout>

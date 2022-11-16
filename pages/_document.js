@@ -4,7 +4,6 @@ import createEmotionServer from "@emotion/server/create-instance";
 import createEmotionCache from "styles/createEmotionCache";
 import Favicon from "components/general/Favicon";
 import Fonts from "components/general/Fonts";
-import Seo from "components/general/Seo";
 import theme from "styles/theme";
 
 export default class MyDocument extends Document {
@@ -21,7 +20,6 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content={theme.palette.primary.main} />
 
           {/* Global Config */}
-          <Seo />
           <Favicon />
           <Fonts />
 
