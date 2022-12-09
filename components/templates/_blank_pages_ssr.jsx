@@ -12,6 +12,8 @@ export default function TermsAndConditions(props) {
   );
 }
 
+TermsAndConditions.disabledLayout = true;
+
 export async function getServerSideProps(context) {
   const endpoints = [`/wp-json/wp/v2/pages`, `/wp-json/wp/v2/pages`];
 

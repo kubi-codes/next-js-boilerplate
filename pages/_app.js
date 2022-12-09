@@ -20,6 +20,7 @@ import Router from "next/router";
 import firebase from "firebaseConfig";
 import "styles/globals.scss";
 import "aos/dist/aos.css";
+import "animate.css";
 
 // Client-side cache shared for the whole session
 // of the user in the browser.
@@ -46,23 +47,36 @@ export default class MyApp extends App {
     });
   }
 
+  MainComponent() {
+    const { Component, pageProps } = this.props;
+    const isDisabledLayout = Component.disabledLayout;
+
+    if (!isDisabledLayout) {
+      return (
+        <MainLayout {...pageProps}>
+          <Component {...pageProps} />
+        </MainLayout>
+      );
+    } else {
+      return <Component {...pageProps} />;
+    }
+  }
+
   render() {
     //pageProps that were returned  from 'getInitialProps' are stored in the props i.e. pageprops
-    const {
-      Component,
-      pageProps,
-      emotionCache = clientSideEmotionCache,
-    } = this.props;
+    const { pageProps, emotionCache = clientSideEmotionCache } = this.props;
     const { url, title } = pageProps ?? {};
 
     const isMaintenance =
       process.env.NEXT_PUBLIC_MAINTENANCE &&
       process.env.NEXT_PUBLIC_MAINTENANCE?.toLocaleLowerCase() === "true";
 
+    const isUsePersist =
+      process.env.NEXT_PUBLIC_PERSIST_USE &&
+      process.env.NEXT_PUBLIC_PERSIST_USE?.toLocaleLowerCase() === "true";
+
     const pageApp = process.env.NEXT_PUBLIC_APP_NAME;
     const pageTitle = title ? `${pageApp} | ${title}` : pageApp;
-
-    const isDisabledLayout = Component.disabledLayout;
 
     return (
       <CacheProvider value={emotionCache}>
@@ -78,15 +92,13 @@ export default class MyApp extends App {
             <Maintenance />
           ) : (
             <Provider store={store}>
-              <PersistGate loading={null} persistor={persistor}>
-                {!isDisabledLayout ? (
-                  <MainLayout {...pageProps}>
-                    <Component {...pageProps} />
-                  </MainLayout>
-                ) : (
-                  <Component {...pageProps} />
-                )}
-              </PersistGate>
+              {isUsePersist ? (
+                <PersistGate loading={null} persistor={persistor}>
+                  {this.MainComponent()}
+                </PersistGate>
+              ) : (
+                this.MainComponent()
+              )}
             </Provider>
           )}
         </ThemeProvider>
