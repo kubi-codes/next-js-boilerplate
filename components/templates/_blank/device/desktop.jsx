@@ -1,11 +1,11 @@
 import React from "react";
 
-function _blank(props) {
+function Desktop(props) {
   return (
-    <div id={`${props.id}-desktop`}>
+    <div className="desktop_view">
       <p>Desktop View</p>
     </div>
   );
 }
 
-export default _blank;
+export default Desktop;

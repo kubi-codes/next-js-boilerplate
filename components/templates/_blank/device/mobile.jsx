@@ -1,11 +1,11 @@
 import React from "react";
 
-function _blank(props) {
+function Mobile(props) {
   return (
-    <div id={`${props.id}-mobile`}>
+    <div className="mobile_view">
       <p>Mobile View</p>
     </div>
   );
 }
 
-export default _blank;
+export default Mobile;

@@ -2,8 +2,10 @@ import React from "react";
 import Blank from "components/templates/_blank/index";
 import * as request from "redux/thunk";
 import { useDispatch, useSelector } from "react-redux";
+import { gql } from "@apollo/client";
+import client from "utils/apollo";
 
-export default function Home() {
+export default function Home(props) {
   const dispatch = useDispatch();
   const redux = useSelector((state) => state);
 
@@ -26,10 +28,32 @@ export default function Home() {
 
 // Data Fetching
 export async function getServerSideProps(context) {
-  return {
-    props: {
-      title: "Home",
-      url: context?.resolvedUrl,
-    }, // will be passed to the page component as props
-  };
+  try {
+    const { data } = await client.query({
+      query: gql`
+        query Countries {
+          countrisses {
+            code
+            name
+            emoji
+          }
+        }
+      `,
+    });
+
+    return {
+      props: {
+        title: "Home",
+        url: context?.resolvedUrl,
+        data,
+      }, // will be passed to the page component as props
+    };
+  } catch (error) {
+    return {
+      props: {
+        title: "Home",
+        url: context?.resolvedUrl,
+      }, // will be passed to the page component as props
+    };
+  }
 }

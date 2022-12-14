@@ -1,11 +1,11 @@
 import React from "react";
 
-function _blank(props) {
+function Tablet(props) {
   return (
-    <div id={`${props.id}-tablet`}>
+    <div className="tablet_view">
       <p>Tablet View</p>
     </div>
   );
 }
 
-export default _blank;
+export default Tablet;
