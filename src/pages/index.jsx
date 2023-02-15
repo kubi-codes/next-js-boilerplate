@@ -1,8 +1,10 @@
 import Head from "next/head";
+import Seo from "@/components/globals/Seo";
 
 export default function Home() {
   return (
     <>
+      <Seo title="Home" url="" />
       <main>
         <h1>Test</h1>
       </main>
