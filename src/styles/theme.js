@@ -21,28 +21,31 @@ const theme = createTheme({
   typography: {
     h1: {
       fontSize: "40px",
+      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
     },
     h2: {
       fontSize: "35px",
+      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
     },
     h4: {
-      fontWeight: "600",
       fontSize: "36px",
+      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
     },
     h5: {
-      fontWeight: "600",
       fontSize: "25px",
+      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
     },
     h6: {
-      fontWeight: "600",
       fontSize: "16px",
+      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
     },
     body1: {
       fontSize: "16px",
+      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
     },
     body2: {
       fontSize: "14px",
-      color: "#646670",
+      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
     },
   },
   components: {

@@ -1,6 +1,9 @@
-import "@/styles/globals.css";
+import "animate.css";
+import "aos/dist/aos.css";
 import "@fontsource/inter";
+import "@/styles/globals.css";
 // Globals
+import AOS from "aos";
 import App from "next/app";
 import Head from "next/head";
 import Router from "next/router";
@@ -26,6 +29,16 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 export default class MyApp extends App {
+  componentDidMount() {
+    console.log(`APP VERSION : v${process.env.NEXT_PUBLIC_APP_VERSION}`);
+
+    AOS.init({
+      delay: 10,
+      duration: 1500,
+      once: true,
+    });
+  }
+
   render() {
     const {
       Component,

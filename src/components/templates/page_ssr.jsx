@@ -1,10 +1,13 @@
+import http from "@/utils/http";
 import Seo from "@/components/globals/Seo";
 
 export default function Home() {
   return (
     <>
       <Seo title="Home" url="" />
-      <main></main>
+      <main>
+        <h1>Test</h1>
+      </main>
     </>
   );
 }

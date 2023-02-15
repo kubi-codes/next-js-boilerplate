@@ -1,3 +1,5 @@
+import React from "react";
+import Box from "@mui/system/Box";
 import styled from "@emotion/styled";
 
 const useResponsive =
@@ -50,3 +52,7 @@ export const MobileWrapper = styled.section`
     width: 100%;
   }
 `;
+
+export const SeoWrapper = (props) => {
+  return <Box sx={{ display: "none" }}>{props.children}</Box>;
+};
