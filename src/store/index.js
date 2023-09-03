@@ -1,8 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { createWrapper } from "next-redux-wrapper";
-import { setupListeners } from "@reduxjs/toolkit/query";
 import { whitelist, blacklist, key } from "./persistent";
 import { encryptTransform } from "redux-persist-transform-encrypt";
+import { CookieStorage } from "redux-persist-cookie-storage";
 import {
   persistStore,
   persistReducer,
@@ -20,6 +19,7 @@ const persistConfig = {
   key,
   storage,
   whitelist,
+  timeout: 500,
   blacklist,
   transforms: [
     encryptTransform({
@@ -45,11 +45,4 @@ export const store = configureStore({
     }),
 });
 
-const makeStore = () => store;
-
-setupListeners(store.dispatch);
-
-const wrapper = createWrapper(makeStore);
 export const persistor = persistStore(store);
-
-export default wrapper;

@@ -2,17 +2,13 @@ import Seo from "@/components/globals/Seo";
 import { useRouter } from "next/router";
 import { Box } from "@mui/system";
 import { Button, Grid, Typography } from "@mui/material";
-import { store, persistor } from "@/store"; // Impor store Redux Anda
-import { useDispatch, useSelector } from "react-redux";
-import * as authReducers from "@/store/reducers/auth.reducers";
 
-export default function Home(props) {
+export default function Test() {
   const router = useRouter();
-  const dispatch = useDispatch();
 
   return (
     <>
-      <Seo title="Home" url="" />
+      <Seo title="Test" url="" />
       <main>
         <Grid
           container
@@ -28,7 +24,7 @@ export default function Home(props) {
               sx={{ fontSize: "90px" }}
               gutterBottom
             >
-              Welcome
+              Testing Route
             </Typography>
             <Typography
               variant="h5"
@@ -36,17 +32,11 @@ export default function Home(props) {
               textTransform="uppercase"
               sx={{ mb: "50px", display: "block" }}
             >
-              edit in src/pages/index.js
+              edit in src/pages/test.js
             </Typography>
             <Box mt="15px" display="flex" justifyContent="center">
-              <Button size="small" onClick={() => router.replace("/test")}>
-                Test Route
-              </Button>
-              <Button
-                size="small"
-                onClick={() => dispatch(authReducers.setToken("test"))}
-              >
-                Test redux
+              <Button size="small" onClick={() => router.replace("/")}>
+                Back
               </Button>
             </Box>
           </Grid>
@@ -61,8 +51,6 @@ export default function Home(props) {
 
 export async function getServerSideProps(context) {
   const endpoints = [];
-  await persistor.persist();
-  const state = store.getState();
 
   // Return our response in the allData variable as an array
   const data = await Promise.all(
@@ -74,7 +62,6 @@ export async function getServerSideProps(context) {
       title: "Home",
       url: context?.resolvedUrl,
       data,
-      state,
     }, // will be passed to the page component as props
   };
 }
