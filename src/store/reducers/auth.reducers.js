@@ -19,7 +19,6 @@ export const authSlice = createSlice({
       state.token = payload.token;
       state.profile = payload.profile;
     },
-
     removeTokenAndProfile: (state) => {
       state.token = null;
       state.profile = null;

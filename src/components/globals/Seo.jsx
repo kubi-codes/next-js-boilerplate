@@ -1,5 +1,5 @@
 import React from "react";
-import seo from "seo.json";
+import seo from "./seo.json";
 import Head from "next/head";
 import PropTypes from "prop-types";
 

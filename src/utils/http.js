@@ -5,7 +5,7 @@ import { setupCache } from "axios-cache-adapter";
 
 // Create `axios-cache-adapter` instance
 const cache = setupCache({
-  maxAge: 15 * 60 * 1000,
+  maxAge: 5 * 60 * 1000,
 });
 
 const http = rateLimit(
