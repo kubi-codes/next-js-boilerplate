@@ -25,11 +25,13 @@ const persistConfig: any = {
       secretKey: persist_key,
     }),
   ],
+  whitelist: ["counter"], // register your reducer
 };
 
 // Register all reducer in HERE
 const rootReducer = combineReducers({
   counter: CounterSlice,
+  counter1: CounterSlice,
 });
 
 const makeConfiguredStore = () =>
