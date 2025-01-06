@@ -5,6 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { AppCacheProvider } from "@mui/material-nextjs/v15-pagesRouter";
 import Provider from "@/stores/Provider";
+import Main from "@/components/layouts/Main/_main";
 
 export default function App(props) {
   const { Component, pageProps } = props;
@@ -18,7 +19,9 @@ export default function App(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Provider>
-          <Component {...pageProps} />
+          <Main>
+            <Component {...pageProps} />
+          </Main>
         </Provider>
       </ThemeProvider>
     </AppCacheProvider>
