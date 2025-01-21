@@ -76,7 +76,7 @@ function _home_headmaster() {
                 backgroundColor: "lightgray",
                 height: "103vh",
                 position: "absolute",
-                width: "100%",
+                width: "50vw",
                 marginTop: "-8vh",
               }}
             />

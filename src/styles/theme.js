@@ -17,7 +17,7 @@ const theme = createTheme({
     },
     warning: {
       main: "#ECB31D",
-      contrastText: "#fff"
+      contrastText: "#fff",
     },
     success: {
       main: "#128C33",
@@ -29,9 +29,13 @@ const theme = createTheme({
   typography: {
     h1: { fontFamily: Panton.style.fontFamily, fontSize: "64px" },
     h2: { fontFamily: Panton.style.fontFamily },
-    h3: { fontFamily: Panton.style.fontFamily },
-    h4: { fontFamily: Panton.style.fontFamily, fontSize: '36px' },
-    h5: { fontFamily: Panton.style.fontFamily, fontSize: '24px', lineHeight: '36px' },
+    h3: { fontFamily: Panton.style.fontFamily, fontSize: "42px" },
+    h4: { fontFamily: Panton.style.fontFamily, fontSize: "36px" },
+    h5: {
+      fontFamily: Panton.style.fontFamily,
+      fontSize: "24px",
+      lineHeight: "36px",
+    },
     h6: { fontFamily: Panton.style.fontFamily, fontSize: "16px" },
     body1: {
       fontFamily: Avenir_Roman.style.fontFamily,
@@ -50,7 +54,7 @@ const theme = createTheme({
           lineHeight: "19px",
           padding: "18px 32px",
           borderRadius: "8px",
-          textTransform: 'capitalize'
+          textTransform: "capitalize",
         },
         outlined: {
           borderWidth: "2px",
@@ -69,6 +73,11 @@ const theme = createTheme({
           },
           "& .MuiInputBase-input": { fontSize: "16px" },
         },
+      },
+    },
+    MuiContainer: {
+      defaultProps: {
+        maxWidth: "xl",
       },
     },
   },

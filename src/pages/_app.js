@@ -10,10 +10,14 @@ import Main from "@/components/layouts/Main/_main";
 export default function App(props) {
   const { Component, pageProps } = props;
 
+  console.log(Component);
+  console.log("pageProps.title", pageProps.title);
+
   return (
     <AppCacheProvider {...props}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <title>{pageProps.title}</title>
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}

@@ -8,7 +8,7 @@ function _footer() {
       sx={{
         bgcolor: (props) => props.palette.primary.main,
         minHeight: "300px",
-        paddingY: "30px",
+        paddingY: "50px",
       }}
     >
       <Container>
