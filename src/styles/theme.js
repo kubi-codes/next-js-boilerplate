@@ -1,73 +1,83 @@
 import { createTheme } from "@mui/material/styles";
-import { red } from "@mui/material/colors";
+import localFont from "next/font/local";
+
+const Panton = localFont({ src: "./fonts/Panton-Bold.otf" });
+const Avenir_Black = localFont({ src: "./fonts/AvenirLTStd-Black.otf" });
+const Avenir_Roman = localFont({ src: "./fonts/AvenirLTStd-Roman.otf" });
 
 // Create a theme instance.
 const theme = createTheme({
+  cssVariables: true,
   palette: {
     primary: {
-      main: "#556cd6",
+      main: "#233E83",
     },
     secondary: {
-      main: "#19857b",
+      main: "#979797",
     },
-    error: {
-      main: red.A400,
-    },
-    dark: {
-      main: "#000000",
+    warning: {
+      main: "#ECB31D",
       contrastText: "#fff",
+    },
+    success: {
+      main: "#128C33",
+    },
+    info: {
+      main: "#A9B3FF",
     },
   },
   typography: {
-    h1: {
-      fontSize: "40px",
-      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
-    },
-    h2: {
-      fontSize: "35px",
-      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
-    },
-    h4: {
-      fontSize: "36px",
-      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
-    },
+    h1: { fontFamily: Panton.style.fontFamily, fontSize: "64px" },
+    h2: { fontFamily: Panton.style.fontFamily },
+    h3: { fontFamily: Panton.style.fontFamily, fontSize: "42px" },
+    h4: { fontFamily: Panton.style.fontFamily, fontSize: "36px" },
     h5: {
-      fontSize: "25px",
-      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
+      fontFamily: Panton.style.fontFamily,
+      fontSize: "24px",
+      lineHeight: "36px",
     },
-    h6: {
-      fontSize: "16px",
-      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
-    },
+    h6: { fontFamily: Panton.style.fontFamily, fontSize: "16px" },
     body1: {
-      fontSize: "16px",
-      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
+      fontFamily: Avenir_Roman.style.fontFamily,
     },
     body2: {
-      fontSize: "14px",
-      fontFamily: "inter, Roboto, Helvetica, Arial, sans-serif",
+      fontFamily: Avenir_Roman.style.fontFamily,
     },
   },
   components: {
-    MuiAppBar: {
+    MuiButton: {
+      defaultProps: { disableElevation: true },
       styleOverrides: {
         root: {
-          background: "#FFFFFF",
-          boxShadow: "none",
+          fontFamily: Panton.style.fontFamily,
+          fontSize: "14px",
+          lineHeight: "19px",
+          padding: "18px 32px",
+          borderRadius: "8px",
+          textTransform: "capitalize",
+        },
+        outlined: {
+          borderWidth: "2px",
         },
       },
     },
-    MuiButton: {
-      defaultProps: {
-        variant: "contained",
-        disableElevation: true,
-        color: "dark",
-      },
+    MuiTextField: {
       styleOverrides: {
-        contained: {
-          borderRadius: "0px",
-          padding: "8px 16px",
+        root: {
+          "& fieldset": {
+            border: "2px solid #979797",
+            borderRadius: "8px",
+          },
+          "& input": {
+            padding: "18px 20px",
+          },
+          "& .MuiInputBase-input": { fontSize: "16px" },
         },
+      },
+    },
+    MuiContainer: {
+      defaultProps: {
+        maxWidth: "xl",
       },
     },
   },
