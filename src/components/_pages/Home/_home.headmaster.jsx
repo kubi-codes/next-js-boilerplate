@@ -73,7 +73,9 @@ function _home_headmaster() {
           <Grid item size={{ md: 6 }}>
             <Box
               sx={{
-                backgroundColor: "lightgray",
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                backgroundImage: `url('/images/bg-homepage.jpg')`,
                 height: "103vh",
                 position: "absolute",
                 width: "50vw",

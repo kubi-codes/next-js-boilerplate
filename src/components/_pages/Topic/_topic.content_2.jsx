@@ -25,7 +25,7 @@ function _topic_content_2() {
                     <Grid item size={{ md: 3.8 }}>
                       <Box position="relative" mb={4}>
                         <CardActionArea>
-                          <Box height="200px" bgcolor="lightgray" />
+                          <Box height="250px" bgcolor="lightgray" />
                         </CardActionArea>
 
                         <Box

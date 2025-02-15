@@ -59,7 +59,7 @@ function _navbar() {
                   { name: "Landscape", link: "/landscape" },
                   { name: "Governance", link: "/governance" },
                 ].map((item) => (
-                  <div>
+                  <Box marginRight="50px">
                     <Typography fontSize="12px" color={color}>
                       {item.desc}
                     </Typography>
@@ -68,7 +68,7 @@ function _navbar() {
                         {item.name}
                       </Typography>
                     </Link>
-                  </div>
+                  </Box>
                 ))
               )}
             </Box>

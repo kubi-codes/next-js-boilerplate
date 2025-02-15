@@ -48,7 +48,10 @@ function _navbar() {
                   { name: "Initiatives", link: "/initiatives" },
                 ].map((item) => (
                   <Link href={item.link}>
-                    <Typography color="primary" variant="h6">
+                    <Typography
+                      color={bgColor === "white" ? "primary" : "#fff"}
+                      variant="h6"
+                    >
                       {item.name}
                     </Typography>
                   </Link>
@@ -71,7 +74,10 @@ function _navbar() {
                   { name: "Contact Us", link: "/contact-us" },
                 ].map((item) => (
                   <Link href={item.link}>
-                    <Typography color={bgColor === "white" ? "primary" :"#fff"} variant="h6">
+                    <Typography
+                      color={bgColor === "white" ? "primary" : "#fff"}
+                      variant="h6"
+                    >
                       {item.name}
                     </Typography>
                   </Link>

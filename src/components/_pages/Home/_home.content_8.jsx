@@ -1,15 +1,18 @@
-import {
-  Container,
-  Typography,
-  Box,
-  TextField,
-  Button,
-} from "@mui/material";
+import { Container, Typography, Box, TextField, Button } from "@mui/material";
 import React from "react";
 
 function _home_content_8() {
   return (
-    <Box height="45vh" bgcolor="lightgray" display="flex" alignItems="center">
+    <Box
+      height="45vh"
+      bgcolor="lightgray"
+      display="flex"
+      alignItems="center"
+      sx={{
+        backgroundImage: `url('/images/bg-cta.jpg')`,
+        backgroundSize: "cover",
+      }}
+    >
       <Container>
         <Typography variant="h2" color="#fff" align="center">
           BE PART OF THE FOOD FIGHTERS!

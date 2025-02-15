@@ -41,14 +41,38 @@ function _home_content_5() {
         <Grid container justifyContent="space-between">
           {React.Children.toArray(
             [
-              { image: "", label: "Magazine", date: "Dec, 2025" },
-              { image: "", label: "Magazine", date: "Dec, 2025" },
-              { image: "", label: "Magazine", date: "Dec, 2025" },
-              { image: "", label: "Magazine", date: "Dec, 2025" },
+              {
+                image: "/images/magazine-example.jpg",
+                label: "Magazine",
+                date: "Dec, 2025",
+              },
+              {
+                image: "/images/magazine-example.jpg",
+                label: "Magazine",
+                date: "Dec, 2025",
+              },
+              {
+                image: "/images/magazine-example.jpg",
+                label: "Magazine",
+                date: "Dec, 2025",
+              },
+              {
+                image: "/images/magazine-example.jpg",
+                label: "Magazine",
+                date: "Dec, 2025",
+              },
             ].map((item) => (
               <Grid item size={{ md: 2.8 }}>
                 <CardActionArea>
-                  <Box height="400px" bgcolor="lightgray" mb={1}></Box>
+                  <Box
+                    height="450px"
+                    // bgcolor="lightgray"
+                    mb={1}
+                    sx={{
+                      backgroundImage: `url('${item.image}')`,
+                      backgroundSize: "cover",
+                    }}
+                  ></Box>
                 </CardActionArea>
                 <Typography>{item.label}</Typography>
                 <Typography color="secondary" fontSize="14px">

@@ -20,7 +20,16 @@ function _about_us_content_5() {
           </Grid>
           <Grid size={{ md: 3 }}>
             <Box bgcolor={(props) => props.palette.warning.main} padding="20px">
-              <Button sx={{fontSize: '24px', color: '#fff'}} endIcon={<img src="/icons/circle-arrow-right-white.svg" alt="icons" width="20px" />}>
+              <Button
+                sx={{ fontSize: "24px", color: "#fff" }}
+                endIcon={
+                  <img
+                    src="/icons/circle-arrow-right-white.svg"
+                    alt="icons"
+                    width="20px"
+                  />
+                }
+              >
                 Read Here
               </Button>
             </Box>

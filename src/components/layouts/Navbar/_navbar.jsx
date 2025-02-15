@@ -1,4 +1,10 @@
-import { Box, Container, Grid2 as Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid2 as Grid,
+  Typography,
+} from "@mui/material";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -38,7 +44,13 @@ function _navbar() {
           <Grid size={{ md: 6 }}>
             <Box display="flex" alignItems="center" gap="40px">
               <Link href="/">
-                <Box bgcolor="lightgray" height="45px" width="140px"></Box>
+                <Box
+                  component="img"
+                  height="45px"
+                  width="140px"
+                  src="/images/TJF-Secondary-Blue-logo.png"
+                  alt="logo"
+                ></Box>
               </Link>
 
               {React.Children.toArray(
@@ -68,12 +80,29 @@ function _navbar() {
                   { name: "About Us", link: "/about-us" },
                   { name: "Updates", link: "/updates" },
                   { name: "Career", link: "/career" },
-                  { name: "Contact Us", link: "/contact-us" },
+                  {
+                    name: "Contact Us",
+                    link: "/contact-us",
+                    bgColor: "success",
+                  },
                 ].map((item) => (
                   <Link href={item.link}>
-                    <Typography color={bgColor === "white" ? "primary" :"#fff"} variant="h6">
-                      {item.name}
-                    </Typography>
+                    {item.bgColor ? (
+                      <Button
+                        variant="contained"
+                        color={item.bgColor}
+                        sx={{ width: "100px", height: "33px", padding: 0 }}
+                      >
+                        {item.name}
+                      </Button>
+                    ) : (
+                      <Typography
+                        color={bgColor === "white" ? "primary" : "#fff"}
+                        variant="h6"
+                      >
+                        {item.name}
+                      </Typography>
+                    )}
                   </Link>
                 ))
               )}
