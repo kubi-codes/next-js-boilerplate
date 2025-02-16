@@ -6,23 +6,23 @@ import NavbarInitiatives from "@/components/layouts/Navbar/_navbar.initiatives";
 import Footer from "@/components/layouts/Footer/_footer";
 import { usePathname } from "next/navigation";
 
-function _main({ children }) {
+function _main({ children, ...props }) {
   const pathname = usePathname();
   const rootPathname = pathname.split("/")?.[1];
 
   const RenderNavbar = () => {
     switch (rootPathname) {
       case "topic":
-        return <NavbarTopic />;
+        return <NavbarTopic {...props?.navbar} />;
 
       case "research":
-        return <NavbarResearch />;
+        return <NavbarResearch {...props?.navbar} />;
 
       case "initiatives":
-        return <NavbarInitiatives />;
+        return <NavbarInitiatives {...props?.navbar} />;
 
       default:
-        return <Navbar />;
+        return <Navbar {...props?.navbar} />;
     }
   };
 

@@ -38,7 +38,17 @@ function _navbar() {
           <Grid size={{ md: 6 }}>
             <Box display="flex" alignItems="center" gap="40px">
               <Link href="/">
-                <Box bgcolor="lightgray" height="45px" width="140px"></Box>
+                <Box
+                  component="img"
+                  height="45px"
+                  width="140px"
+                  src={
+                    bgColor === "white"
+                      ? "/images/TJF-Secondary-Blue-logo.png"
+                      : "/images/TJF-White-logo.png"
+                  }
+                  alt="logo"
+                ></Box>
               </Link>
 
               {React.Children.toArray(

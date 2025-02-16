@@ -3,10 +3,13 @@ import {
   Button,
   Container,
   Grid2 as Grid,
+  IconButton,
   Typography,
 } from "@mui/material";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import GlobeIcon from "@/components/shared/icons/globe";
+import ChevronIcon from "@/components/shared/icons/chevronDown";
 
 function _navbar() {
   const [bgColor, setBgColor] = useState("transparent");
@@ -29,7 +32,7 @@ function _navbar() {
       component="nav"
       display="flex"
       alignItems="center"
-      height="8vh"
+      height="9.5vh"
       position="fixed"
       width="100%"
       zIndex={10}
@@ -106,6 +109,15 @@ function _navbar() {
                   </Link>
                 ))
               )}
+
+              <IconButton>
+                <Box display="flex" alignItems="center" gap={1.2}>
+                  <GlobeIcon color={bgColor === "white" ? "#233E83" : "#fff"} />
+                  <ChevronIcon
+                    color={bgColor === "white" ? "#233E83" : "#fff"}
+                  />
+                </Box>
+              </IconButton>
             </Box>
           </Grid>
         </Grid>

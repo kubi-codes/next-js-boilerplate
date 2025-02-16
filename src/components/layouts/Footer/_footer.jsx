@@ -12,10 +12,17 @@ function _footer() {
       }}
     >
       <Container>
-        <Grid container justifyContent="space-between" gap={3} sx={{ mb: 3 }}>
-          <Grid item size={{ md: 2 }}>
+        <Grid container justifyContent="space-between" sx={{ mb: 3 }}>
+          <Grid item size={{ md: 1.4 }}>
             <Link href="/">
-              <Box height="120px" bgcolor="lightgray" />
+              <Box
+                height="150px"
+                sx={{
+                  backgroundImage: `url('/images/TJF-Primary-White-small-logo.png')`,
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
             </Link>
           </Grid>
           <Grid item size={{ md: 3 }}>
@@ -77,6 +84,17 @@ function _footer() {
             >
               Connect With Us
             </Typography>
+
+            <Box display="flex" gap="30px" mt="10px">
+              {React.Children.toArray(
+                [
+                  "instagram.svg",
+                  "facebook.svg",
+                  "youtube.svg",
+                  "linkedin.svg",
+                ].map((item) => <img src={`/icons/${item}`} />)
+              )}
+            </Box>
           </Grid>
         </Grid>
 

@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material/styles";
 import localFont from "next/font/local";
 
 const Panton = localFont({ src: "./fonts/Panton-Bold.otf" });
-const Avenir_Black = localFont({ src: "./fonts/AvenirLTStd-Black.otf" });
+// const Avenir_Black = localFont({ src: "./fonts/AvenirLTStd-Black.otf" });
 const Avenir_Roman = localFont({ src: "./fonts/AvenirLTStd-Roman.otf" });
 
 // Create a theme instance.

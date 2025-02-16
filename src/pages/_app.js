@@ -10,9 +10,6 @@ import Main from "@/components/layouts/Main/_main";
 export default function App(props) {
   const { Component, pageProps } = props;
 
-  console.log(Component);
-  console.log("pageProps.title", pageProps.title);
-
   return (
     <AppCacheProvider {...props}>
       <Head>
@@ -23,7 +20,7 @@ export default function App(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Provider>
-          <Main>
+          <Main {...pageProps}>
             <Component {...pageProps} />
           </Main>
         </Provider>
