@@ -8,6 +8,11 @@ export async function getServerSideProps() {
   return {
     props: {
       title: "Updates | Tay Juhana Foundation",
+      navbar: {
+        color: "#233E83",
+        bgColor: "white",
+        disableElevation: true,
+      },
     },
   };
 }

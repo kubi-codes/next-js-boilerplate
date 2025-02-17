@@ -13,7 +13,7 @@ function _career_content_1() {
   return (
     <Container>
       <Grid container justifyContent="space-between">
-        <Grid size={{ md: 5 }} height="100vh" display="flex" alignItems="center">
+        <Grid size={{ md: 5 }} height="90vh" display="flex" alignItems="center">
           <Box>
             <Typography variant="body1" fontSize="36px" gutterBottom>
               Careers at
@@ -39,11 +39,12 @@ function _career_content_1() {
           <Box
             sx={{
               backgroundImage: `url('/images/bg-career.png')`,
-              height: "100vh",
+              height: "88vh",
               position: "absolute",
               width: "50vw",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
+              backgroundPosition: 'right'
             }}
           />
         </Grid>

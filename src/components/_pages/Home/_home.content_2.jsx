@@ -4,10 +4,28 @@ import {
   Container,
   Grid2 as Grid,
   Typography,
+  Popover,
+  CardActionArea,
+  IconButton,
 } from "@mui/material";
 import React from "react";
+import Link from "next/link";
 
 function _home_content_2() {
+  const [variant, setVariant] = React.useState("bg-indonesian.png");
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
+
   return (
     <Box
       minHeight="90vh"
@@ -17,7 +35,13 @@ function _home_content_2() {
     >
       <Container>
         <Grid container justifyContent="space-between">
-          <Grid item size={{ md: 3.5 }} display="flex" height="400px" alignItems="center">
+          <Grid
+            item
+            size={{ md: 3.5 }}
+            display="flex"
+            height="400px"
+            alignItems="center"
+          >
             <Box>
               <Box
                 bgcolor={(props) => props.palette.warning.main}
@@ -47,16 +71,180 @@ function _home_content_2() {
             </Box>
           </Grid>
           <Grid item size={{ md: 7 }}>
+            <Box position="relative" height="400px">
+              {/* Sumatra */}
+              <Box
+                sx={{
+                  width: "100px",
+                  height: "100px",
+                  position: "absolute",
+                  left: "8%",
+                  top: "15%",
+                  zIndex: 2,
+                  cursor: "pointer",
+                }}
+                onMouseOver={() => setVariant("bg-indonesian-1.png")}
+                onMouseOut={() => setVariant("bg-indonesian.png")}
+                aria-describedby={id}
+                onClick={handleClick}
+              />
+
+              <Popover
+                id={id}
+                open={open}
+                anchorEl={anchorEl}
+                onClose={handleClose}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+              >
+                <Box
+                  padding="20px"
+                  width="400px"
+                  minHeight="625px"
+                  position="relative"
+                >
+                  <IconButton
+                    sx={{ position: "absolute", right: 12, top: 5 }}
+                    onClick={handleClose}
+                  >
+                    <img src="/icons/close.svg" />
+                  </IconButton>
+
+                  <Box mb="80px" mt="20px">
+                    <Link href="#">
+                      <Box
+                        bgcolor="lightgray"
+                        minHeight="200px"
+                        position="relative"
+                      >
+                        <Box
+                          bgcolor="#fff"
+                          height="100px"
+                          boxShadow="0px 1px 1px rgba(0, 0, 0, 0.1)"
+                          position="absolute"
+                          width="90%"
+                          bottom="-50px"
+                          left={0}
+                          padding="10px 20px"
+                        >
+                          <Typography
+                            variant="body2"
+                            color="secondary"
+                            gutterBottom
+                          >
+                            Sumatera - Peatland - Horticulture
+                          </Typography>
+                          <Typography
+                            variant="h6"
+                            fontSize="16px"
+                            sx={{
+                              display: "-webkit-box",
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              WebkitLineClamp: 2, // Membatasi ke 2 baris
+                            }}
+                          >
+                            Rekontruksi Lahan Pertanian dengan Lahan Suboptimal
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Link>
+                  </Box>
+
+                  <Box component="hr" mb="30px" />
+
+                  <Box>
+                    <Link href="#">
+                      <Box
+                        bgcolor="lightgray"
+                        minHeight="200px"
+                        position="relative"
+                      >
+                        <Box
+                          bgcolor="#fff"
+                          height="100px"
+                          boxShadow="0px 1px 1px rgba(0, 0, 0, 0.1)"
+                          position="absolute"
+                          width="90%"
+                          bottom="-50px"
+                          left={0}
+                          padding="10px 20px"
+                        >
+                          <Typography
+                            variant="body2"
+                            color="secondary"
+                            gutterBottom
+                          >
+                            Sumatera - Peatland - Horticulture
+                          </Typography>
+                          <Typography
+                            variant="h6"
+                            fontSize="16px"
+                            sx={{
+                              display: "-webkit-box",
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              WebkitLineClamp: 2, // Membatasi ke 2 baris
+                            }}
+                          >
+                            Rekontruksi Lahan Pertanian dengan Lahan Suboptimal
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Link>
+                  </Box>
+                </Box>
+              </Popover>
+
+              {/* Kalimantan */}
+              <Box
+                sx={{
+                  width: "70px",
+                  height: "70px",
+                  position: "absolute",
+                  left: "21.5vw",
+                  transform: "translate(-50%, 0)",
+                  top: "30%",
+                  zIndex: 2,
+                  cursor: "pointer",
+                }}
+              />
+            </Box>
+
+            {/* Papua */}
             <Box
               sx={{
-                height: "400px",
-                backgroundImage: `url('/images/bg-indonesian.png')`,
+                width: "70px",
+                height: "70px",
+                position: "absolute",
+                right: "-30px",
+                transform: "translate(-50%, 0)",
+                top: "50%",
+                zIndex: 2,
+                cursor: "pointer",
+              }}
+            />
+
+            <Box
+              sx={{
+                height: variant === "bg-indonesian.png" ? "400px" : "410px",
+                backgroundImage: `url('/images/${variant}')`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 position: "absolute",
+                backgroundPosition: "center",
 
-                width: "60vw",
-                right: -8,
+                width: variant === "bg-indonesian.png" ? "60vw" : "61vw",
+                right: variant === "bg-indonesian.png" ? -8 : -26,
+                top: "25%",
               }}
             />
           </Grid>

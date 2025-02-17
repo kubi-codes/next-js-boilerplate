@@ -96,6 +96,18 @@ function _contact_us_content_1() {
                   variant="outlined"
                   placeholder="Your name here..."
                   fullWidth
+                  sx={{
+                    "& fieldset": { border: "1px solid #fff !important" },
+                    input: {
+                      color: "#fff",
+                      "&::placeholder": {
+                        // <----- Add this.
+                        opacity: 1,
+                        color: "#979797",
+                      },
+                    },
+                    // label: { color: "blue" },
+                  }}
                 />
               </Grid>
               <Grid size={{ md: 5.8 }}>
@@ -106,6 +118,18 @@ function _contact_us_content_1() {
                   variant="outlined"
                   placeholder="Your email here..."
                   fullWidth
+                  sx={{
+                    "& fieldset": { border: "1px solid #fff !important" },
+                    input: {
+                      color: "#fff",
+                      "&::placeholder": {
+                        // <----- Add this.
+                        opacity: 1,
+                        color: "#979797",
+                      },
+                    },
+                    // label: { color: "blue" },
+                  }}
                 />
               </Grid>
             </Grid>
@@ -119,6 +143,18 @@ function _contact_us_content_1() {
                   variant="outlined"
                   placeholder="Your phone number here..."
                   fullWidth
+                  sx={{
+                    "& fieldset": { border: "1px solid #fff !important" },
+                    input: {
+                      color: "#fff",
+                      "&::placeholder": {
+                        // <----- Add this.
+                        opacity: 1,
+                        color: "#979797",
+                      },
+                    },
+                    // label: { color: "blue" },
+                  }}
                 />
               </Grid>
               <Grid size={{ md: 5.8 }}>
@@ -129,6 +165,18 @@ function _contact_us_content_1() {
                   variant="outlined"
                   placeholder="Your email here..."
                   fullWidth
+                  sx={{
+                    "& fieldset": { border: "1px solid #fff !important" },
+                    input: {
+                      color: "#fff",
+                      "&::placeholder": {
+                        // <----- Add this.
+                        opacity: 1,
+                        color: "#979797",
+                      },
+                    },
+                    // label: { color: "blue" },
+                  }}
                 />
               </Grid>
             </Grid>
@@ -142,7 +190,18 @@ function _contact_us_content_1() {
               fullWidth
               multiline
               rows={4}
-              sx={{ mb: 3 }}
+              sx={{
+                "& fieldset": { border: "1px solid #fff !important" },
+                textarea: {
+                  color: "#fff",
+                  "&::placeholder": {
+                    // <----- Add this.
+                    opacity: 1,
+                    color: "#979797",
+                  },
+                },
+                mb: 4,
+              }}
             />
 
             <ReCAPTCHA

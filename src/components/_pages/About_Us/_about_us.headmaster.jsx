@@ -64,12 +64,24 @@ function _about_us_headmaster() {
                 position: "absolute",
                 width: "50vw",
                 marginTop: "-8vh",
+                backgroundImage: `url('/images/bg-aboutUs.jpg')`,
               }}
             />
 
             <Box marginTop="104vh" position="relative">
-              <Box component="img" src="/icons/comma-top-success.svg" position="absolute" top="-60px" left={0} />
-              <Typography textAlign="right" variant="h3" color="success" lineHeight="63px">
+              <Box
+                component="img"
+                src="/icons/comma-top-success.svg"
+                position="absolute"
+                top="-50px"
+                left={0}
+              />
+              <Typography
+                textAlign="right"
+                variant="h3"
+                color="success"
+                lineHeight="63px"
+              >
                 Providing Food for Humanity <br /> through Sustainable
                 Suboptimal
                 <br /> Land Cultivation
