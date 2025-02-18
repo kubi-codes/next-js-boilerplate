@@ -45,7 +45,8 @@ function _home_content_4() {
                 <Box
                   bgcolor={(props) => props.palette.warning.main}
                   display="inline-block"
-                  padding={1}
+                  pt={1}
+                  pb={0.5}
                   paddingX={2}
                   mb={1}
                 >

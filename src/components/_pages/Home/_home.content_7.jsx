@@ -93,7 +93,7 @@ function _home_content_7() {
         </Container>
       </Box>
 
-      {isMobile ? <MobileView /> : nulll}
+      {isMobile ? <MobileView /> : null}
     </>
   );
 }

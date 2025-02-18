@@ -40,7 +40,8 @@ function _home_headmaster() {
                     backgroundColor: (props) => props.palette.warning.main,
                   }}
                   display="inline-block"
-                  p={1}
+                  pt={1.2}
+                  px={1}
                   mb={3}
                 >
                   <Typography variant="h1" color="#fff" y>
