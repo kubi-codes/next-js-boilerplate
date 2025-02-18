@@ -17,8 +17,8 @@ function _home() {
       <_home_content_2 />
       <_home_content_3 />
       <_home_content_4 />
-      <_home_content_5 />
-      <_home_content_6 />
+      {/* <_home_content_5 /> */}
+      {/* <_home_content_6 /> */}
       <_home_content_7 />
       <_home_content_8 />
     </>

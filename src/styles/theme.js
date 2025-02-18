@@ -27,8 +27,20 @@ const theme = createTheme({
     },
   },
   typography: {
-    h1: { fontFamily: Panton.style.fontFamily, fontSize: "64px" },
-    h2: { fontFamily: Panton.style.fontFamily },
+    h1: {
+      fontFamily: Panton.style.fontFamily,
+      fontSize: "64px",
+      "@media (max-width:600px)": {
+        fontSize: "36px",
+        lineHeight: '36px'
+      },
+    },
+    h2: {
+      fontFamily: Panton.style.fontFamily,
+      "@media (max-width:600px)": {
+        fontSize: "36px",
+      },
+    },
     h3: { fontFamily: Panton.style.fontFamily, fontSize: "42px" },
     h4: { fontFamily: Panton.style.fontFamily, fontSize: "36px" },
     h5: {
@@ -39,6 +51,10 @@ const theme = createTheme({
     h6: { fontFamily: Panton.style.fontFamily, fontSize: "16px" },
     body1: {
       fontFamily: Avenir_Roman.style.fontFamily,
+      "@media (max-width:600px)": {
+        fontSize: "14px",
+        lineHeight: '21px'
+      },
     },
     body2: {
       fontFamily: Avenir_Roman.style.fontFamily,
@@ -55,6 +71,11 @@ const theme = createTheme({
           padding: "18px 32px",
           borderRadius: "8px",
           textTransform: "capitalize",
+
+          "@media (max-width:600px)": {
+            padding: "10px 16px",
+            borderRadius: "4px",
+          },
         },
         outlined: {
           borderWidth: "2px",
@@ -70,6 +91,10 @@ const theme = createTheme({
           },
           "& input": {
             padding: "18px 20px",
+
+            "@media (max-width:600px)": {
+              padding: "10px 16px",
+            },
           },
           "& .MuiInputBase-input": { fontSize: "16px" },
         },

@@ -3,7 +3,7 @@ import { Box, Container, Typography } from "@mui/material";
 
 function _home_content_1() {
   return (
-    <Box bgcolor={(props) => props.palette.primary.main} paddingY="40px">
+    <Box bgcolor={(props) => props.palette.primary.main} paddingY="40px" mb="20px">
       <Container>
         <Typography color="#fff" align="center" fontSize="22px" lineHeight="36px">
           “Tay Juhana Foundation (TJF) is a nonprofit organization dedicated to
