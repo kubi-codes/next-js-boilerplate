@@ -32,7 +32,7 @@ const theme = createTheme({
       fontSize: "64px",
       "@media (max-width:600px)": {
         fontSize: "36px",
-        lineHeight: '36px'
+        lineHeight: "36px",
       },
     },
     h2: {
@@ -41,7 +41,13 @@ const theme = createTheme({
         fontSize: "36px",
       },
     },
-    h3: { fontFamily: Panton.style.fontFamily, fontSize: "42px" },
+    h3: {
+      fontFamily: Panton.style.fontFamily,
+      fontSize: "42px",
+      "@media (max-width:600px)": {
+        fontSize: "32px",
+      },
+    },
     h4: { fontFamily: Panton.style.fontFamily, fontSize: "36px" },
     h5: {
       fontFamily: Panton.style.fontFamily,
@@ -53,7 +59,7 @@ const theme = createTheme({
       fontFamily: Avenir_Roman.style.fontFamily,
       "@media (max-width:600px)": {
         fontSize: "14px",
-        lineHeight: '21px'
+        lineHeight: "21px",
       },
     },
     body2: {
