@@ -108,9 +108,12 @@ function _navbar(props) {
                       },
                     ].map((item) => (
                       <Box maxWidth="150px" marginRight="20px">
-                        <Typography fontSize="12px" color={color}>
-                          {item.desc}
-                        </Typography>
+                        {item.desc ? (
+                          <Typography fontSize="12px" color={color}>
+                            {item.desc}
+                          </Typography>
+                        ) : null}
+
                         <Link href={`/topic/${item.link}`}>
                           <Typography color={color} variant="h6">
                             {item.name}
