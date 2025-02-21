@@ -7,10 +7,17 @@ import {
   CardActionArea,
 } from "@mui/material";
 
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import MobileView from "./mobile/_topic.content_2";
+
 function _topic_content_2() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <>
-      <Box pb="80px">
+      <Box pb="80px" display={isMobile ? "none" : "block"}>
         <Container>
           <Grid container justifyContent="space-between">
             <Grid item size={{ md: 2 }}>
@@ -25,7 +32,7 @@ function _topic_content_2() {
                     <Grid item size={{ md: 3.8 }}>
                       <Box position="relative" mb={4}>
                         <CardActionArea>
-                          <Box height="200px" bgcolor="lightgray" />
+                          <Box height="250px" bgcolor="lightgray" />
                         </CardActionArea>
 
                         <Box
@@ -62,6 +69,8 @@ function _topic_content_2() {
           </Grid>
         </Container>
       </Box>
+
+      {isMobile ? <MobileView /> : null}
     </>
   );
 }

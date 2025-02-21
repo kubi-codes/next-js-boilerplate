@@ -5,6 +5,7 @@ import {
   CardActionArea,
   Typography,
 } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 
 function _initiatives_content_2() {
@@ -15,9 +16,11 @@ function _initiatives_content_2() {
           {[...new Array(4)].map((item) => (
             <Grid item size={{ md: 5.8 }}>
               <Box position="relative" mb={10}>
-                <CardActionArea>
-                  <Box height="340px" bgcolor="lightgray" />
-                </CardActionArea>
+                <Link href="/initiatives/lorem" passHref>
+                  <CardActionArea>
+                    <Box height="340px" bgcolor="lightgray" />
+                  </CardActionArea>
+                </Link>
 
                 <Box
                   width="60%"
@@ -26,26 +29,28 @@ function _initiatives_content_2() {
                   marginBottom="-7%"
                   bgcolor="#fff"
                 >
-                  <CardActionArea
-                    sx={{
-                      px: "10px",
-                      py: "8px",
-                    }}
-                  >
-                    <Typography
-                      component="span"
-                      display="flex"
-                      gap={3}
-                      variant="h4"
+                  <Link href="/initiatives/lorem" passHref>
+                    <CardActionArea
+                      sx={{
+                        px: "10px",
+                        py: "8px",
+                      }}
                     >
-                      Sustainable Peatland Agriculture
-                      <Box
-                        component="img"
-                        src="/icons/circle-arrow-right-success.svg"
-                        sx={{ mb: -0.5, ml: 2 }}
-                      />
-                    </Typography>
-                  </CardActionArea>
+                      <Typography
+                        component="span"
+                        display="flex"
+                        gap={3}
+                        variant="h4"
+                      >
+                        Sustainable Peatland Agriculture
+                        <Box
+                          component="img"
+                          src="/icons/circle-arrow-right-success.svg"
+                          sx={{ mb: -0.5, ml: 2 }}
+                        />
+                      </Typography>
+                    </CardActionArea>
+                  </Link>
                 </Box>
               </Box>
             </Grid>
