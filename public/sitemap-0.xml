@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://example.com</loc><lastmod>2025-01-21T14:36:22.706Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://example.com/about-us</loc><lastmod>2025-01-21T14:36:22.708Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://example.com/initiatives</loc><lastmod>2025-01-21T14:36:22.708Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://example.com/research</loc><lastmod>2025-01-21T14:36:22.708Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://example.com/topic</loc><lastmod>2025-01-21T14:36:22.708Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://example.com</loc><lastmod>2025-02-21T08:26:35.761Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://example.com/about-us</loc><lastmod>2025-02-21T08:26:35.762Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://example.com/career</loc><lastmod>2025-02-21T08:26:35.762Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://example.com/contact-us</loc><lastmod>2025-02-21T08:26:35.762Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://example.com/initiatives</loc><lastmod>2025-02-21T08:26:35.762Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://example.com/research</loc><lastmod>2025-02-21T08:26:35.762Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://example.com/topic</loc><lastmod>2025-02-21T08:26:35.762Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://example.com/updates</loc><lastmod>2025-02-21T08:26:35.762Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
