@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 
 function _main({ children, ...props }) {
   const pathname = usePathname();
-  const rootPathname = pathname.split("/")?.[1];
+  const rootPathname = pathname?.split("/")?.[1];
 
   const RenderNavbar = () => {
     switch (rootPathname) {
