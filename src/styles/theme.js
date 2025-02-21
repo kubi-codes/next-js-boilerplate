@@ -32,7 +32,7 @@ const theme = createTheme({
       fontSize: "64px",
       "@media (max-width:600px)": {
         fontSize: "36px",
-        lineHeight: "36px",
+        lineHeight: "42px",
       },
     },
     h2: {

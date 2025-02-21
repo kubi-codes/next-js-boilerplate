@@ -1,10 +1,9 @@
 import {
   Box,
-  Container,
-  Grid2 as Grid,
-  Typography,
   Button,
+  Container,
   IconButton,
+  Typography,
   Drawer,
 } from "@mui/material";
 import Link from "next/link";
@@ -118,45 +117,19 @@ function _navbar(props) {
           >
             {React.Children.toArray(
               [
-                {
-                  name: "Food Security",
-                  link: "/food-security",
-                  desc: "Topic",
-                },
-                {
-                  name: "Agliculture",
-                  link: "/agliculture",
-                },
-                {
-                  name: "Suboptimal Land",
-                  link: "/suboptimal-land",
-                },
-                {
-                  name: "Livelihood",
-                  link: "/livelihood",
-                },
-                {
-                  name: "Landscape",
-                  link: "/landscape",
-                },
-                {
-                  name: "Governance",
-                  link: "/governance",
-                },
+                { name: "Topic", link: "/topic" },
+                { name: "Research", link: "/research" },
+                { name: "Initiatives", link: "/initiatives" },
+                { name: "About Us", link: "/about-us" },
+                { name: "Our Approach", link: "/our-approach" },
+                { name: "Updates", link: "/updates" },
+                { name: "Career", link: "/career" },
               ].map((item) => (
-                <React.Fragment>
-                  {item.desc ? (
-                    <Typography fontSize="12px" color="#fff">
-                      {item.desc}
-                    </Typography>
-                  ) : null}
-
-                  <Link href={`/topic/${item.link}`}>
-                    <Typography color="#fff" variant="h6">
-                      {item.name}
-                    </Typography>
-                  </Link>
-                </React.Fragment>
+                <Link href={item.link}>
+                  <Typography color="#fff" variant="h6">
+                    {item.name}
+                  </Typography>
+                </Link>
               ))
             )}
           </Box>

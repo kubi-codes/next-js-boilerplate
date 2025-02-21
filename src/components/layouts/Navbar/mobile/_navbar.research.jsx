@@ -119,29 +119,21 @@ function _navbar(props) {
             {React.Children.toArray(
               [
                 {
-                  name: "Food Security",
-                  link: "/food-security",
-                  desc: "Topic",
+                  name: "Peatland Agriculture Sustainability",
+                  link: "/peatland-agriculture-sustainability",
+                  desc: "Research",
                 },
                 {
-                  name: "Agliculture",
-                  link: "/agliculture",
+                  name: "Sustainable Food System",
+                  link: "/sustainable-food-system",
                 },
                 {
-                  name: "Suboptimal Land",
-                  link: "/suboptimal-land",
+                  name: "Coconut Research Center",
+                  link: "/coconut-research-center",
                 },
                 {
-                  name: "Livelihood",
-                  link: "/livelihood",
-                },
-                {
-                  name: "Landscape",
-                  link: "/landscape",
-                },
-                {
-                  name: "Governance",
-                  link: "/governance",
+                  name: "Coastal Agriculture Water Management",
+                  link: "/coastal-agriculture-water-management",
                 },
               ].map((item) => (
                 <React.Fragment>
@@ -151,7 +143,7 @@ function _navbar(props) {
                     </Typography>
                   ) : null}
 
-                  <Link href={`/topic/${item.link}`}>
+                  <Link href={`/research/${item.link}`}>
                     <Typography color="#fff" variant="h6">
                       {item.name}
                     </Typography>
