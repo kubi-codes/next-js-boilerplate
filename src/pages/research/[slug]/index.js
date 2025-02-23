@@ -7,7 +7,7 @@ export default function ResearchDetail() {
 export async function getServerSideProps(props) {
   return {
     props: {
-      title: `${props.params?.slug
+      title: `${props?.params?.slug
         ?.replace(/-/g, " ")
         ?.replace(/\b\w/g, (char) =>
           char.toUpperCase()

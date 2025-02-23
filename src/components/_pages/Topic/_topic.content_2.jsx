@@ -57,13 +57,13 @@ function _topic_content_2() {
                   ].map((item) => (
                     <Grid item size={{ md: 3.8 }}>
                       <Box position="relative" mb={4}>
-                        <Link href={item.link}>
+                        <Link href={`/topic/${item.link}`}>
                           <CardActionArea>
                             <Box height="250px" bgcolor="lightgray" />
                           </CardActionArea>
                         </Link>
 
-                        <Link href={item.link}>
+                        <Link href={`/topic/${item.link}`}>
                           <Box
                             width="80%"
                             position="absolute"

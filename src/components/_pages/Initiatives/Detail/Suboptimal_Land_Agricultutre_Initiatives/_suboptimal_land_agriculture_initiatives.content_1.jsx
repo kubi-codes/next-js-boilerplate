@@ -4,39 +4,28 @@ import {
   Grid2 as Grid,
   Typography,
   CardActionArea,
-  TextField,
   IconButton,
-  Button,
+  Grow,
   FormControlLabel,
   Checkbox,
   Chip,
-  Grow,
+  Button,
   Pagination,
 } from "@mui/material";
-import React from "react";
-import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import Link from "next/link";
+import React from "react";
 
-function _research_detail() {
-  const [isTopicShow, setIsTopicShow] = React.useState(true);
-  const [isCategoryShow, setIsCategoryShow] = React.useState(true);
+function _suboptimal_land_agriculture_initiatives_content_1() {
+  const [isLocation, setIsLocation] = React.useState(true);
+  const [isTypeOfLand, setIsTypeOfLand] = React.useState(true);
+  const [isTypeOfComodity, setIsTypeOfComodity] = React.useState(true);
 
   return (
-    <Box pt="10%" pb="5%">
+    <Box pt="50px" pb="100px">
       <Container>
-        <Typography
-          variant="h1"
-          color="primary"
-          fontFamily="Poppins"
-          fontWeight="600"
-        >
-          PUBLICATION
-        </Typography>
-
-        <Grid container justifyContent="space-between" mt="70px">
-          <Grid size={{ md: 3 }}>
+        <Grid container justifyContent="space-between">
+          <Grid size={{ md: 2 }}>
             <Typography
               variant="h4"
               color="primary"
@@ -47,34 +36,19 @@ function _research_detail() {
               Filter
             </Typography>
 
-            <TextField
-              placeholder="Search"
-              fullWidth
-              slotProps={{
-                input: {
-                  endAdornment: (
-                    <IconButton>
-                      <SearchIcon />
-                    </IconButton>
-                  ),
-                },
-              }}
-            />
-
             {/* Topic */}
             <Box
               display="flex"
               justifyContent="space-between"
               borderBottom="1px solid #979797"
               alignItems="center"
-              pb="10px"
-              pt="30px"
+              pt="10px"
             >
               <Typography fontSize="19px" fontFamily="Poppins" fontWeight="700">
-                Topic
+                Location
               </Typography>
-              <IconButton onClick={() => setIsTopicShow(!isTopicShow)}>
-                {isTopicShow ? (
+              <IconButton onClick={() => setIsLocation(!isLocation)}>
+                {isLocation ? (
                   <KeyboardArrowDownIcon htmlColor="#979797" />
                 ) : (
                   <KeyboardArrowUpIcon htmlColor="#979797" />
@@ -82,9 +56,9 @@ function _research_detail() {
               </IconButton>
             </Box>
 
-            <Grow in={isTopicShow} unmountOnExit>
-              <Box mt={3} position="relative">
-                <Box mb={2}>
+            <Grow in={isLocation} unmountOnExit>
+              <Box mt={1} position="relative">
+                <Box>
                   <FormControlLabel
                     control={<Checkbox />}
                     label={
@@ -93,34 +67,7 @@ function _research_detail() {
                         justifyContent="space-between"
                         alignItems="flex-end"
                       >
-                        <Typography fontWeight={500}>
-                          Peatland Agriculture <br />
-                          Sustainability
-                        </Typography>
-
-                        <Chip
-                          color="#000000"
-                          label="11"
-                          sx={{ position: "absolute", right: 0 }}
-                        />
-                      </Box>
-                    }
-                  />
-                </Box>
-
-                <Box mb={2}>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <Box
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="flex-end"
-                      >
-                        <Typography fontWeight={500}>
-                          Sustainability
-                          <br /> Food System
-                        </Typography>
+                        <Typography fontWeight={500}>Sumatera</Typography>
 
                         <Chip
                           color="#000000"
@@ -141,10 +88,28 @@ function _research_detail() {
                         justifyContent="space-between"
                         alignItems="flex-end"
                       >
-                        <Typography fontWeight={500}>
-                          Coconut Research <br />
-                          Center
-                        </Typography>
+                        <Typography fontWeight={500}>Sumatera</Typography>
+
+                        <Chip
+                          color="#000000"
+                          label="11"
+                          sx={{ position: "absolute", right: 0 }}
+                        />
+                      </Box>
+                    }
+                  />
+                </Box>
+
+                <Box>
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label={
+                      <Box
+                        display="flex"
+                        justifyContent="space-between"
+                        alignItems="flex-end"
+                      >
+                        <Typography fontWeight={500}>Papua</Typography>
 
                         <Chip
                           color="#000000"
@@ -163,14 +128,13 @@ function _research_detail() {
               justifyContent="space-between"
               borderBottom="1px solid #979797"
               alignItems="center"
-              pb="10px"
-              pt="30px"
+              pt="20px"
             >
               <Typography fontSize="19px" fontFamily="Poppins" fontWeight="700">
-                Categories
+                Type of Land
               </Typography>
-              <IconButton onClick={() => setIsCategoryShow(!isCategoryShow)}>
-                {isCategoryShow ? (
+              <IconButton onClick={() => setIsTypeOfLand(!isTypeOfLand)}>
+                {isTypeOfLand ? (
                   <KeyboardArrowDownIcon htmlColor="#979797" />
                 ) : (
                   <KeyboardArrowUpIcon htmlColor="#979797" />
@@ -178,9 +142,9 @@ function _research_detail() {
               </IconButton>
             </Box>
 
-            <Grow in={isCategoryShow} unmountOnExit>
-              <Box mt={3} position="relative">
-                <Box mb={2}>
+            <Grow in={isTypeOfLand} unmountOnExit>
+              <Box mt={1} position="relative">
+                <Box>
                   <FormControlLabel
                     control={<Checkbox />}
                     label={
@@ -189,34 +153,7 @@ function _research_detail() {
                         justifyContent="space-between"
                         alignItems="flex-end"
                       >
-                        <Typography fontWeight={500}>
-                          Peatland Agriculture <br />
-                          Sustainability
-                        </Typography>
-
-                        <Chip
-                          color="#000000"
-                          label="11"
-                          sx={{ position: "absolute", right: 0 }}
-                        />
-                      </Box>
-                    }
-                  />
-                </Box>
-
-                <Box mb={2}>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <Box
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="flex-end"
-                      >
-                        <Typography fontWeight={500}>
-                          Sustainability
-                          <br /> Food System
-                        </Typography>
+                        <Typography fontWeight={500}>Peatland</Typography>
 
                         <Chip
                           color="#000000"
@@ -237,10 +174,7 @@ function _research_detail() {
                         justifyContent="space-between"
                         alignItems="flex-end"
                       >
-                        <Typography fontWeight={500}>
-                          Coconut Research <br />
-                          Center
-                        </Typography>
+                        <Typography fontWeight={500}>Swamp Land</Typography>
 
                         <Chip
                           color="#000000"
@@ -254,82 +188,171 @@ function _research_detail() {
               </Box>
             </Grow>
 
-            <Button variant="contained" color="success" sx={{ mt: 4 }}>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              borderBottom="1px solid #979797"
+              alignItems="center"
+              pt="20px"
+            >
+              <Typography fontSize="19px" fontFamily="Poppins" fontWeight="700">
+                Type of Comodity
+              </Typography>
+              <IconButton
+                onClick={() => setIsTypeOfComodity(!isTypeOfComodity)}
+              >
+                {isTypeOfComodity ? (
+                  <KeyboardArrowDownIcon htmlColor="#979797" />
+                ) : (
+                  <KeyboardArrowUpIcon htmlColor="#979797" />
+                )}
+              </IconButton>
+            </Box>
+
+            <Grow in={isTypeOfComodity} unmountOnExit>
+              <Box mt={1} position="relative">
+                <Box>
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label={
+                      <Box
+                        display="flex"
+                        justifyContent="space-between"
+                        alignItems="flex-end"
+                      >
+                        <Typography fontWeight={500}>Horticulture</Typography>
+
+                        <Chip
+                          color="#000000"
+                          label="11"
+                          sx={{ position: "absolute", right: 0 }}
+                        />
+                      </Box>
+                    }
+                  />
+                </Box>
+
+                <Box>
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label={
+                      <Box
+                        display="flex"
+                        justifyContent="space-between"
+                        alignItems="flex-end"
+                      >
+                        <Typography fontWeight={500}>Food Crops</Typography>
+
+                        <Chip
+                          color="#000000"
+                          label="11"
+                          sx={{ position: "absolute", right: 0 }}
+                        />
+                      </Box>
+                    }
+                  />
+                </Box>
+
+                <Box>
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label={
+                      <Box
+                        display="flex"
+                        justifyContent="space-between"
+                        alignItems="flex-end"
+                      >
+                        <Typography fontWeight={500}>Seasonal Crops</Typography>
+
+                        <Chip
+                          color="#000000"
+                          label="11"
+                          sx={{ position: "absolute", right: 0 }}
+                        />
+                      </Box>
+                    }
+                  />
+                </Box>
+              </Box>
+            </Grow>
+
+            <Button
+              variant="contained"
+              color="success"
+              sx={{ mt: 3, py: "15px" }}
+            >
               Reset
             </Button>
+
+            <Box bgcolor="#233E83" padding="20px" borderRadius="8px" mt="40px">
+              <Typography
+                variant="h6"
+                fontSize="18px"
+                align="center"
+                color="#fff"
+                fontFamily="Poppins"
+                fontWeight="700"
+              >
+                You have relevant success story ? <br />
+                Send to Us!
+              </Typography>
+
+              <Box display="flex" justifyContent="center">
+                <Button
+                  variant="contained"
+                  color="warning"
+                  sx={{ mt: 3, py: "15px" }}
+                >
+                  Contact Us
+                </Button>
+              </Box>
+            </Box>
           </Grid>
-          <Grid size={{ md: 8.5 }}>
-            <Grid container justifyContent="space-between" mt={5}>
+          <Grid size={{ md: 9.7 }}>
+            <Grid container>
               {React.Children.toArray(
-                [
-                  {
-                    image: "/images/magazine-example.jpg",
-                    label: "Peatland Agriculture Sustainability",
-                    title:
-                      "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                    date: "Dec, 2025",
-                  },
-                  {
-                    image: "/images/magazine-example.jpg",
-                    label: "Peatland Agriculture Sustainability",
-                    title:
-                      "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                    date: "Dec, 2025",
-                  },
-                  {
-                    image: "/images/magazine-example.jpg",
-                    label: "Peatland Agriculture Sustainability",
-                    title:
-                      "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                    date: "Dec, 2025",
-                  },
-                  {
-                    image: "/images/magazine-example.jpg",
-                    label: "Peatland Agriculture Sustainability",
-                    title:
-                      "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                    date: "Dec, 2025",
-                  },
-                  {
-                    image: "/images/magazine-example.jpg",
-                    label: "Peatland Agriculture Sustainability",
-                    title:
-                      "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                    date: "Dec, 2025",
-                  },
-                  {
-                    image: "/images/magazine-example.jpg",
-                    label: "Peatland Agriculture Sustainability",
-                    title:
-                      "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                    date: "Dec, 2025",
-                  },
-                ].map((item) => (
-                  <Grid item size={{ md: 3.8 }} mb={3}>
-                    <Link href={`/`} passHref>
-                      <CardActionArea>
+                [...new Array(9)].map(() => (
+                  <Grid size={{ md: 4 }} sx={{ px: "10px" }}>
+                    <CardActionArea sx={{ mb: "50px" }}>
+                      <Box
+                        bgcolor="lightgray"
+                        height="230px"
+                        position="relative"
+                      >
                         <Box
-                          height="450px"
-                          // bgcolor="lightgray"
-                          mb={1}
-                          sx={{
-                            backgroundImage: `url('${item.image}')`,
-                            backgroundSize: "cover",
-                          }}
-                        ></Box>
-                      </CardActionArea>
-                    </Link>
-                    <Typography color="warning" mt={0.5}>
-                      {item.label}
-                    </Typography>
-                    <Typography color="secondary" fontSize="14px" my={0.5}>
-                      {item.date}
-                    </Typography>
-                    <Link href={`/`} passHref>
-                      <Typography variant="h6" fontSize="18px">
-                        {item.title}
-                      </Typography>
-                    </Link>
+                          bgcolor="#fff"
+                          height="100px"
+                          boxShadow="0px 1px 1px rgba(0, 0, 0, 0.1)"
+                          position="absolute"
+                          width="90%"
+                          bottom="-20px"
+                          left={0}
+                          padding="10px 20px"
+                        >
+                          <Typography
+                            variant="body2"
+                            color="secondary"
+                            gutterBottom
+                          >
+                            Papua - Peatland - Horticulture
+                          </Typography>
+                          <Typography
+                            variant="h6"
+                            fontSize="16px"
+                            sx={{
+                              display: "-webkit-box",
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              WebkitLineClamp: 2, // Membatasi ke 2 baris
+                            }}
+                          >
+                            Transformasi Lahan Suboptimal: Pemasok Hasil Tani
+                            se-Sorong Raya
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </CardActionArea>
                   </Grid>
                 ))
               )}
@@ -379,4 +402,4 @@ function _research_detail() {
   );
 }
 
-export default _research_detail;
+export default _suboptimal_land_agriculture_initiatives_content_1;
