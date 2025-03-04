@@ -22,7 +22,7 @@ function _navbar(props) {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setBgColor("white");
-        setColor("#233E83");
+        setColor("black");
       } else {
         setBgColor("transparent");
         setColor("#fff");

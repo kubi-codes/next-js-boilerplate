@@ -10,6 +10,7 @@ import {
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_topic.content_2";
+import Link from "next/link";
 
 function _topic_content_2() {
   const theme = useTheme();
@@ -28,38 +29,67 @@ function _topic_content_2() {
             <Grid item size={{ md: 9 }}>
               <Grid container justifyContent="space-between">
                 {React.Children.toArray(
-                  [...new Array(6)].map(() => (
+                  [
+                    {
+                      name: "Food Security",
+                      link: "/food-security",
+                    },
+                    {
+                      name: "Agliculture",
+                      link: "/agliculture",
+                    },
+                    {
+                      name: "Suboptimal Land",
+                      link: "/suboptimal-land",
+                    },
+                    {
+                      name: "Livelihood",
+                      link: "/livelihood",
+                    },
+                    {
+                      name: "Landscape",
+                      link: "/landscape",
+                    },
+                    {
+                      name: "Governance",
+                      link: "/governance",
+                    },
+                  ].map((item) => (
                     <Grid item size={{ md: 3.8 }}>
                       <Box position="relative" mb={4}>
-                        <CardActionArea>
-                          <Box height="250px" bgcolor="lightgray" />
-                        </CardActionArea>
-
-                        <Box
-                          width="80%"
-                          position="absolute"
-                          bottom="0px"
-                          bgcolor="#fff"
-                        >
-                          <CardActionArea
-                            sx={{
-                              px: "10px",
-                              py: "8px",
-                            }}
-                          >
-                            <Box component="span" display="flex" gap={3}>
-                              <Typography variant="h5" noWrap>
-                                Sustainable Peatland Agriculture
-                              </Typography>
-                              <Box
-                                component="img"
-                                src="/icons/circle-arrow-right-success.svg"
-                                width="25px"
-                                sx={{ ml: 2 }}
-                              />
-                            </Box>
+                        <Link href={`/topic/${item.link}`}>
+                          <CardActionArea>
+                            <Box height="250px" bgcolor="lightgray" />
                           </CardActionArea>
-                        </Box>
+                        </Link>
+
+                        <Link href={`/topic/${item.link}`}>
+                          <Box
+                            width="80%"
+                            position="absolute"
+                            bottom="0px"
+                            bgcolor="#fff"
+                          >
+                            <CardActionArea
+                              sx={{
+                                px: "10px",
+                                py: "8px",
+                              }}
+                            >
+                              <Box component="span" display="flex" gap={3}>
+                                <Typography variant="h5" noWrap>
+                                  {item.name}
+                                </Typography>
+                                <Box
+                                  component="img"
+                                  src="/icons/circle-arrow-right-success.svg"
+                                  width="25px"
+                                  sx={{ ml: 2 }}
+                                />
+                              </Box>
+                            </CardActionArea>
+                          </Box>
+                        </Link>
                       </Box>
                     </Grid>
                   ))

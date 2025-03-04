@@ -170,7 +170,7 @@ function _research_detail() {
                 Categories
               </Typography>
               <IconButton onClick={() => setIsCategoryShow(!isCategoryShow)}>
-                {isTopicShow ? (
+                {isCategoryShow ? (
                   <KeyboardArrowDownIcon htmlColor="#979797" />
                 ) : (
                   <KeyboardArrowUpIcon htmlColor="#979797" />
