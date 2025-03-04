@@ -9,6 +9,7 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_career.content_2";
+import Link from "next/link";
 
 function _career_content_2() {
   const theme = useTheme();
@@ -39,7 +40,7 @@ function _career_content_2() {
             </Grid>
             <Grid size={{ md: 8 }}>
               {React.Children.toArray(
-                [...new Array(5)].map(() => (
+                [...new Array(5)].map((item, index) => (
                   <Box
                     bgcolor="#F5F5F5"
                     padding="20px"
@@ -56,15 +57,17 @@ function _career_content_2() {
                       galley of type and scrambled it to make a type
                     </Typography>
 
-                    <Box display="flex" justifyContent="flex-end" mt={4}>
-                      <Button
-                        variant="contained"
-                        color="warning"
-                        sx={{ py: "15px" }}
-                      >
-                        See Position
-                      </Button>
-                    </Box>
+                    <Link href={`/career/${index}`}>
+                      <Box display="flex" justifyContent="flex-end" mt={4}>
+                        <Button
+                          variant="contained"
+                          color="warning"
+                          sx={{ py: "15px" }}
+                        >
+                          See Position
+                        </Button>
+                      </Box>
+                    </Link>
                   </Box>
                 ))
               )}

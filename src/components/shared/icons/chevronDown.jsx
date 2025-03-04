@@ -1,8 +1,8 @@
 import SvgIcon from "@mui/material/SvgIcon";
 
-export default function Icons({ color }) {
+export default function Icons({ color, fontSize }) {
   return (
-    <SvgIcon sx={{ fontSize: 13 }}>
+    <SvgIcon sx={{ fontSize: fontSize || 13 }}>
       <svg
         width="15"
         height="9"

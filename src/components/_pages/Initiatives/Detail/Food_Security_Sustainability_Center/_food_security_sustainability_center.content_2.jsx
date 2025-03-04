@@ -1,41 +1,97 @@
-import { Container, Grid2 as Grid, Typography, Box } from "@mui/material";
+import {
+  Container,
+  Grid2 as Grid,
+  Typography,
+  Box,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@mui/material";
 import React from "react";
+import ChecvronIcon from "@/components/shared/icons/chevronDown";
 
-function _food_security_sustainability_center_content_1() {
+function _food_security_sustainability_center_content_2() {
   return (
-    <Box pt="150px" mb="100px">
+    <Box pt="50px">
       <Container>
-        <Grid container justifyContent="space-between" alignItems="center">
+        <Typography variant="h4" color="primary" sx={{ mb: "70px" }}>
+          Our planned activities are tailored to provide maximum <br />
+          benefit to specific individuals or groups. They are:
+        </Typography>
+
+        <Grid container justifyContent="space-between">
+          <Grid size={{ md: 6 }}>
+            {React.Children.toArray(
+              [
+                {
+                  title:
+                    "Vulnerable community groups living around FOSTER in Tanah Merah Village.",
+                  body: `Collabowriting adalah program kolaborasi antara penulis artikel dengan TJF yang mengangkat isu Ketahanan Pangan, Lahan Suboptimal, dan Pertanian Berkelanjutan dalam setiap tulisan yang akan dibuat. Program ini bertujuan untuk membentuk gerakan kolaboratif demi membangun kesadaran masyarakat akan pentingnya menjaga ketahanan pangan melalui pertanian berkelanjutan.`,
+                },
+                {
+                  title: "Indragiri Hilir Regency’s Coconut Farmers ",
+                  body: ``,
+                },
+                {
+                  title:
+                    "Adolescents and Youth who live in Indragiri Hilir Regency",
+                  body: ``,
+                },
+                {
+                  title:
+                    "Universities in Riau Province and Indragiri Hilir Regency",
+                  body: ``,
+                },
+                {
+                  title: "Government",
+                  body: ``,
+                },
+              ].map((item, index, array) => (
+                <Accordion
+                  elevation={0}
+                  sx={{
+                    mb: "15px",
+                    backgroundColor: "#fff",
+                    "&::before": { backgroundColor: "#fff" },
+                  }}
+                >
+                  <AccordionSummary
+                    expandIcon={<ChecvronIcon color="#979797" fontSize="30" />}
+                    aria-controls="panel1-content"
+                    id="panel1-header"
+                    sx={{
+                      borderBottom:
+                        array.length - 1 !== index ? "1px solid #000000" : "",
+                      px: 0,
+                    }}
+                  >
+                    <Typography
+                      component="span"
+                      color="#000000"
+                      variant="h5"
+                      sx={{ mr: "30px" }}
+                    >
+                      {item.title}
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails sx={{ px: 0, pt: 3 }}>
+                    {item.body}
+                  </AccordionDetails>
+                </Accordion>
+              ))
+            )}
+          </Grid>
           <Grid size={{ md: 6 }}>
             <Box
               component="img"
-              src="/images/bg-food-security-and-sustainability-center.png"
+              src="/images/image-3.jpg"
               width="45vw"
-              height="600px"
+              height="400px"
               position="absolute"
-              left="0px"
+              sx={{ objectFit: "cover" }}
+              right="0px"
             />
             <Box height="600px"></Box>
-          </Grid>
-          <Grid size={{ md: 6 }}>
-            <Typography>
-              FOSTER is an inspiring initiative spearheaded by YBDA (Yayasan
-              Bahtera Dwipa Abadi) and TJF in partnership as a research
-              organization.
-              <br />
-              <br />
-              This project aims to unlock the potential of tidal swamp land in
-              the Indragiri Hilir Regency to ensure food security at local,
-              regional, and national levels.
-              <br />
-              <br />
-              Despite the location’s technical and non-technical challenges,
-              FOSTER is committed to establishing a research center that will
-              serve as a beacon of hope for the local community. Through
-              testing, training, and the development of innovative practices,
-              this center will help cultivate food crops, livestock, and
-              freshwater aquaculture, ultimately improving the lives of many.
-            </Typography>
           </Grid>
         </Grid>
       </Container>
@@ -43,4 +99,4 @@ function _food_security_sustainability_center_content_1() {
   );
 }
 
-export default _food_security_sustainability_center_content_1;
+export default _food_security_sustainability_center_content_2;
