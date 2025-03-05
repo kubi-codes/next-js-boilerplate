@@ -1,48 +1,77 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  Grid2 as Grid,
-  Typography,
-  CardActionArea,
-} from "@mui/material";
+import Link from "next/link";
+import { Box, Container, Typography, CardActionArea } from "@mui/material";
 
 function _topic_content_2() {
   return (
     <Box pb="80px">
       <Container>
-        <Typography variant="h5" color="primary" sx={{ mb: 3}}>
+        <Typography variant="h5" color="primary" sx={{ mb: 3 }}>
           EXPLORE
           <br /> OUR PROJECT
         </Typography>
 
         {React.Children.toArray(
-          [...new Array(6)].map(() => (
+          [
+            {
+              name: "Food Security",
+              link: "food-security",
+            },
+            {
+              name: "Agliculture",
+              link: "agliculture",
+            },
+            {
+              name: "Suboptimal Land",
+              link: "suboptimal-land",
+            },
+            {
+              name: "Livelihood",
+              link: "livelihood",
+            },
+            {
+              name: "Landscape",
+              link: "landscape",
+            },
+            {
+              name: "Governance",
+              link: "governance",
+            },
+          ].map((item) => (
             <Box position="relative" mb={4}>
-              <CardActionArea>
-                <Box height="220px" bgcolor="lightgray" />
-              </CardActionArea>
-
-              <Box width="80%" position="absolute" bottom="0px" bgcolor="#fff">
-                <CardActionArea
-                  sx={{
-                    px: "10px",
-                    py: "8px",
-                  }}
-                >
-                  <Box component="span" display="flex" gap={3}>
-                    <Typography variant="h5" noWrap>
-                      Sustainable Peatland Agriculture
-                    </Typography>
-                    <Box
-                      component="img"
-                      src="/icons/circle-arrow-right-success.svg"
-                      width="25px"
-                      sx={{ ml: 2 }}
-                    />
-                  </Box>
+              <Link href={`/topic/${item.link}`}>
+                <CardActionArea>
+                  <Box height="220px" bgcolor="lightgray" />
                 </CardActionArea>
-              </Box>
+              </Link>
+
+              <Link href={`/topic/${item.link}`}>
+                <Box
+                  width="80%"
+                  position="absolute"
+                  bottom="0px"
+                  bgcolor="#fff"
+                >
+                  <CardActionArea
+                    sx={{
+                      px: "10px",
+                      py: "8px",
+                    }}
+                  >
+                    <Box component="span" display="flex" gap={3}>
+                      <Typography variant="h5" noWrap>
+                        {item.name}
+                      </Typography>
+                      <Box
+                        component="img"
+                        src="/icons/circle-arrow-right-success.svg"
+                        width="25px"
+                        sx={{ ml: 2 }}
+                      />
+                    </Box>
+                  </CardActionArea>
+                </Box>
+              </Link>
             </Box>
           ))
         )}
