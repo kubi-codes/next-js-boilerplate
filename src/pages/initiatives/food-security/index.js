@@ -1,7 +1,7 @@
-import _food_security from "@/components/_pages/Initiatives/Detail/Food_Security/_food_security";
+import _sustainable_peatland_agriculture from "@/components/_pages/Initiatives/Detail/Sustainable_Peatland_Agriculture/_sustainable_peatland_agriculture";
 
-export default function FoodSecurity() {
-  return <_food_security />;
+export default function SustainablePeatlandAgriculture() {
+  return <_sustainable_peatland_agriculture />;
 }
 
 export async function getServerSideProps(props) {

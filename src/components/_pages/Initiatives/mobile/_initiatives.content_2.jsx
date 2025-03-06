@@ -12,9 +12,36 @@ function _initiatives_content_2() {
   return (
     <Box>
       <Container>
-        {[...new Array(4)].map((item) => (
-          <Box position="relative" mb="40px">
-            <Link href="/initiatives/lorem" passHref>
+        <Typography
+          variant="h5"
+          align="left"
+          color="primary"
+          sx={{ mb: "20px", mt: "20px" }}
+        >
+          EXPLORE
+          <br /> OUR PROJECT
+        </Typography>
+
+        {[
+          {
+            name: "Sustainable Peatland Agriculture",
+            link: "/food-security",
+          },
+          {
+            name: "Suboptimal Land Agriculture Initiatives",
+            link: "/suboptimal-land-agricultutre-initiatives",
+          },
+          {
+            name: "Collabowritting",
+            link: "/collabowritting",
+          },
+          {
+            name: "Food Security and Sustainability Center",
+            link: "/food-security-and-sustainability-center",
+          },
+        ].map((item, key) => (
+          <Box position="relative" mb="30px">
+            <Link href={`/initiatives/${item.link}`} passHref>
               <CardActionArea>
                 <Box height="220px" bgcolor="lightgray" />
               </CardActionArea>
@@ -24,17 +51,22 @@ function _initiatives_content_2() {
               width="80%"
               position="absolute"
               bottom="0px"
-              marginBottom="-7%"
+              // marginBottom="-7%"
               bgcolor="#fff"
+              minHeight="70px"
+              display="flex"
+              alignItems="center"
+              right={key % 2 === 1 ? "0px" : "inherit"}
             >
-              <Link href="/initiatives/lorem" passHref>
+              <Link href={`/initiatives/${item.link}`} passHref>
                 <CardActionArea
                   sx={{
                     px: "10px",
                     py: "8px",
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '10px'
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    justifyContent: "space-between",
                   }}
                 >
                   <Typography
@@ -44,7 +76,7 @@ function _initiatives_content_2() {
                     variant="h4"
                     fontSize="20px"
                   >
-                    Sustainable Peatland Agriculture
+                    {item.name}
                   </Typography>
                   <Box
                     component="img"

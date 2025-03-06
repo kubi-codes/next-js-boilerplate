@@ -1,10 +1,16 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import MobileView from "./mobile/_collabowritting.headmaster";
 
 function _initiatives_headmaster() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <>
-      <Box position="relative" mb="150px">
+      <Box position="relative" mb="150px" display={isMobile ? "none" : "block"}>
         <Box
           minHeight="60vh"
           bgcolor="lightgray"
@@ -67,6 +73,8 @@ function _initiatives_headmaster() {
           }}
         /> */}
       </Box>
+
+      {isMobile ? <MobileView /> : null}
     </>
   );
 }
