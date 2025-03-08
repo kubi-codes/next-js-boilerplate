@@ -7,7 +7,7 @@ export default function SustainablePeatlandAgriculture() {
 export async function getServerSideProps(props) {
   return {
     props: {
-      title: `Food Security | Tay Juhana Foundation`,
+      title: `Sustainable Peatland Agriculture | Tay Juhana Foundation`,
     },
   };
 }

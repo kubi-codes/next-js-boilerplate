@@ -8,9 +8,9 @@ function _sustainable_peatland_agriculture() {
   return (
     <>
       <_initiatives_headmaster />
-      {/* <_sustainable_peatland_agriculture_content_1 />
+      <_sustainable_peatland_agriculture_content_1 />
       <_sustainable_peatland_agriculture_content_2 />
-      <_sustainable_peatland_agriculture_content_3 /> */}
+      <_sustainable_peatland_agriculture_content_3 />
     </>
   );
 }

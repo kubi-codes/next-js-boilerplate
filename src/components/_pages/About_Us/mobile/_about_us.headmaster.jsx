@@ -5,7 +5,7 @@ function _about_us_headmaster() {
   return (
     <Box minHeight="150vh" paddingTop="8vh" position="relative">
       <Container>
-        <Box mt="50px">
+        <Box my="20px">
           <Typography variant="h1" color="primary" gutterBottom>
             WHO WE ARE?
           </Typography>
@@ -39,23 +39,25 @@ function _about_us_headmaster() {
             result and encourage everyone to do the same in their own capacity.
           </Typography>
         </Box>
+      </Container>
 
-        <Box
-          sx={{
-            backgroundColor: "lightgray",
-            height: "450px",
-            width: "100%",
-            backgroundImage: `url('/images/bg-aboutUs.jpg')`,
-            backgroundSize: "cover",
-          }}
-        />
+      <Box
+        sx={{
+          backgroundColor: "lightgray",
+          height: "450px",
+          width: "100%",
+          backgroundImage: `url('/images/bg-aboutUs.jpg')`,
+          backgroundSize: "cover",
+        }}
+      />
 
-        <Box marginTop="70px" position="relative">
+      <Container>
+        <Box marginTop="50px" position="relative">
           <Box
             component="img"
             src="/icons/comma-top-success.svg"
             position="absolute"
-            top="-50px"
+            top="-30px"
             left={0}
             width="60px"
           />
@@ -64,10 +66,12 @@ function _about_us_headmaster() {
             variant="h3"
             color="success"
             lineHeight="48px"
+            fontSize="32px"
           >
-            Providing Food <br /> for Humanity through <br /> Sustainable
-            Suboptimal
-            <br /> Land Cultivation
+            Providing Food
+            <br /> for Humanity through
+            <br /> Sustainable Suboptimal
+            Land Cultivation
           </Typography>
         </Box>
       </Container>

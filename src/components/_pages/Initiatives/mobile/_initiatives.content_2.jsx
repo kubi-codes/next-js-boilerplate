@@ -25,7 +25,7 @@ function _initiatives_content_2() {
         {[
           {
             name: "Sustainable Peatland Agriculture",
-            link: "/food-security",
+            link: "/sustainable-peatland-agriculture",
           },
           {
             name: "Suboptimal Land Agriculture Initiatives",

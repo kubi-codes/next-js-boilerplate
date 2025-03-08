@@ -11,10 +11,11 @@ function _about_us_content_1() {
   return (
     <>
       <Box
-        mb="150px"
         sx={{
           backgroundImage: "url('/images/bg-grid.png')",
-          paddingBottom: "50px",
+          marginBottom: "50px",
+          paddingBottom: '1px',
+          paddingBottom: '50px',
           zIndex: -2,
         }}
         display={isMobile ? "none" : "block"}
