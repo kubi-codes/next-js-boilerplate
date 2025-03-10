@@ -1,10 +1,16 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import MobileView from "./mobile/_sustainable_peatland_agriculture.headmaster";
 
 function _initiatives_headmaster() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <>
-      <Box position="relative" mb="100px">
+      <Box position="relative" mb="100px" display={isMobile ? "none" : "block"}>
         <Box
           minHeight="60vh"
           bgcolor="lightgray"
@@ -54,6 +60,8 @@ function _initiatives_headmaster() {
           </Box>
         </Box>
       </Box>
+
+      {isMobile ? <MobileView /> : null}
     </>
   );
 }

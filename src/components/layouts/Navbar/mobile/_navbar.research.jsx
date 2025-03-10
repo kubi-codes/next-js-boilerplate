@@ -12,25 +12,34 @@ import React, { useEffect, useState } from "react";
 import GlobeIcon from "@/components/shared/icons/globe";
 import ChevronIcon from "@/components/shared/icons/chevronDown";
 import MenuIcon from "@/components/shared/icons/menu";
+import { usePathname } from "next/navigation";
 
 function _navbar(props) {
+  const pathname = usePathname();
   const [openDrawer, setOpenDrawer] = useState(false);
   const [bgColor, setBgColor] = useState(props?.bgColor ?? "transparent");
   const [color, setColor] = useState(props?.color ?? "#fff");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setBgColor("white");
-        setColor("black");
-      } else {
-        setBgColor("transparent");
-        setColor("#fff");
-      }
-    };
+  console.log("pathname", pathname?.split("/").length);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+  useEffect(() => {
+    if (pathname?.split("/").length !== 3) {
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          setBgColor("white");
+          setColor("black");
+        } else {
+          setBgColor("transparent");
+          setColor("#fff");
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    } else {
+      setBgColor("white");
+      setColor("black");
+    }
   }, []);
 
   return (

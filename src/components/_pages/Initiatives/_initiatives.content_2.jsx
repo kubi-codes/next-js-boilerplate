@@ -26,7 +26,7 @@ function _initiatives_content_2() {
             {[
               {
                 name: "Sustainable Peatland Agriculture",
-                link: "/food-security",
+                link: "/sustainable-peatland-agriculture",
               },
               {
                 name: "Suboptimal Land Agriculture Initiatives",
@@ -64,11 +64,7 @@ function _initiatives_content_2() {
                           py: "8px",
                         }}
                       >
-                        <Typography
-                          component="span"
-                          gap={3}
-                          variant="h4"
-                        >
+                        <Typography component="span" gap={3} variant="h4">
                           {item.name}
                           <Box
                             component="img"

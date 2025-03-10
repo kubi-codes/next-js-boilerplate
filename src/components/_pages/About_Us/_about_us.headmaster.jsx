@@ -10,13 +10,8 @@ function _about_us_headmaster() {
 
   return (
     <>
-      <Box
-        minHeight="150vh"
-        paddingTop="8vh"
-        position="relative"
-        display={isMobile ? "none" : "block"}
-      >
-        <Container>
+      <Box position="relative" display={isMobile ? "none" : "block"}>
+        <Container sx={{ paddingTop: "8vh", marginBottom: '150px' }}>
           <Grid container>
             <Grid
               item
@@ -25,7 +20,7 @@ function _about_us_headmaster() {
               alignItems="center"
               sx={{ minHeight: "95vh" }}
             >
-              <Box maxWidth="70%" mt="10vh">
+              <Box maxWidth="70%">
                 <Typography variant="h1" color="primary" gutterBottom>
                   WHO WE ARE?
                 </Typography>
@@ -71,6 +66,8 @@ function _about_us_headmaster() {
                   width: "50vw",
                   marginTop: "-8vh",
                   backgroundImage: `url('/images/bg-aboutUs.jpg')`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
                 }}
               />
 

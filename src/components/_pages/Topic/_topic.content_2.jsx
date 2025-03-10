@@ -6,7 +6,6 @@ import {
   Typography,
   CardActionArea,
 } from "@mui/material";
-
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_topic.content_2";
@@ -32,27 +31,27 @@ function _topic_content_2() {
                   [
                     {
                       name: "Food Security",
-                      link: "/food-security",
+                      link: "food-security",
                     },
                     {
                       name: "Agliculture",
-                      link: "/agliculture",
+                      link: "agliculture",
                     },
                     {
                       name: "Suboptimal Land",
-                      link: "/suboptimal-land",
+                      link: "suboptimal-land",
                     },
                     {
                       name: "Livelihood",
-                      link: "/livelihood",
+                      link: "livelihood",
                     },
                     {
                       name: "Landscape",
-                      link: "/landscape",
+                      link: "landscape",
                     },
                     {
                       name: "Governance",
-                      link: "/governance",
+                      link: "governance",
                     },
                   ].map((item) => (
                     <Grid item size={{ md: 3.8 }}>

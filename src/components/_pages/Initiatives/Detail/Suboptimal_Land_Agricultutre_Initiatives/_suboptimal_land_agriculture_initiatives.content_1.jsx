@@ -15,390 +15,419 @@ import {
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import React from "react";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import MobileView from "./mobile/_suboptimal_land_agriculture_initiatives.content_1";
 
 function _suboptimal_land_agriculture_initiatives_content_1() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   const [isLocation, setIsLocation] = React.useState(true);
   const [isTypeOfLand, setIsTypeOfLand] = React.useState(true);
   const [isTypeOfComodity, setIsTypeOfComodity] = React.useState(true);
 
   return (
-    <Box pt="50px" pb="100px">
-      <Container>
-        <Grid container justifyContent="space-between">
-          <Grid size={{ md: 2 }}>
-            <Typography
-              variant="h4"
-              color="primary"
-              fontFamily="Poppins"
-              fontWeight="700"
-              gutterBottom
-            >
-              Filter
-            </Typography>
-
-            {/* Topic */}
-            <Box
-              display="flex"
-              justifyContent="space-between"
-              borderBottom="1px solid #979797"
-              alignItems="center"
-              pt="10px"
-            >
-              <Typography fontSize="19px" fontFamily="Poppins" fontWeight="700">
-                Location
-              </Typography>
-              <IconButton onClick={() => setIsLocation(!isLocation)}>
-                {isLocation ? (
-                  <KeyboardArrowDownIcon htmlColor="#979797" />
-                ) : (
-                  <KeyboardArrowUpIcon htmlColor="#979797" />
-                )}
-              </IconButton>
-            </Box>
-
-            <Grow in={isLocation} unmountOnExit>
-              <Box mt={1} position="relative">
-                <Box>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <Box
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="flex-end"
-                      >
-                        <Typography fontWeight={500}>Sumatera</Typography>
-
-                        <Chip
-                          color="#000000"
-                          label="11"
-                          sx={{ position: "absolute", right: 0 }}
-                        />
-                      </Box>
-                    }
-                  />
-                </Box>
-
-                <Box>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <Box
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="flex-end"
-                      >
-                        <Typography fontWeight={500}>Sumatera</Typography>
-
-                        <Chip
-                          color="#000000"
-                          label="11"
-                          sx={{ position: "absolute", right: 0 }}
-                        />
-                      </Box>
-                    }
-                  />
-                </Box>
-
-                <Box>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <Box
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="flex-end"
-                      >
-                        <Typography fontWeight={500}>Papua</Typography>
-
-                        <Chip
-                          color="#000000"
-                          label="11"
-                          sx={{ position: "absolute", right: 0 }}
-                        />
-                      </Box>
-                    }
-                  />
-                </Box>
-              </Box>
-            </Grow>
-
-            <Box
-              display="flex"
-              justifyContent="space-between"
-              borderBottom="1px solid #979797"
-              alignItems="center"
-              pt="20px"
-            >
-              <Typography fontSize="19px" fontFamily="Poppins" fontWeight="700">
-                Type of Land
-              </Typography>
-              <IconButton onClick={() => setIsTypeOfLand(!isTypeOfLand)}>
-                {isTypeOfLand ? (
-                  <KeyboardArrowDownIcon htmlColor="#979797" />
-                ) : (
-                  <KeyboardArrowUpIcon htmlColor="#979797" />
-                )}
-              </IconButton>
-            </Box>
-
-            <Grow in={isTypeOfLand} unmountOnExit>
-              <Box mt={1} position="relative">
-                <Box>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <Box
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="flex-end"
-                      >
-                        <Typography fontWeight={500}>Peatland</Typography>
-
-                        <Chip
-                          color="#000000"
-                          label="11"
-                          sx={{ position: "absolute", right: 0 }}
-                        />
-                      </Box>
-                    }
-                  />
-                </Box>
-
-                <Box>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <Box
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="flex-end"
-                      >
-                        <Typography fontWeight={500}>Swamp Land</Typography>
-
-                        <Chip
-                          color="#000000"
-                          label="11"
-                          sx={{ position: "absolute", right: 0 }}
-                        />
-                      </Box>
-                    }
-                  />
-                </Box>
-              </Box>
-            </Grow>
-
-            <Box
-              display="flex"
-              justifyContent="space-between"
-              borderBottom="1px solid #979797"
-              alignItems="center"
-              pt="20px"
-            >
-              <Typography fontSize="19px" fontFamily="Poppins" fontWeight="700">
-                Type of Comodity
-              </Typography>
-              <IconButton
-                onClick={() => setIsTypeOfComodity(!isTypeOfComodity)}
-              >
-                {isTypeOfComodity ? (
-                  <KeyboardArrowDownIcon htmlColor="#979797" />
-                ) : (
-                  <KeyboardArrowUpIcon htmlColor="#979797" />
-                )}
-              </IconButton>
-            </Box>
-
-            <Grow in={isTypeOfComodity} unmountOnExit>
-              <Box mt={1} position="relative">
-                <Box>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <Box
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="flex-end"
-                      >
-                        <Typography fontWeight={500}>Horticulture</Typography>
-
-                        <Chip
-                          color="#000000"
-                          label="11"
-                          sx={{ position: "absolute", right: 0 }}
-                        />
-                      </Box>
-                    }
-                  />
-                </Box>
-
-                <Box>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <Box
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="flex-end"
-                      >
-                        <Typography fontWeight={500}>Food Crops</Typography>
-
-                        <Chip
-                          color="#000000"
-                          label="11"
-                          sx={{ position: "absolute", right: 0 }}
-                        />
-                      </Box>
-                    }
-                  />
-                </Box>
-
-                <Box>
-                  <FormControlLabel
-                    control={<Checkbox />}
-                    label={
-                      <Box
-                        display="flex"
-                        justifyContent="space-between"
-                        alignItems="flex-end"
-                      >
-                        <Typography fontWeight={500}>Seasonal Crops</Typography>
-
-                        <Chip
-                          color="#000000"
-                          label="11"
-                          sx={{ position: "absolute", right: 0 }}
-                        />
-                      </Box>
-                    }
-                  />
-                </Box>
-              </Box>
-            </Grow>
-
-            <Button
-              variant="contained"
-              color="success"
-              sx={{ mt: 3, py: "15px" }}
-            >
-              Reset
-            </Button>
-
-            <Box bgcolor="#233E83" padding="20px" borderRadius="8px" mt="40px">
+    <>
+      <Box pt="50px" pb="100px" display={isMobile ? "none" : "block"}>
+        <Container>
+          <Grid container justifyContent="space-between">
+            <Grid size={{ md: 2 }}>
               <Typography
-                variant="h6"
-                fontSize="18px"
-                align="center"
-                color="#fff"
+                variant="h4"
+                color="primary"
                 fontFamily="Poppins"
                 fontWeight="700"
+                gutterBottom
               >
-                You have relevant success story ? <br />
-                Send to Us!
+                Filter
               </Typography>
 
-              <Box display="flex" justifyContent="center">
-                <Button
-                  variant="contained"
-                  color="warning"
-                  sx={{ mt: 3, py: "15px" }}
+              {/* Topic */}
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                borderBottom="1px solid #979797"
+                alignItems="center"
+                pt="10px"
+              >
+                <Typography
+                  fontSize="19px"
+                  fontFamily="Poppins"
+                  fontWeight="700"
                 >
-                  Contact Us
-                </Button>
+                  Location
+                </Typography>
+                <IconButton onClick={() => setIsLocation(!isLocation)}>
+                  {isLocation ? (
+                    <KeyboardArrowDownIcon htmlColor="#979797" />
+                  ) : (
+                    <KeyboardArrowUpIcon htmlColor="#979797" />
+                  )}
+                </IconButton>
               </Box>
-            </Box>
-          </Grid>
-          <Grid size={{ md: 9.7 }}>
-            <Grid container>
-              {React.Children.toArray(
-                [...new Array(9)].map(() => (
-                  <Grid size={{ md: 4 }} sx={{ px: "10px" }}>
-                    <CardActionArea sx={{ mb: "50px" }}>
-                      <Box
-                        bgcolor="lightgray"
-                        height="230px"
-                        position="relative"
-                      >
+
+              <Grow in={isLocation} unmountOnExit>
+                <Box mt={1} position="relative">
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label={
                         <Box
-                          bgcolor="#fff"
-                          height="100px"
-                          boxShadow="0px 1px 1px rgba(0, 0, 0, 0.1)"
-                          position="absolute"
-                          width="90%"
-                          bottom="-20px"
-                          left={0}
-                          padding="10px 20px"
+                          display="flex"
+                          justifyContent="space-between"
+                          alignItems="flex-end"
                         >
-                          <Typography
-                            variant="body2"
-                            color="secondary"
-                            gutterBottom
-                          >
-                            Papua - Peatland - Horticulture
-                          </Typography>
-                          <Typography
-                            variant="h6"
-                            fontSize="16px"
-                            sx={{
-                              display: "-webkit-box",
-                              WebkitBoxOrient: "vertical",
-                              overflow: "hidden",
-                              textOverflow: "ellipsis",
-                              WebkitLineClamp: 2, // Membatasi ke 2 baris
-                            }}
-                          >
-                            Transformasi Lahan Suboptimal: Pemasok Hasil Tani
-                            se-Sorong Raya
-                          </Typography>
+                          <Typography fontWeight={500}>Sumatera</Typography>
+
+                          <Chip
+                            color="#000000"
+                            label="11"
+                            sx={{ position: "absolute", right: 0 }}
+                          />
                         </Box>
-                      </Box>
-                    </CardActionArea>
-                  </Grid>
-                ))
-              )}
+                      }
+                    />
+                  </Box>
+
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label={
+                        <Box
+                          display="flex"
+                          justifyContent="space-between"
+                          alignItems="flex-end"
+                        >
+                          <Typography fontWeight={500}>Sumatera</Typography>
+
+                          <Chip
+                            color="#000000"
+                            label="11"
+                            sx={{ position: "absolute", right: 0 }}
+                          />
+                        </Box>
+                      }
+                    />
+                  </Box>
+
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label={
+                        <Box
+                          display="flex"
+                          justifyContent="space-between"
+                          alignItems="flex-end"
+                        >
+                          <Typography fontWeight={500}>Papua</Typography>
+
+                          <Chip
+                            color="#000000"
+                            label="11"
+                            sx={{ position: "absolute", right: 0 }}
+                          />
+                        </Box>
+                      }
+                    />
+                  </Box>
+                </Box>
+              </Grow>
 
               <Box
                 display="flex"
-                width="100%"
-                justifyContent="center"
-                mt="30px"
+                justifyContent="space-between"
+                borderBottom="1px solid #979797"
+                alignItems="center"
+                pt="20px"
               >
-                <Pagination
-                  count={10}
-                  variant="outlined"
-                  shape="rounded"
-                  sx={{
-                    "& .MuiButtonBase-root": {
-                      border: "none",
-                      backgroundColor: "#D9D9D9",
-                      paddingX: "32px",
-                      paddingY: "22px",
-                      fontWeight: 600,
-                      color: "#979797",
-                    },
-                    "& .MuiPaginationItem-previousNext": {
-                      backgroundColor: "#979797 !important",
-                      color: "#fff",
-                    },
-                    "& .Mui-selected": {
-                      backgroundColor: (props) =>
-                        `${props.palette.success.main} !important`,
-                      color: "#fff",
-                    },
-                    "& .Mui-selected:hover": {
-                      backgroundColor: (props) => props.palette.success.main,
-                    },
-                    "& .MuiButtonBase-root:hover": {
-                      backgroundColor: "#D9D9D9",
-                    },
-                  }}
-                />
+                <Typography
+                  fontSize="19px"
+                  fontFamily="Poppins"
+                  fontWeight="700"
+                >
+                  Type of Land
+                </Typography>
+                <IconButton onClick={() => setIsTypeOfLand(!isTypeOfLand)}>
+                  {isTypeOfLand ? (
+                    <KeyboardArrowDownIcon htmlColor="#979797" />
+                  ) : (
+                    <KeyboardArrowUpIcon htmlColor="#979797" />
+                  )}
+                </IconButton>
+              </Box>
+
+              <Grow in={isTypeOfLand} unmountOnExit>
+                <Box mt={1} position="relative">
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label={
+                        <Box
+                          display="flex"
+                          justifyContent="space-between"
+                          alignItems="flex-end"
+                        >
+                          <Typography fontWeight={500}>Peatland</Typography>
+
+                          <Chip
+                            color="#000000"
+                            label="11"
+                            sx={{ position: "absolute", right: 0 }}
+                          />
+                        </Box>
+                      }
+                    />
+                  </Box>
+
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label={
+                        <Box
+                          display="flex"
+                          justifyContent="space-between"
+                          alignItems="flex-end"
+                        >
+                          <Typography fontWeight={500}>Swamp Land</Typography>
+
+                          <Chip
+                            color="#000000"
+                            label="11"
+                            sx={{ position: "absolute", right: 0 }}
+                          />
+                        </Box>
+                      }
+                    />
+                  </Box>
+                </Box>
+              </Grow>
+
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                borderBottom="1px solid #979797"
+                alignItems="center"
+                pt="20px"
+              >
+                <Typography
+                  fontSize="19px"
+                  fontFamily="Poppins"
+                  fontWeight="700"
+                >
+                  Type of Comodity
+                </Typography>
+                <IconButton
+                  onClick={() => setIsTypeOfComodity(!isTypeOfComodity)}
+                >
+                  {isTypeOfComodity ? (
+                    <KeyboardArrowDownIcon htmlColor="#979797" />
+                  ) : (
+                    <KeyboardArrowUpIcon htmlColor="#979797" />
+                  )}
+                </IconButton>
+              </Box>
+
+              <Grow in={isTypeOfComodity} unmountOnExit>
+                <Box mt={1} position="relative">
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label={
+                        <Box
+                          display="flex"
+                          justifyContent="space-between"
+                          alignItems="flex-end"
+                        >
+                          <Typography fontWeight={500}>Horticulture</Typography>
+
+                          <Chip
+                            color="#000000"
+                            label="11"
+                            sx={{ position: "absolute", right: 0 }}
+                          />
+                        </Box>
+                      }
+                    />
+                  </Box>
+
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label={
+                        <Box
+                          display="flex"
+                          justifyContent="space-between"
+                          alignItems="flex-end"
+                        >
+                          <Typography fontWeight={500}>Food Crops</Typography>
+
+                          <Chip
+                            color="#000000"
+                            label="11"
+                            sx={{ position: "absolute", right: 0 }}
+                          />
+                        </Box>
+                      }
+                    />
+                  </Box>
+
+                  <Box>
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label={
+                        <Box
+                          display="flex"
+                          justifyContent="space-between"
+                          alignItems="flex-end"
+                        >
+                          <Typography fontWeight={500}>
+                            Seasonal Crops
+                          </Typography>
+
+                          <Chip
+                            color="#000000"
+                            label="11"
+                            sx={{ position: "absolute", right: 0 }}
+                          />
+                        </Box>
+                      }
+                    />
+                  </Box>
+                </Box>
+              </Grow>
+
+              <Button
+                variant="contained"
+                color="success"
+                sx={{ mt: 3, py: "15px" }}
+              >
+                Reset
+              </Button>
+
+              <Box
+                bgcolor="#233E83"
+                padding="20px"
+                borderRadius="8px"
+                mt="40px"
+              >
+                <Typography
+                  variant="h6"
+                  fontSize="18px"
+                  align="center"
+                  color="#fff"
+                  fontFamily="Poppins"
+                  fontWeight="700"
+                >
+                  You have relevant success story ? <br />
+                  Send to Us!
+                </Typography>
+
+                <Box display="flex" justifyContent="center">
+                  <Button
+                    variant="contained"
+                    color="warning"
+                    sx={{ mt: 3, py: "15px" }}
+                  >
+                    Contact Us
+                  </Button>
+                </Box>
               </Box>
             </Grid>
+            <Grid size={{ md: 9.7 }}>
+              <Grid container>
+                {React.Children.toArray(
+                  [...new Array(9)].map(() => (
+                    <Grid size={{ md: 4 }} sx={{ px: "10px" }}>
+                      <CardActionArea sx={{ mb: "50px" }}>
+                        <Box
+                          bgcolor="lightgray"
+                          height="230px"
+                          position="relative"
+                        >
+                          <Box
+                            bgcolor="#fff"
+                            height="100px"
+                            boxShadow="0px 1px 1px rgba(0, 0, 0, 0.1)"
+                            position="absolute"
+                            width="90%"
+                            bottom="-20px"
+                            left={0}
+                            padding="10px 20px"
+                          >
+                            <Typography
+                              variant="body2"
+                              color="secondary"
+                              gutterBottom
+                            >
+                              Papua - Peatland - Horticulture
+                            </Typography>
+                            <Typography
+                              variant="h6"
+                              fontSize="16px"
+                              sx={{
+                                display: "-webkit-box",
+                                WebkitBoxOrient: "vertical",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                WebkitLineClamp: 2, // Membatasi ke 2 baris
+                              }}
+                            >
+                              Transformasi Lahan Suboptimal: Pemasok Hasil Tani
+                              se-Sorong Raya
+                            </Typography>
+                          </Box>
+                        </Box>
+                      </CardActionArea>
+                    </Grid>
+                  ))
+                )}
+
+                <Box
+                  display="flex"
+                  width="100%"
+                  justifyContent="center"
+                  mt="30px"
+                >
+                  <Pagination
+                    count={10}
+                    variant="outlined"
+                    shape="rounded"
+                    sx={{
+                      "& .MuiButtonBase-root": {
+                        border: "none",
+                        backgroundColor: "#D9D9D9",
+                        paddingX: "32px",
+                        paddingY: "22px",
+                        fontWeight: 600,
+                        color: "#979797",
+                      },
+                      "& .MuiPaginationItem-previousNext": {
+                        backgroundColor: "#979797 !important",
+                        color: "#fff",
+                      },
+                      "& .Mui-selected": {
+                        backgroundColor: (props) =>
+                          `${props.palette.success.main} !important`,
+                        color: "#fff",
+                      },
+                      "& .Mui-selected:hover": {
+                        backgroundColor: (props) => props.palette.success.main,
+                      },
+                      "& .MuiButtonBase-root:hover": {
+                        backgroundColor: "#D9D9D9",
+                      },
+                    }}
+                  />
+                </Box>
+              </Grid>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+
+      {isMobile ? <MobileView /> : null}
+    </>
   );
 }
 
