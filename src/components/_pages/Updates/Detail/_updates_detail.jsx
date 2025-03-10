@@ -8,12 +8,18 @@ import {
 } from "@mui/material";
 import React from "react";
 import Link from "next/link";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import MobileView from "./mobile/_updates_detail";
 
 function _updates_detail() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <>
-      <Box pt="7%">
-        <Container>
+      <Box display={isMobile ? "none" : "block"}>
+        <Container sx={{ pt: "7%" }}>
           <Typography variant="h1" align="center" color="primary">
             Lorem Ipsum
           </Typography>
@@ -95,8 +101,8 @@ function _updates_detail() {
         </Container>
       </Box>
 
-      <Box pb="100px" pt="50px">
-        <Container>
+      <Box display={isMobile ? "none" : "block"}>
+        <Container sx={{ pb: "100px", pt: "50px" }}>
           <Grid container justifyContent="space-between">
             <Grid size={{ md: 3 }}>
               <Box sx={{ borderBottom: "6px solid #000000", mb: "30px" }} />
@@ -152,6 +158,8 @@ function _updates_detail() {
           </Grid>
         </Container>
       </Box>
+
+      {isMobile ? <MobileView /> : null}
     </>
   );
 }
