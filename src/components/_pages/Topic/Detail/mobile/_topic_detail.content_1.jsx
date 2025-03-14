@@ -1,18 +1,20 @@
 import {
   Container,
-  Grid2 as Grid,
   Typography,
   Box,
   CardActionArea,
+  IconButton,
 } from "@mui/material";
 import Link from "next/link";
 import React from "react";
+import CircleNext from "@/components/shared/icons/CircleNext";
+import CirclePrev from "@/components/shared/icons/CirclePrev";
 
 function _topic_detail_content_1() {
   return (
     <Container>
       <Box py="7%">
-        <Typography variant="h5" color="primary" mb="40px">
+        <Typography variant="h5" color="primary" mb="20px" mt="20px">
           Food Security <br /> Latest Updates
         </Typography>
 
@@ -91,6 +93,15 @@ function _topic_detail_content_1() {
               </Link>
             ))
           )}
+        </Box>
+
+        <Box display="flex" gap="5px" mt="30px" justifyContent="flex-end">
+          <IconButton sx={{ padding: "5px", height: "45px" }}>
+            <CirclePrev color="#979797" fontSize="33px" />
+          </IconButton>
+          <IconButton sx={{ padding: "5px", height: "45px" }}>
+            <CircleNext color="#233E83" fontSize="33px" />
+          </IconButton>
         </Box>
       </Box>
     </Container>

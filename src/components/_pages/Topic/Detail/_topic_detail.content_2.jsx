@@ -4,11 +4,14 @@ import {
   Typography,
   Grid2 as Grid,
   CardActionArea,
+  IconButton
 } from "@mui/material";
 import React from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_topic_detail.content_2";
+import CircleNext from "@/components/shared/icons/CircleNext";
+import CirclePrev from "@/components/shared/icons/CirclePrev";
 
 function _topic_detail_content_2() {
   const theme = useTheme();
@@ -19,9 +22,24 @@ function _topic_detail_content_2() {
       <Box display={isMobile ? "none" : "block"}>
         <Container>
           <Box mb="100px">
-            <Typography variant="h4" color="primary">
-              Food Security <br /> Latest Resource
-            </Typography>
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="flex-end"
+            >
+              <Typography variant="h4" color="primary">
+                Food Security <br /> Latest Resource
+              </Typography>
+
+              <Box display="flex" gap="5px">
+                <IconButton sx={{ padding: "5px", height: "45px" }}>
+                  <CirclePrev color="#979797" fontSize="33px" />
+                </IconButton>
+                <IconButton sx={{ padding: "5px", height: "45px" }}>
+                  <CircleNext color="#233E83" fontSize="33px" />
+                </IconButton>
+              </Box>
+            </Box>
 
             <Grid container justifyContent="space-between" mt="40px">
               {React.Children.toArray(

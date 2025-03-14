@@ -13,7 +13,7 @@ import Link from "next/link";
 
 function _topic_content_2() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.between('xs', 'sm'));
 
   return (
     <>
@@ -21,44 +21,58 @@ function _topic_content_2() {
         <Container>
           <Grid container justifyContent="space-between">
             <Grid item size={{ md: 2 }}>
-              <Typography variant="h4" color="primary">
+              <Typography variant="h4" color="primary" sx={{mb: '30px'}}>
                 EXPLORE OUR PROJECT
               </Typography>
             </Grid>
-            <Grid item size={{ md: 9 }}>
+            <Grid item size={{ md: 9 , xs: 12}}>
               <Grid container justifyContent="space-between">
                 {React.Children.toArray(
                   [
                     {
                       name: "Food Security",
                       link: "food-security",
+                      image: "/images/food-security.jpg",
                     },
                     {
                       name: "Agliculture",
                       link: "agliculture",
+                      image: "/images/agliculture.jpg",
                     },
                     {
                       name: "Suboptimal Land",
                       link: "suboptimal-land",
+                      image: "/images/suboptimal-land.jpg",
                     },
                     {
                       name: "Livelihood",
                       link: "livelihood",
+                      image: "/images/livelihood.jpg",
                     },
                     {
                       name: "Landscape",
                       link: "landscape",
+                      image: "/images/landscape.jpg",
                     },
                     {
                       name: "Governance",
                       link: "governance",
+                      image: "/images/governance.jpg",
                     },
                   ].map((item) => (
-                    <Grid item size={{ md: 3.8 }}>
+                    <Grid item size={{ md: 3.8, xs: 5.8 }}>
                       <Box position="relative" mb={4}>
                         <Link href={`/topic/${item.link}`}>
                           <CardActionArea>
-                            <Box height="250px" bgcolor="lightgray" />
+                            <Box
+                              height="250px"
+                              bgcolor="lightgray"
+                              sx={{
+                                backgroundImage: `url('${item.image}')`,
+                                backgroundSize: "cover",
+                                backgroundPosition: 'center'
+                              }}
+                            />
                           </CardActionArea>
                         </Link>
 
