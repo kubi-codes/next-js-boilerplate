@@ -7,11 +7,7 @@ export default function ResearchDetail() {
 export async function getServerSideProps(props) {
   return {
     props: {
-      title: `${props?.params?.slug
-        ?.replace(/-/g, " ")
-        ?.replace(/\b\w/g, (char) =>
-          char.toUpperCase()
-        )} | Tay Juhana Foundation`,
+      title: `Publication | Tay Juhana Foundation`,
 
       navbar: {
         color: "#233E83",

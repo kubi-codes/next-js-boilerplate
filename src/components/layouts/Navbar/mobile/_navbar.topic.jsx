@@ -1,7 +1,6 @@
 import {
   Box,
   Container,
-  Grid2 as Grid,
   Typography,
   Button,
   IconButton,
@@ -162,7 +161,7 @@ function _navbar(props) {
           </Box>
 
           <Box display="flex" justifyContent="center" mt="20px">
-            <Link href="/">
+            <Link href="/contact-us">
               <Button variant="contained" color="success">
                 Contact Us
               </Button>

@@ -16,32 +16,46 @@ function _topic_content_2() {
             {
               name: "Food Security",
               link: "food-security",
+              image: "/images/food-security.jpg",
             },
             {
               name: "Agliculture",
               link: "agliculture",
+              image: "/images/agliculture.jpg",
             },
             {
               name: "Suboptimal Land",
               link: "suboptimal-land",
+              image: "/images/suboptimal-land.jpg",
             },
             {
               name: "Livelihood",
               link: "livelihood",
+              image: "/images/livelihood.jpg",
             },
             {
               name: "Landscape",
               link: "landscape",
+              image: "/images/landscape.jpg",
             },
             {
               name: "Governance",
               link: "governance",
+              image: "/images/governance.jpg",
             },
           ].map((item) => (
             <Box position="relative" mb={4}>
               <Link href={`/topic/${item.link}`}>
                 <CardActionArea>
-                  <Box height="220px" bgcolor="lightgray" />
+                  <Box
+                    height="220px"
+                    bgcolor="lightgray"
+                    sx={{
+                      backgroundImage: `url('${item.image}')`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  />
                 </CardActionArea>
               </Link>
 

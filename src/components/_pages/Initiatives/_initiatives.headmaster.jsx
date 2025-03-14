@@ -17,7 +17,7 @@ function _initiatives_headmaster() {
           display="flex"
           alignItems="center"
           sx={{
-            backgroundImage: `url('/images/bg-topic.jpg')`,
+            backgroundImage: `url('/images/bg-initiatives.jpg')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -41,7 +41,7 @@ function _initiatives_headmaster() {
           sx={{
             height: "80vh",
             width: "100vw",
-            backgroundColor: "#00000066",
+            backgroundColor: "#00000010",
             position: "absolute",
             top: 0,
           }}

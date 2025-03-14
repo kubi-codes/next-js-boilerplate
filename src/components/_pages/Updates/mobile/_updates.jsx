@@ -1,18 +1,19 @@
 import {
   Container,
-  Grid2 as Grid,
   Typography,
   Box,
-  Button,
   CardActionArea,
+  IconButton,
 } from "@mui/material";
 import Link from "next/link";
 import React from "react";
+import CircleNext from "@/components/shared/icons/CircleNext";
+import CirclePrev from "@/components/shared/icons/CirclePrev";
 
 function _updates() {
   return (
     <Container>
-      <Box py="100px" minHeight="100vh">
+      <Box pt="100px" pb="50px" minHeight="100vh">
         <Box mb="30px">
           <Typography variant="h1" color="primary" gutterBottom>
             LATEST UPDATES
@@ -102,6 +103,15 @@ function _updates() {
             </React.Fragment>
           ))
         )}
+
+        <Box display="flex" gap="5px" mt="30px" justifyContent="flex-end">
+          <IconButton sx={{ padding: "5px", height: "45px" }}>
+            <CirclePrev color="#979797" fontSize="33px" />
+          </IconButton>
+          <IconButton sx={{ padding: "5px", height: "45px" }}>
+            <CircleNext color="#233E83" fontSize="33px" />
+          </IconButton>
+        </Box>
       </Box>
     </Container>
   );
