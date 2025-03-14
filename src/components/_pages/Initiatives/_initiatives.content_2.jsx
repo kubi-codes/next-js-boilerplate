@@ -27,25 +27,37 @@ function _initiatives_content_2() {
               {
                 name: "Sustainable Peatland Agriculture",
                 link: "/sustainable-peatland-agriculture",
+                image: "/images/initiatives/Rectangle 68.jpg",
               },
               {
                 name: "Suboptimal Land Agriculture Initiatives",
                 link: "/suboptimal-land-agricultutre-initiatives",
+                image: "/images/initiatives/Rectangle 69.jpg",
               },
               {
                 name: "Collabowritting",
                 link: "/collabowritting",
+                image: "/images/initiatives/Rectangle 189.jpg",
               },
               {
                 name: "Food Security and Sustainability Center",
                 link: "/food-security-and-sustainability-center",
+                image: "/images/initiatives/Rectangle 190.jpg",
               },
             ].map((item) => (
               <Grid item size={{ md: 5.8 }}>
                 <Box position="relative" mb={10}>
                   <Link href={`/initiatives/${item.link}`} passHref>
                     <CardActionArea>
-                      <Box height="340px" bgcolor="lightgray" />
+                      <Box
+                        height="340px"
+                        bgcolor="lightgray"
+                        sx={{
+                          backgroundImage: `url('${item.image}')`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                        }}
+                      />
                     </CardActionArea>
                   </Link>
 

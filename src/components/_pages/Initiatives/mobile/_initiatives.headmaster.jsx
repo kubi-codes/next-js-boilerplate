@@ -10,7 +10,7 @@ function _research_headmaster() {
         display="flex"
         alignItems="center"
         sx={{
-          backgroundImage: `url('/images/bg-topic.jpg')`,
+          backgroundImage: `url('/images/bg-initiatives.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

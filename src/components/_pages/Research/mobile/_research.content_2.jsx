@@ -6,6 +6,7 @@ import {
   CardActionArea,
   Button,
 } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 
 function _research_content_2() {
@@ -25,7 +26,7 @@ function _research_content_2() {
             <Grid container justifyContent="space-between">
               {React.Children.toArray(
                 [...new Array(6)].map(() => (
-                  <Grid item size={{ md: 3.8 }} sx={{ mb: "20px" }}>
+                  <Grid item size={{ md: 3.8, sm: 5.8 }} sx={{ mb: "20px" }}>
                     <CardActionArea>
                       <Box
                         bgcolor={(props) => props.palette.warning.main}
@@ -55,9 +56,11 @@ function _research_content_2() {
         <Box display="flex" alignItems="center" gap="20px">
           <Box bgcolor="#000" height="1px" width="90%" />
 
-          <Button variant="contained" color="success" sx={{ width: "150px" }}>
-            View More
-          </Button>
+          <Link href={`/research/publication`}>
+            <Button variant="contained" color="success" sx={{ width: "150px" }}>
+              View More
+            </Button>
+          </Link>
         </Box>
       </Container>
     </Box>

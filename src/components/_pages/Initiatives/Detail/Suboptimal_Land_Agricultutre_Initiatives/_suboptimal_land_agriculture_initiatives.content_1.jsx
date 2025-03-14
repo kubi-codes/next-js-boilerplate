@@ -18,6 +18,7 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_suboptimal_land_agriculture_initiatives.content_1";
+import Link from "next/link";
 
 function _suboptimal_land_agriculture_initiatives_content_1() {
   const theme = useTheme();
@@ -26,6 +27,40 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
   const [isLocation, setIsLocation] = React.useState(true);
   const [isTypeOfLand, setIsTypeOfLand] = React.useState(true);
   const [isTypeOfComodity, setIsTypeOfComodity] = React.useState(true);
+
+  const [location, setLocation] = React.useState([]);
+  const [typeOfLand, setTypeOfLand] = React.useState([]);
+  const [typeOfComodity, setTypeOfComodity] = React.useState([]);
+
+  const handleLocation = (value, variant) => {
+    if (!value) {
+      setLocation(location?.filter((item) => item !== variant));
+    } else {
+      setLocation([...location, ...[variant]]);
+    }
+  };
+
+  const handleTypeOfLand = (value, variant) => {
+    if (!value) {
+      setTypeOfLand(typeOfLand?.filter((item) => item !== variant));
+    } else {
+      setTypeOfLand([...typeOfLand, ...[variant]]);
+    }
+  };
+
+  const handleTypeOfComodity = (value, variant) => {
+    if (!value) {
+      setTypeOfComodity(typeOfComodity?.filter((item) => item !== variant));
+    } else {
+      setTypeOfComodity([...typeOfComodity, ...[variant]]);
+    }
+  };
+
+  const handleReset = () => {
+    setLocation([]);
+    setTypeOfLand([]);
+    setTypeOfComodity([]);
+  };
 
   return (
     <>
@@ -71,7 +106,16 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
                 <Box mt={1} position="relative">
                   <Box>
                     <FormControlLabel
-                      control={<Checkbox />}
+                      control={
+                        <Checkbox
+                          onChange={(e) =>
+                            handleLocation(e.target.checked, "Sumatera")
+                          }
+                          checked={Boolean(
+                            location?.find((item) => item === "Sumatera")
+                          )}
+                        />
+                      }
                       label={
                         <Box
                           display="flex"
@@ -92,14 +136,23 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
 
                   <Box>
                     <FormControlLabel
-                      control={<Checkbox />}
+                      control={
+                        <Checkbox
+                          onChange={(e) =>
+                            handleLocation(e.target.checked, "Kalimantan")
+                          }
+                          checked={Boolean(
+                            location?.find((item) => item === "Kalimantan")
+                          )}
+                        />
+                      }
                       label={
                         <Box
                           display="flex"
                           justifyContent="space-between"
                           alignItems="flex-end"
                         >
-                          <Typography fontWeight={500}>Sumatera</Typography>
+                          <Typography fontWeight={500}>Kalimantan</Typography>
 
                           <Chip
                             color="#000000"
@@ -113,7 +166,16 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
 
                   <Box>
                     <FormControlLabel
-                      control={<Checkbox />}
+                      control={
+                        <Checkbox
+                          onChange={(e) =>
+                            handleLocation(e.target.checked, "Papua")
+                          }
+                          checked={Boolean(
+                            location?.find((item) => item === "Papua")
+                          )}
+                        />
+                      }
                       label={
                         <Box
                           display="flex"
@@ -161,7 +223,16 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
                 <Box mt={1} position="relative">
                   <Box>
                     <FormControlLabel
-                      control={<Checkbox />}
+                      control={
+                        <Checkbox
+                          onChange={(e) =>
+                            handleTypeOfLand(e.target.checked, "Peatland")
+                          }
+                          checked={Boolean(
+                            typeOfLand?.find((item) => item === "Peatland")
+                          )}
+                        />
+                      }
                       label={
                         <Box
                           display="flex"
@@ -182,7 +253,16 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
 
                   <Box>
                     <FormControlLabel
-                      control={<Checkbox />}
+                      control={
+                        <Checkbox
+                          onChange={(e) =>
+                            handleTypeOfLand(e.target.checked, "Swamp Land")
+                          }
+                          checked={Boolean(
+                            typeOfLand?.find((item) => item === "Swamp Land")
+                          )}
+                        />
+                      }
                       label={
                         <Box
                           display="flex"
@@ -232,7 +312,21 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
                 <Box mt={1} position="relative">
                   <Box>
                     <FormControlLabel
-                      control={<Checkbox />}
+                      control={
+                        <Checkbox
+                          onChange={(e) =>
+                            handleTypeOfComodity(
+                              e.target.checked,
+                              "Horticulture"
+                            )
+                          }
+                          checked={Boolean(
+                            typeOfComodity?.find(
+                              (item) => item === "Horticulture"
+                            )
+                          )}
+                        />
+                      }
                       label={
                         <Box
                           display="flex"
@@ -253,7 +347,18 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
 
                   <Box>
                     <FormControlLabel
-                      control={<Checkbox />}
+                      control={
+                        <Checkbox
+                          onChange={(e) =>
+                            handleTypeOfComodity(e.target.checked, "Food Crops")
+                          }
+                          checked={Boolean(
+                            typeOfComodity?.find(
+                              (item) => item === "Food Crops"
+                            )
+                          )}
+                        />
+                      }
                       label={
                         <Box
                           display="flex"
@@ -274,7 +379,21 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
 
                   <Box>
                     <FormControlLabel
-                      control={<Checkbox />}
+                      control={
+                        <Checkbox
+                          onChange={(e) =>
+                            handleTypeOfComodity(
+                              e.target.checked,
+                              "Seasonal Crops"
+                            )
+                          }
+                          checked={Boolean(
+                            typeOfComodity?.find(
+                              (item) => item === "Seasonal Crops"
+                            )
+                          )}
+                        />
+                      }
                       label={
                         <Box
                           display="flex"
@@ -301,6 +420,7 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
                 variant="contained"
                 color="success"
                 sx={{ mt: 3, py: "15px" }}
+                onClick={handleReset}
               >
                 Reset
               </Button>
@@ -324,13 +444,15 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
                 </Typography>
 
                 <Box display="flex" justifyContent="center">
-                  <Button
-                    variant="contained"
-                    color="warning"
-                    sx={{ mt: 3, py: "15px" }}
-                  >
-                    Contact Us
-                  </Button>
+                  <Link href="/contact-us">
+                    <Button
+                      variant="contained"
+                      color="warning"
+                      sx={{ mt: 3, py: "15px" }}
+                    >
+                      Contact Us
+                    </Button>
+                  </Link>
                 </Box>
               </Box>
             </Grid>
