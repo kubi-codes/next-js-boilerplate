@@ -100,7 +100,7 @@ function _footer() {
                     "facebook.svg",
                     "youtube.svg",
                     "linkedin.svg",
-                  ].map((item) => <img src={`/icons/${item}`} />)
+                  ].map((item) => <img src={`/icons/${item}`} alt={item} />)
                 )}
               </Box>
             </Grid>

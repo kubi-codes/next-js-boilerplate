@@ -28,7 +28,8 @@ function _about_us_content_5() {
           <Grid justifyContent="space-between" alignItems="center" container>
             <Grid size={{ md: 7 }}>
               <Typography variant="h1" color="primary">
-                READ OUR STORY ABOUT FOOD FIGHTERS!
+                It is always a pleasure to welcome anyone interested on our
+                causes
               </Typography>
             </Grid>
             <Grid size={{ md: 3 }}>
@@ -45,8 +46,9 @@ function _about_us_content_5() {
                       width="20px"
                     />
                   }
+                
                 >
-                  Read Here
+                  Contact Us
                 </Button>
               </Box>
             </Grid>
