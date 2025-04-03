@@ -52,7 +52,15 @@ function _updates() {
               <Grid item size={{ md: 3.3, sm: 3.3 }}>
                 <Link href={`/updates/slug`}>
                   <CardActionArea>
-                    <Box bgcolor="lightgray" height="270px" position="relative">
+                    <Box
+                      bgcolor="lightgray"
+                      height="270px"
+                      position="relative"
+                      sx={{
+                        backgroundImage: `url('https://tayjuhanafoundation.org/wp-content/uploads/2025/03/4-768x430.png')`,
+                        backgroundSize: "cover",
+                      }}
+                    >
                       <Box
                         bgcolor="#fff"
                         height="100px"
@@ -68,7 +76,7 @@ function _updates() {
                           color="secondary"
                           gutterBottom
                         >
-                          February 12, 2024
+                          Mar 20, 2025
                         </Typography>
                         <Typography
                           variant="h6"
@@ -81,16 +89,32 @@ function _updates() {
                             WebkitLineClamp: 2, // Membatasi ke 2 baris
                           }}
                         >
-                          Rekontruksi Lahan Pertanian dengan Lahan Suboptimal
+                          Maximizing Nature’s Concealed Potential in Wetland
+                          Agriculture
                         </Typography>
                       </Box>
                     </Box>
                   </CardActionArea>
                 </Link>
               </Grid>
-              <Grid item size={{ md: 4, sm: 4 }}>
+              <Grid item size={{ md: 4.2, sm: 4 }}>
                 {React.Children.toArray(
-                  [...new Array(2)].map((item, key, arr) => (
+                  [
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/12/lahan-gambut-untuk-pertanian-300x300.webp",
+                      title:
+                        "Water Management Process in Peatland for Agriculture",
+                      date: "Dec 20, 2024",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/12/jurnal-pertanian-lahan-suboptimal-300x300.webp",
+                      title:
+                        "Journal of Suboptimal Land Agriculture: Optimization of Land Management",
+                      date: "Dec 20, 2024",
+                    },
+                  ].map((item, key, arr) => (
                     <Link href={`/updates/slug`}>
                       <Grid container justifyContent="space-between" mb={2.5}>
                         <Grid item size={{ md: 6, sm: 6 }}>
@@ -99,7 +123,7 @@ function _updates() {
                             color="secondary"
                             gutterBottom
                           >
-                            December 23, 2023
+                            {item.date}
                           </Typography>
                           <Typography
                             variant="h6"
@@ -111,12 +135,20 @@ function _updates() {
                               WebkitLineClamp: 3, // Membatasi ke 2 baris
                             }}
                           >
-                            Konteks Masa Lalu dalam Pembangunan Berkelanjutan
+                            {item.title}
                           </Typography>
                         </Grid>
                         <Grid item size={{ md: 5.5, sm: 5.5 }}>
                           <CardActionArea>
-                            <Box bgcolor="lightgray" height="115px"></Box>
+                            <Box
+                              bgcolor="lightgray"
+                              height="125px"
+                              sx={{
+                                backgroundImage: `url('${item.image}')`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                              }}
+                            ></Box>
                           </CardActionArea>
                         </Grid>
 
@@ -141,9 +173,23 @@ function _updates() {
                   ))
                 )}
               </Grid>
-              <Grid item size={{ md: 4, sm: 4 }}>
+              <Grid item size={{ md: 4.2, sm: 4 }}>
                 {React.Children.toArray(
-                  [...new Array(2)].map((item, key, arr) => (
+                  [
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/12/de2a2a06-7721-413a-aaf5-2721dd00a034-300x300.webp",
+                      title: "National Peatland Management Strategy",
+                      date: "Dec 4, 2024",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/12/2eb301d3-bf4e-4b94-a667-844a5e761e2a-300x300.webp",
+                      title:
+                        "Optimization of Peatland Utilization into Productive Land",
+                      date: "Dec 4, 2024",
+                    },
+                  ].map((item, key, arr) => (
                     <Link href={`/updates/slug`}>
                       <Grid container justifyContent="space-between" mb={2.5}>
                         <Grid item size={{ md: 6, sm: 6 }}>
@@ -152,7 +198,7 @@ function _updates() {
                             color="secondary"
                             gutterBottom
                           >
-                            December 23, 2023
+                            {item.date}
                           </Typography>
                           <Typography
                             variant="h6"
@@ -164,12 +210,20 @@ function _updates() {
                               WebkitLineClamp: 3, // Membatasi ke 2 baris
                             }}
                           >
-                            Konteks Masa Lalu dalam Pembangunan Berkelanjutan
+                            {item.title}
                           </Typography>
                         </Grid>
                         <Grid item size={{ md: 5.5, sm: 5.5 }}>
                           <CardActionArea>
-                            <Box bgcolor="lightgray" height="115px"></Box>
+                            <Box
+                              bgcolor="lightgray"
+                              height="125px"
+                              sx={{
+                                backgroundImage: `url('${item.image}')`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                              }}
+                            ></Box>
                           </CardActionArea>
                         </Grid>
 
@@ -200,7 +254,15 @@ function _updates() {
               <Grid item size={{ md: 3.3, sm: 3.3 }}>
                 <Link href={`/updates/slug`}>
                   <CardActionArea>
-                    <Box bgcolor="lightgray" height="270px" position="relative">
+                    <Box
+                      bgcolor="lightgray"
+                      height="270px"
+                      position="relative"
+                      sx={{
+                        backgroundImage: `url('https://tayjuhanafoundation.org/wp-content/uploads/2025/01/sustainable-peatland-management-in-indonesia-300x300.jpg')`,
+                        backgroundSize: "cover",
+                      }}
+                    >
                       <Box
                         bgcolor="#fff"
                         height="100px"
@@ -216,7 +278,7 @@ function _updates() {
                           color="secondary"
                           gutterBottom
                         >
-                          February 12, 2024
+                          Jan 21, 2025
                         </Typography>
                         <Typography
                           variant="h6"
@@ -229,16 +291,30 @@ function _updates() {
                             WebkitLineClamp: 2, // Membatasi ke 2 baris
                           }}
                         >
-                          Rekontruksi Lahan Pertanian dengan Lahan Suboptimal
+                          Sustainable Peatland Management in Indonesia
                         </Typography>
                       </Box>
                     </Box>
                   </CardActionArea>
                 </Link>
               </Grid>
-              <Grid item size={{ md: 4, sm: 4 }}>
+              <Grid item size={{ md: 4.2, sm: 4 }}>
                 {React.Children.toArray(
-                  [...new Array(2)].map((item, key, arr) => (
+                  [
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/04/Strategi-Pemanfaatan-Lahan-Gambut-300x171.webp",
+                      title: "Strategi Pemanfaatan Lahan Gambut Berkelanjutan",
+                      date: "Apr 1, 2024",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/03/Pemanfaatan-Lahan-Gambut-300x200.jpg",
+                      title:
+                        "Pemanfaatan Lahan Gambut untuk Pertanian Berkelanjutan",
+                      date: "Mar 28, 2024",
+                    },
+                  ].map((item, key, arr) => (
                     <Link href={`/updates/slug`}>
                       <Grid container justifyContent="space-between" mb={2.5}>
                         <Grid item size={{ md: 6, sm: 6 }}>
@@ -247,7 +323,7 @@ function _updates() {
                             color="secondary"
                             gutterBottom
                           >
-                            December 23, 2023
+                            {item.date}
                           </Typography>
                           <Typography
                             variant="h6"
@@ -259,12 +335,20 @@ function _updates() {
                               WebkitLineClamp: 3, // Membatasi ke 2 baris
                             }}
                           >
-                            Konteks Masa Lalu dalam Pembangunan Berkelanjutan
+                            {item.title}
                           </Typography>
                         </Grid>
                         <Grid item size={{ md: 5.5, sm: 5.5 }}>
                           <CardActionArea>
-                            <Box bgcolor="lightgray" height="115px"></Box>
+                            <Box
+                              bgcolor="lightgray"
+                              height="125px"
+                              sx={{
+                                backgroundImage: `url('${item.image}')`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                              }}
+                            ></Box>
                           </CardActionArea>
                         </Grid>
 
@@ -289,9 +373,24 @@ function _updates() {
                   ))
                 )}
               </Grid>
-              <Grid item size={{ md: 4, sm: 4 }}>
+              <Grid item size={{ md: 4.2, sm: 4 }}>
                 {React.Children.toArray(
-                  [...new Array(2)].map((item, key, arr) => (
+                  [
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2025/01/Sustainable-Peatland-Cultivation-Example-300x300.jpg",
+                      title:
+                        "Sustainable Peatland Cultivation Example for a Greener Future",
+                      date: "Jan 21, 2024",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2025/01/Peatland-Agriculture-Potential-for-Food-Production-300x300.jpg",
+                      title:
+                        "Peatland Agriculture Potential for Food Production",
+                      date: "Jan 21, 2025",
+                    },
+                  ].map((item, key, arr) => (
                     <Link href={`/updates/slug`}>
                       <Grid container justifyContent="space-between" mb={2.5}>
                         <Grid item size={{ md: 6, sm: 6 }}>
@@ -300,7 +399,7 @@ function _updates() {
                             color="secondary"
                             gutterBottom
                           >
-                            December 23, 2023
+                            {item.date}
                           </Typography>
                           <Typography
                             variant="h6"
@@ -312,12 +411,20 @@ function _updates() {
                               WebkitLineClamp: 3, // Membatasi ke 2 baris
                             }}
                           >
-                            Konteks Masa Lalu dalam Pembangunan Berkelanjutan
+                            {item.title}
                           </Typography>
                         </Grid>
                         <Grid item size={{ md: 5.5, sm: 5.5 }}>
                           <CardActionArea>
-                            <Box bgcolor="lightgray" height="115px"></Box>
+                            <Box
+                              bgcolor="lightgray"
+                              height="125px"
+                              sx={{
+                                backgroundImage: `url('${item.image}')`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                              }}
+                            ></Box>
                           </CardActionArea>
                         </Grid>
 

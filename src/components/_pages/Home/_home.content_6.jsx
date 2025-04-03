@@ -50,7 +50,16 @@ function _home_content_6() {
             <Grid item size={{ md: 3.3 }}>
               <Link href="/updates/slug">
                 <CardActionArea>
-                  <Box bgcolor="lightgray" height="400px" position="relative">
+                  <Box
+                    bgcolor="lightgray"
+                    height="400px"
+                    position="relative"
+                    sx={{
+                      backgroundImage: `url('https://tayjuhanafoundation.org/wp-content/uploads/2025/03/4-1024x573.png')`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  >
                     <Box
                       bgcolor="#fff"
                       height="100px"
@@ -66,7 +75,7 @@ function _home_content_6() {
                         color="secondary"
                         gutterBottom
                       >
-                        February 12, 2024
+                        March 20, 2025
                       </Typography>
                       <Typography
                         variant="h6"
@@ -79,7 +88,8 @@ function _home_content_6() {
                           WebkitLineClamp: 2, // Membatasi ke 2 baris
                         }}
                       >
-                        Rekontruksi Lahan Pertanian dengan Lahan Suboptimal
+                        Maximizing Nature’s Concealed Potential in Wetland
+                        Agriculture
                       </Typography>
                     </Box>
                   </Box>
@@ -88,7 +98,28 @@ function _home_content_6() {
             </Grid>
             <Grid item size={{ md: 4 }}>
               {React.Children.toArray(
-                [...new Array(3)].map((item, key, arr) => (
+                [
+                  {
+                    image:
+                      "https://tayjuhanafoundation.org/wp-content/uploads/2024/12/lahan-gambut-untuk-pertanian.webp",
+                    title:
+                      "Water Management Process in Peatland for Agriculture",
+                    date: "Dec 20, 2024",
+                  },
+                  {
+                    image:
+                      "https://tayjuhanafoundation.org/wp-content/uploads/2024/12/jurnal-pertanian-lahan-suboptimal.webp",
+                    title:
+                      "Journal of Suboptimal Land Agriculture: Optimization of Land Management",
+                    date: "Dec 20, 2024",
+                  },
+                  {
+                    image:
+                      "https://tayjuhanafoundation.org/wp-content/uploads/2024/12/de2a2a06-7721-413a-aaf5-2721dd00a034.webp",
+                    title: "National Peatland Management Strategy",
+                    date: "Dec 4, 2024",
+                  },
+                ].map((item, key, arr) => (
                   <Link href={`/updates/slug`}>
                     <Grid container justifyContent="space-between" mb={2.5}>
                       <Grid item size={{ md: 6 }}>
@@ -97,7 +128,7 @@ function _home_content_6() {
                           color="secondary"
                           gutterBottom
                         >
-                          December 23, 2023
+                          {item.date}
                         </Typography>
                         <Typography
                           variant="h6"
@@ -109,12 +140,20 @@ function _home_content_6() {
                             WebkitLineClamp: 3, // Membatasi ke 2 baris
                           }}
                         >
-                          Konteks Masa Lalu dalam Pembangunan Berkelanjutan
+                          {item.title}
                         </Typography>
                       </Grid>
                       <Grid item size={{ md: 5.5 }}>
                         <CardActionArea>
-                          <Box bgcolor="lightgray" height="115px"></Box>
+                          <Box
+                            bgcolor="lightgray"
+                            height="115px"
+                            sx={{
+                              backgroundImage: `url('${item.image}')`,
+                              backgroundSize: "cover",
+                              backgroundPosition: "center",
+                            }}
+                          ></Box>
                         </CardActionArea>
                       </Grid>
 

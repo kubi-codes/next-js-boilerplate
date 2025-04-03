@@ -72,24 +72,31 @@ function _home_content_5() {
             {React.Children.toArray(
               [
                 {
-                  image: "/images/magazine-example.jpg",
-                  label: "Magazine",
-                  date: "Dec, 2025",
+                  image:
+                    "https://tayjuhanafoundation.org/wp-content/uploads/2024/01/TJF-Greenboard-Isu-3-pdf.jpg",
+                  label:
+                    "TJF Greenboard | Isu 3: Menjaga Ketahanan Pangan di Tengah Gempuran Perubahan Iklim",
+                  date: "Jan, 2024",
                 },
                 {
-                  image: "/images/magazine-example.jpg",
-                  label: "Magazine",
-                  date: "Dec, 2025",
+                  image:
+                    "https://tayjuhanafoundation.org/wp-content/uploads/2025/02/Buku-Series-1-Wetland-2025-pdf.jpg",
+                  label: "Buku Kisah Sukses Bertani di Lahan Basah",
+                  date: "Feb, 2025",
                 },
                 {
-                  image: "/images/magazine-example.jpg",
-                  label: "Magazine",
-                  date: "Dec, 2025",
+                  image:
+                    "https://tayjuhanafoundation.org/wp-content/uploads/2024/07/Brief-TJF-July-2024-Coconut-based-Agroforesty-pdf.jpg",
+                  label:
+                    "Coconut-based Agroforestry-Paludiculture to Improve Peatlands Sustainability and Food Security",
+                  date: "Jul, 2024",
                 },
                 {
-                  image: "/images/magazine-example.jpg",
-                  label: "Magazine",
-                  date: "Dec, 2025",
+                  image:
+                    "https://tayjuhanafoundation.org/wp-content/uploads/2023/12/TJF-POLICY-BRIEF-SEPT-2023-2-pdf.jpg",
+                  label:
+                    "TJF Policy Brief: Governance Strategies for Boosting Farmer Capacity and Productivity Amidst El-Nino Challenges in Indonesia",
+                  date: "Sep, 2024",
                 },
               ].map((item) => (
                 <Grid item size={{ md: 2.8 }}>
@@ -100,12 +107,25 @@ function _home_content_5() {
                       mb={1}
                       sx={{
                         backgroundImage: `url('${item.image}')`,
-                        backgroundSize: "cover",
+                        backgroundSize: "100% 100%",
                         backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        border: "1px solid lightgray",
                       }}
                     ></Box>
                   </CardActionArea>
-                  <Typography>{item.label}</Typography>
+                  <Typography
+                    sx={{
+                      display: "-webkit-box",
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      WebkitLineClamp: 3, // Membatasi ke 2 baris
+                      mb: 1,
+                    }}
+                  >
+                    {item.label}
+                  </Typography>
                   <Typography color="secondary" fontSize="14px">
                     {item.date}
                   </Typography>

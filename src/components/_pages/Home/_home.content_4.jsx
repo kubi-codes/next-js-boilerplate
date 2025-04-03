@@ -19,7 +19,7 @@ function _home_content_4() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const imageSlider = ["images/bg-example.jpg", "images/bg-example-4.jpg"];
+  const imageSlider = ["images/Rectangle-70.jpg", "images/bg-example-4.jpg"];
   const [selected, setSelected] = React.useState(0);
 
   const handleNext = () => {
