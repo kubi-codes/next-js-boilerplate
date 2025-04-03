@@ -459,48 +459,111 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
             <Grid size={{ md: 9.7 }}>
               <Grid container>
                 {React.Children.toArray(
-                  [...new Array(9)].map(() => (
+                  [
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2025/03/4-1024x573.png",
+                      title:
+                        "Maximizing Nature’s Concealed Potential in Wetland Agriculture",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/10/DSC07729-1024x580.jpg",
+                      title:
+                        "Tay Juhana Foundation Achieves Success at World Coconut Day 2024",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2022/07/announcement-1024x1008.png",
+                      title:
+                        "Can We Feast from Peatland Agriculture? – TJF Challenge #PeatParty",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/08/WhatsApp-Image-2024-08-08-at-10.50.14_6d60c486-1024x768.jpg",
+                      title:
+                        "Tay Juhana Foundation Update: Social Capital and Coconut Sustainability",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2022/10/zoom-bg-tys-2-1024x576.png",
+                      title:
+                        "#tellyourstory 2.0 Final Event: They Took Their Action to Secure Our Food from Crisis!",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2022/09/FAQ-1024x576.png",
+                      title: "FAQ #TellYourStory 2022",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2021/11/WhatsApp-Image-2021-11-11-at-15.39.05-2-1024x768.jpeg",
+                      title:
+                        "Peatlands need you, you need peatlands: A call to support peatland actions",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2021/08/WhatsApp-Image-2021-06-08-at-14.30.32-1024x1024.jpeg",
+                      title:
+                        "#PEATPARTY Report: Exploring Peatlands and Sustainability",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2021/03/wetland-challenge-reminder-8feb-80-e1616485936466-1024x571.jpg",
+                      title:
+                        "TJF Wetlands Day Challenge: Help Joni to Find Treasure from His Parents!",
+                    },
+                  ].map((item) => (
                     <Grid size={{ md: 4 }} sx={{ px: "10px" }}>
-                      <CardActionArea sx={{ mb: "50px" }}>
-                        <Box
-                          bgcolor="lightgray"
-                          height="230px"
-                          position="relative"
-                        >
+                      <Link
+                        href={`/initiatives/suboptimal-land-agricultutre-initiatives/slug`}
+                      >
+                        <CardActionArea sx={{ mb: "50px" }}>
                           <Box
-                            bgcolor="#fff"
-                            height="100px"
-                            boxShadow="0px 1px 1px rgba(0, 0, 0, 0.1)"
-                            position="absolute"
-                            width="90%"
-                            bottom="-20px"
-                            left={0}
-                            padding="10px 20px"
+                            bgcolor="lightgray"
+                            height="230px"
+                            position="relative"
+                            sx={{
+                              backgroundImage: `url('${item.image}')`,
+                              backgroundSize: "cover",
+                              backgroundPosition: "center",
+                            }}
+                            boxShadow="-1px -1px 10px rgba(0, 0, 0, 0.1)"
                           >
-                            <Typography
-                              variant="body2"
-                              color="secondary"
-                              gutterBottom
+                            <Box
+                              bgcolor="#fff"
+                              height="100px"
+                              boxShadow="1px 1px 1px rgba(0, 0, 0, 0.1)"
+                              position="absolute"
+                              width="90%"
+                              bottom="-20px"
+                              left={0}
+                              padding="10px 20px"
                             >
-                              Papua - Peatland - Horticulture
-                            </Typography>
-                            <Typography
-                              variant="h6"
-                              fontSize="16px"
-                              sx={{
-                                display: "-webkit-box",
-                                WebkitBoxOrient: "vertical",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                WebkitLineClamp: 2, // Membatasi ke 2 baris
-                              }}
-                            >
-                              Transformasi Lahan Suboptimal: Pemasok Hasil Tani
-                              se-Sorong Raya
-                            </Typography>
+                              <Typography
+                                variant="body2"
+                                color="secondary"
+                                gutterBottom
+                              >
+                                Papua - Peatland - Horticulture
+                              </Typography>
+                              <Typography
+                                variant="h6"
+                                fontSize="16px"
+                                sx={{
+                                  display: "-webkit-box",
+                                  WebkitBoxOrient: "vertical",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  WebkitLineClamp: 2, // Membatasi ke 2 baris
+                                }}
+                              >
+                                {item.title}
+                              </Typography>
+                            </Box>
                           </Box>
-                        </Box>
-                      </CardActionArea>
+                        </CardActionArea>
+                      </Link>
                     </Grid>
                   ))
                 )}

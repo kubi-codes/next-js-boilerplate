@@ -9,6 +9,12 @@ export async function getServerSideProps() {
   return {
     props: {
       title: "Our Approach | Tay Juhana Foundation",
+      navbar: {
+        color: "#fff",
+        logo: "/images/TJF-White-logo.png",
+        bgColor: "transparent",
+        disableElevation: true,
+      },
     },
   };
 }

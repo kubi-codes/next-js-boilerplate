@@ -17,7 +17,7 @@ function _career_content_2() {
 
   return (
     <>
-      <Box pt="100px" display={isMobile ? "none" : "block"}>
+      <Box id="content" pt="100px" display={isMobile ? "none" : "block"}>
         <Container>
           <Typography variant="h3" align="center" color="primary">
             WE HAVE 4 OPEN POSITION NOW!

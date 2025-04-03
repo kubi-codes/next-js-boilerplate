@@ -4,10 +4,22 @@ export default function Topic() {
   return <_topic_detail />;
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(props) {
+  const capitalize = (str) => {
+    return str
+      .split("-") // Pisahkan slug berdasarkan "-"
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Kapitalisasi setiap kata
+      .join(" "); // Gabungkan kembali dengan spasi
+  };
+
+  const title = props.query?.slug
+    ? `${capitalize(props.query.slug)} | Tay Juhana Foundation`
+    : "Topic | Tay Juhana Foundation";
+
   return {
     props: {
-      title: "Detail | Tay Juhana Foundation",
+      title,
+      topic: props.query.slug,
     },
   };
 }

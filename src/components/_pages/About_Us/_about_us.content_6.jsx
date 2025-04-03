@@ -38,8 +38,10 @@ function _about_us_content_6() {
               sx={{
                 width: "255px",
                 height: "255px",
-                bgcolor: "lightgray",
                 borderRadius: "50%",
+                backgroundImage: `url('/images/Layer 1 copy 1.png')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
               }}
             />
           </Box>

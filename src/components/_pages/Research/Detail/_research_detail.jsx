@@ -12,6 +12,8 @@ import {
   Chip,
   Grow,
   Pagination,
+  Slide,
+  Dialog,
 } from "@mui/material";
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
@@ -21,6 +23,12 @@ import Link from "next/link";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_research_detail";
+import GlobeIcon from "@/components/shared/icons/globe";
+import ChevronIcon from "@/components/shared/icons/chevronDown";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 function _research_detail() {
   const theme = useTheme();
@@ -28,6 +36,15 @@ function _research_detail() {
 
   const [isTopicShow, setIsTopicShow] = React.useState(true);
   const [isCategoryShow, setIsCategoryShow] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -279,62 +296,69 @@ function _research_detail() {
                 {React.Children.toArray(
                   [
                     {
-                      image: "/images/magazine-example.jpg",
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/11/LANDLIFE-1-pdf.jpg",
                       label: "Peatland Agriculture Sustainability",
                       title:
-                        "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                      date: "Dec, 2025",
+                        "LAND & LIFE | Edisi #1: Masih adakah lahan di masa depan?",
+                      date: "Nov, 2024",
                     },
                     {
-                      image: "/images/magazine-example.jpg",
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/01/TJF-Greenboard-Isu-3-pdf.jpg",
                       label: "Peatland Agriculture Sustainability",
                       title:
-                        "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                      date: "Dec, 2025",
+                        "TJF Greenboard | Isu 3: Menjaga Ketahanan Pangan di Tengah Gempuran Perubahan Iklim",
+                      date: "Jan, 2024",
                     },
                     {
-                      image: "/images/magazine-example.jpg",
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/01/annual-report-2023organized-pdf.jpg",
                       label: "Peatland Agriculture Sustainability",
                       title:
-                        "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                      date: "Dec, 2025",
+                        "Annual Report 2023: Enhancing Resilience in Food Security",
+                      date: "Jan, 2023",
                     },
                     {
-                      image: "/images/magazine-example.jpg",
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2023/02/cover-annual-report-2022-18pages-196x300.jpg",
                       label: "Peatland Agriculture Sustainability",
                       title:
-                        "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                      date: "Dec, 2025",
+                        "Annual Report 2022: Securing Our Food from Crisis",
+                      date: "Feb, 2023",
                     },
                     {
-                      image: "/images/magazine-example.jpg",
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2023/01/TJF-Brief-Dec-2022-1-pdf.jpg",
                       label: "Peatland Agriculture Sustainability",
                       title:
-                        "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                      date: "Dec, 2025",
+                        "Re-visiting Government of Indonesia Strategies on Food Crisis and Farmers’ Resilience",
+                      date: "Dec, 2022",
                     },
                     {
-                      image: "/images/magazine-example.jpg",
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2022/06/TJF-Brief-June-2022-pdf.jpg",
                       label: "Peatland Agriculture Sustainability",
                       title:
-                        "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                      date: "Dec, 2025",
+                        "What Could be the Strategy to Strengthen Our Food System? A case study from Russia – Ukraine war",
+                      date: "Jun, 2022",
                     },
                   ].map((item) => (
                     <Grid item size={{ md: 3.8 }} mb={3}>
-                      <Link href={`/`} passHref>
-                        <CardActionArea>
-                          <Box
-                            height="450px"
-                            // bgcolor="lightgray"
-                            mb={1}
-                            sx={{
-                              backgroundImage: `url('${item.image}')`,
-                              backgroundSize: "cover",
-                            }}
-                          ></Box>
-                        </CardActionArea>
-                      </Link>
+                      <CardActionArea onClick={handleClickOpen}>
+                        <Box
+                          height="450px"
+                          // bgcolor="lightgray"
+                          mb={1}
+                          sx={{
+                            backgroundImage: `url('${item.image}')`,
+                            backgroundSize: "100% 100%",
+                            backgroundPosition: "center",
+                            backgroundRepeat: "no-repeat",
+                            border: "1px solid lightgray",
+                          }}
+                        ></Box>
+                      </CardActionArea>
                       <Typography color="warning" mt={0.5}>
                         {item.label}
                       </Typography>
@@ -392,6 +416,141 @@ function _research_detail() {
           </Grid>
         </Container>
       </Box>
+
+      <Dialog
+        fullScreen
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Transition}
+      >
+        <Box height="100vh" overflow="hidden">
+          <Grid container>
+            <Grid size={{ md: 6 }} position="relative">
+              <Box position="absolute" top="20px" left="30px">
+                <Link href="/">
+                  <Box
+                    component="img"
+                    height="45px"
+                    width="140px"
+                    src={"/images/TJF-White-logo.png"}
+                    alt="logo"
+                    sx={{
+                      filter: "drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5))",
+                    }}
+                  ></Box>
+                </Link>
+              </Box>
+
+              <Box
+                height="100vh"
+                mb={1}
+                sx={{
+                  backgroundImage: `url('/images/magazine-example.jpg')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              ></Box>
+            </Grid>
+            <Grid
+              size={{ md: 6 }}
+              sx={{
+                backgroundColor: (theme) => theme.palette.primary.main,
+                display: "flex",
+                alignItems: "center",
+                position: "relative",
+              }}
+            >
+              <IconButton
+                sx={{ position: "absolute", top: "20px", right: "50px" }}
+              >
+                <Box display="flex" alignItems="center" gap={1.2}>
+                  <GlobeIcon color={"#fff"} />
+                  <ChevronIcon color={"#fff"} />
+                </Box>
+              </IconButton>
+
+              <Box p={5}>
+                <Typography variant="h1" color="#fff" sx={{ mb: 2 }}>
+                  The Magazine
+                </Typography>
+                <Typography fontSize="18px" color="#fff">
+                  March 2024
+                </Typography>
+
+                <Box
+                  sx={{
+                    borderBottom: "1px solid #fff",
+                    maxWidth: "60%",
+                    my: "20px",
+                  }}
+                />
+
+                <Typography fontSize="18px" color="#fff" sx={{ mb: 1 }}>
+                  Tema : Tema 1
+                </Typography>
+
+                <Typography fontSize="18px" color="#fff" sx={{ mb: 5 }}>
+                  Contributor : Contributor 1, Contributor 2
+                </Typography>
+
+                <Box width="80%">
+                  <Typography fontSize="12px" color="#fff" sx={{ mb: 5 }}>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged.
+                  </Typography>
+                </Box>
+
+                <Box display="flex" gap={2}>
+                  <Button color="success" variant="contained">
+                    Download PDF Mobile
+                  </Button>
+                  <Button color="warning" variant="contained">
+                    Download Print Version
+                  </Button>
+                </Box>
+              </Box>
+
+              <Box
+                bgcolor={(props) => props.palette.warning.main}
+                height="100vh"
+                width="70px"
+                position="relative"
+                mt={-1}
+              >
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "-10%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    color="warning"
+                    sx={{
+                      transform: "rotate(270deg)",
+                      width: "200px",
+                      "&:hover": {
+                        backgroundColor: (props) => props.palette.warning.main,
+                      },
+                    }}
+                    disableElevation
+                    disableTouchRipple
+                  >
+                    Read
+                  </Button>
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+      </Dialog>
 
       {isMobile ? <MobileView /> : null}
     </>

@@ -9,6 +9,7 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_career.content_1";
+import Link from "next/link";
 
 function _career_content_1() {
   const theme = useTheme();
@@ -41,9 +42,11 @@ function _career_content_1() {
                   what you could be part of if you join Tay Juhana Foundation.
                 </Typography>
 
-                <Button variant="contained" color="success">
-                  See Open Position
-                </Button>
+                <Link href={`#content`}>
+                  <Button variant="contained" color="success">
+                    See Open Position
+                  </Button>
+                </Link>
               </Box>
             </Grid>
             <Grid size={{ md: 6 }} position="relative">

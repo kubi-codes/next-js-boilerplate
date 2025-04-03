@@ -8,6 +8,7 @@ import {
 import React from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Link from "next/link";
 
 function _about_us_content_5() {
   const theme = useTheme();
@@ -28,7 +29,8 @@ function _about_us_content_5() {
           <Grid justifyContent="space-between" alignItems="center" container>
             <Grid size={{ md: 7 }}>
               <Typography variant="h1" color="primary">
-                READ OUR STORY ABOUT FOOD FIGHTERS!
+                It is always a pleasure to welcome anyone interested on our
+                causes
               </Typography>
             </Grid>
             <Grid size={{ md: 3 }}>
@@ -36,18 +38,20 @@ function _about_us_content_5() {
                 bgcolor={(props) => props.palette.warning.main}
                 padding="20px"
               >
-                <Button
-                  sx={{ fontSize: "24px", color: "#fff" }}
-                  endIcon={
-                    <img
-                      src="/icons/circle-arrow-right-white.svg"
-                      alt="icons"
-                      width="20px"
-                    />
-                  }
-                >
-                  Read Here
-                </Button>
+                <Link href={`/contact-us`}>
+                  <Button
+                    sx={{ fontSize: "24px", color: "#fff" }}
+                    endIcon={
+                      <img
+                        src="/icons/circle-arrow-right-white.svg"
+                        alt="icons"
+                        width="20px"
+                      />
+                    }
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
               </Box>
             </Grid>
           </Grid>
