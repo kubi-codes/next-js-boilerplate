@@ -21,6 +21,10 @@ function _navbar(props) {
   const router = useRouter();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [bgColor, setBgColor] = useState(props?.bgColor ?? "transparent");
+  const [color, setColor] = useState(props?.color ?? "primary");
+  const [logo, setLogo] = useState(
+    props?.logo ?? "/images/TJF-Secondary-Blue-logo.png"
+  );
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -36,9 +40,14 @@ function _navbar(props) {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setBgColor(props?.bgColor ?? "white");
+        setBgColor("white");
+        setColor("primary");
+        setLogo("/images/TJF-Secondary-Blue-logo.png");
       } else {
         setBgColor(props?.bgColor ?? "transparent");
+
+        if (props?.logo) setLogo(props?.logo);
+        if (props?.color) setColor(props?.color);
       }
     };
 
@@ -73,7 +82,7 @@ function _navbar(props) {
                     component="img"
                     height="45px"
                     width="140px"
-                    src="/images/TJF-Secondary-Blue-logo.png"
+                    src={logo}
                     alt="logo"
                   ></Box>
                 </Link>
@@ -85,7 +94,7 @@ function _navbar(props) {
                     { name: "Initiatives", link: "/initiatives" },
                   ].map((item) => (
                     <Link href={item.link}>
-                      <Typography color="primary" variant="h6">
+                      <Typography color={color} variant="h6">
                         {item.name}
                       </Typography>
                     </Link>

@@ -37,16 +37,18 @@ function _home_content_6() {
                 Discover weekly insights on sustainablefarming in suboptimal
                 lands and join usin building a greener future.
               </Typography>
-              <Button
-                variant="contained"
-                color="success"
-                sx={{ px: "32px", py: "18px" }}
-              >
-                Browse
-              </Button>
+              <Link href={`/updates`}>
+                <Button
+                  variant="contained"
+                  color="success"
+                  sx={{ px: "32px", py: "18px" }}
+                >
+                  Browse
+                </Button>
+              </Link>
             </Grid>
             <Grid item size={{ md: 3.3 }}>
-              <Link href="#">
+              <Link href="/updates/slug">
                 <CardActionArea>
                   <Box bgcolor="lightgray" height="400px" position="relative">
                     <Box
@@ -87,7 +89,7 @@ function _home_content_6() {
             <Grid item size={{ md: 4 }}>
               {React.Children.toArray(
                 [...new Array(3)].map((item, key, arr) => (
-                  <Link href={"#"}>
+                  <Link href={`/updates/slug`}>
                     <Grid container justifyContent="space-between" mb={2.5}>
                       <Grid item size={{ md: 6 }}>
                         <Typography

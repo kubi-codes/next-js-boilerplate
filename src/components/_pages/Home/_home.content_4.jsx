@@ -4,7 +4,7 @@ import {
   Grid2 as Grid,
   Button,
   Typography,
-  IconButton
+  IconButton,
 } from "@mui/material";
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,6 +13,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_home.content_4";
 import CircleNext from "@/components/shared/icons/CircleNext";
 import CirclePrev from "@/components/shared/icons/CirclePrev";
+import Link from "next/link";
 
 function _home_content_4() {
   const theme = useTheme();
@@ -81,9 +82,13 @@ function _home_content_4() {
                   transforming 20 hectares of suboptimal land into a thriving
                   integrated farm.
                 </Typography>
-                <Button variant="contained" color="success">
-                  Read Full Story
-                </Button>
+                <Link
+                  href={`/initiatives/food-security-and-sustainability-center`}
+                >
+                  <Button variant="contained" color="success">
+                    Read Full Story
+                  </Button>
+                </Link>
               </Box>
             </Grid>
             <Grid item size={{ md: 5 }}>

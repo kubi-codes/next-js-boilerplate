@@ -4,7 +4,7 @@ export default function UpdateDetails() {
   return <_updates_detail />;
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(props) {
   const capitalize = (str) => {
     return str
       .split("-") // Pisahkan slug berdasarkan "-"

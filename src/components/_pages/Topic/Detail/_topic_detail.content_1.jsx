@@ -54,7 +54,7 @@ function _topic_detail_content_1() {
 
             <Grid container justifyContent="space-between" mt="40px">
               <Grid item size={{ md: 3.3, sm: 3.8 }}>
-                <Link href="#">
+                <Link href={`/topic/${params?.slug}/slug`}>
                   <CardActionArea>
                     <Box bgcolor="lightgray" height="400px" position="relative">
                       <Box
@@ -95,7 +95,7 @@ function _topic_detail_content_1() {
               <Grid item size={{ md: 4, sm: 3.8 }}>
                 {React.Children.toArray(
                   [...new Array(3)].map((item, key, arr) => (
-                    <Link href={"#"}>
+                    <Link href={`/topic/${params?.slug}/slug`}>
                       <Grid container justifyContent="space-between" mb={2.5}>
                         <Grid item size={{ md: 6, sm: 6 }}>
                           <Typography
@@ -148,7 +148,7 @@ function _topic_detail_content_1() {
               <Grid item size={{ md: 4, sm: 3.8 }}>
                 {React.Children.toArray(
                   [...new Array(3)].map((item, key, arr) => (
-                    <Link href={"#"}>
+                    <Link href={`/topic/${params?.slug}/slug`}>
                       <Grid container justifyContent="space-between" mb={2.5}>
                         <Grid item size={{ md: 6, sm: 6 }}>
                           <Typography

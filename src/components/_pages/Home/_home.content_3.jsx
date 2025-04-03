@@ -13,6 +13,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_home.content_3";
 import CircleNext from "@/components/shared/icons/CircleNext";
 import CirclePrev from "@/components/shared/icons/CirclePrev";
+import Link from "next/link";
 
 function _home_content_3() {
   const theme = useTheme();
@@ -123,9 +124,12 @@ function _home_content_3() {
                   Uncover innovative solutions for sustainable farming on
                   peatlands through TJF's groundbreaking research.
                 </Typography>
-                <Button variant="contained" color="success">
-                  Read Full Story
-                </Button>
+
+                <Link href={`/initiatives/sustainable-peatland-agriculture`}>
+                  <Button variant="contained" color="success">
+                    Read Full Story
+                  </Button>
+                </Link>
               </Box>
             </Grid>
           </Grid>

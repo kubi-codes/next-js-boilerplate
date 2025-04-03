@@ -17,10 +17,11 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_navbar.initiatives";
 
-function _navbar() {
+function _navbar(props) {
   const router = useRouter();
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [bgColor, setBgColor] = useState("transparent");
+  const [bgColor, setBgColor] = useState(props?.bgColor ?? "transparent");
+  const [color, setColor] = useState(props?.color ?? "primary");
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -37,8 +38,12 @@ function _navbar() {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setBgColor("white");
+        setColor("primary");
       } else {
-        setBgColor("transparent");
+        setBgColor(props?.bgColor ?? "transparent");
+
+        if (props?.logo) setLogo(props?.logo);
+        if (props?.color) setColor(props?.color);
       }
     };
 
@@ -50,7 +55,7 @@ function _navbar() {
     <>
       <Box
         component="nav"
-        display={isMobile ? 'none' : 'flex'}
+        display={isMobile ? "none" : "flex"}
         alignItems="center"
         height="8vh"
         position="fixed"

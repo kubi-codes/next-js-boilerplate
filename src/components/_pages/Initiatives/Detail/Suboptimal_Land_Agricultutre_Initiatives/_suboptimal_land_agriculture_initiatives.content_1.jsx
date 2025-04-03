@@ -461,46 +461,50 @@ function _suboptimal_land_agriculture_initiatives_content_1() {
                 {React.Children.toArray(
                   [...new Array(9)].map(() => (
                     <Grid size={{ md: 4 }} sx={{ px: "10px" }}>
-                      <CardActionArea sx={{ mb: "50px" }}>
-                        <Box
-                          bgcolor="lightgray"
-                          height="230px"
-                          position="relative"
-                        >
+                      <Link
+                        href={`/initiatives/suboptimal-land-agricultutre-initiatives/slug`}
+                      >
+                        <CardActionArea sx={{ mb: "50px" }}>
                           <Box
-                            bgcolor="#fff"
-                            height="100px"
-                            boxShadow="0px 1px 1px rgba(0, 0, 0, 0.1)"
-                            position="absolute"
-                            width="90%"
-                            bottom="-20px"
-                            left={0}
-                            padding="10px 20px"
+                            bgcolor="lightgray"
+                            height="230px"
+                            position="relative"
                           >
-                            <Typography
-                              variant="body2"
-                              color="secondary"
-                              gutterBottom
+                            <Box
+                              bgcolor="#fff"
+                              height="100px"
+                              boxShadow="0px 1px 1px rgba(0, 0, 0, 0.1)"
+                              position="absolute"
+                              width="90%"
+                              bottom="-20px"
+                              left={0}
+                              padding="10px 20px"
                             >
-                              Papua - Peatland - Horticulture
-                            </Typography>
-                            <Typography
-                              variant="h6"
-                              fontSize="16px"
-                              sx={{
-                                display: "-webkit-box",
-                                WebkitBoxOrient: "vertical",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                WebkitLineClamp: 2, // Membatasi ke 2 baris
-                              }}
-                            >
-                              Transformasi Lahan Suboptimal: Pemasok Hasil Tani
-                              se-Sorong Raya
-                            </Typography>
+                              <Typography
+                                variant="body2"
+                                color="secondary"
+                                gutterBottom
+                              >
+                                Papua - Peatland - Horticulture
+                              </Typography>
+                              <Typography
+                                variant="h6"
+                                fontSize="16px"
+                                sx={{
+                                  display: "-webkit-box",
+                                  WebkitBoxOrient: "vertical",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  WebkitLineClamp: 2, // Membatasi ke 2 baris
+                                }}
+                              >
+                                Transformasi Lahan Suboptimal: Pemasok Hasil
+                                Tani se-Sorong Raya
+                              </Typography>
+                            </Box>
                           </Box>
-                        </Box>
-                      </CardActionArea>
+                        </CardActionArea>
+                      </Link>
                     </Grid>
                   ))
                 )}

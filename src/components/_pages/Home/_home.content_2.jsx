@@ -73,9 +73,13 @@ function _home_content_2() {
                   land into thriving farms and ensuring food security for their
                   community.
                 </Typography>
-                <Button variant="contained" color="success">
-                  Read Full Story
-                </Button>
+                <Link
+                  href={`/initiatives/suboptimal-land-agricultutre-initiatives`}
+                >
+                  <Button variant="contained" color="success">
+                    Read Full Story
+                  </Button>
+                </Link>
               </Box>
             </Grid>
             <Grid item size={{ md: 7 }}>

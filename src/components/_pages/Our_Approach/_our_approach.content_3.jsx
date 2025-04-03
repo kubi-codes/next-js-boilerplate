@@ -8,6 +8,7 @@ import {
 import React from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Link from "next/link";
 
 function _about_us_content_5() {
   const theme = useTheme();
@@ -37,19 +38,20 @@ function _about_us_content_5() {
                 bgcolor={(props) => props.palette.warning.main}
                 padding="20px"
               >
-                <Button
-                  sx={{ fontSize: "24px", color: "#fff" }}
-                  endIcon={
-                    <img
-                      src="/icons/circle-arrow-right-white.svg"
-                      alt="icons"
-                      width="20px"
-                    />
-                  }
-                
-                >
-                  Contact Us
-                </Button>
+                <Link href={`/contact-us`}>
+                  <Button
+                    sx={{ fontSize: "24px", color: "#fff" }}
+                    endIcon={
+                      <img
+                        src="/icons/circle-arrow-right-white.svg"
+                        alt="icons"
+                        width="20px"
+                      />
+                    }
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
               </Box>
             </Grid>
           </Grid>

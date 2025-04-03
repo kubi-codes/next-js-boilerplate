@@ -21,12 +21,14 @@ function Our_approach_content_5() {
             Explore what activities we have done to <br />
             help sustainable farming
           </Typography>
-          <Button variant="contained" color="success">
-            See All
-          </Button>
+          <Link href={`/updates`}>
+            <Button variant="contained" color="success">
+              See All
+            </Button>
+          </Link>
         </Grid>
         <Grid item size={{ md: 3.3, sm: 3.8 }}>
-          <Link href="#">
+          <Link href={`/updates/slug`}>
             <CardActionArea>
               <Box bgcolor="lightgray" height="400px" position="relative">
                 <Box
@@ -63,7 +65,7 @@ function Our_approach_content_5() {
         <Grid item size={{ md: 4, sm: 3.8 }}>
           {React.Children.toArray(
             [...new Array(3)].map((item, key, arr) => (
-              <Link href={"#"}>
+              <Link href={`/updates/slug`}>
                 <Grid container justifyContent="space-between" mb={2.5}>
                   <Grid item size={{ md: 6, sm: 6 }}>
                     <Typography variant="body2" color="secondary" gutterBottom>
