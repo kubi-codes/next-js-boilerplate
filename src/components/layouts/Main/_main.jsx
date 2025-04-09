@@ -28,9 +28,9 @@ function _main({ children, ...props }) {
 
   return (
     <>
-      <RenderNavbar />
+      {!props?.navbar?.disable && <RenderNavbar />}
       {children}
-      <Footer />
+      {!props?.footer?.disable && <Footer />}
     </>
   );
 }

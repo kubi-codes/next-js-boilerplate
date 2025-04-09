@@ -12,9 +12,55 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_updates_detail";
 
+const shareLinks = {
+  facebook: (url) =>
+    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+  twitter: (url, text = "") =>
+    `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+      url
+    )}&text=${encodeURIComponent(text)}`,
+  linkedin: (url) =>
+    `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+      url
+    )}`,
+  whatsapp: (url, text = "") =>
+    `https://api.whatsapp.com/send?text=${encodeURIComponent(
+      text
+    )}%20${encodeURIComponent(url)}`,
+};
+
 function _updates_detail() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const handleShare = (platform) => {
+    const currentUrl =
+      typeof window !== "undefined"
+        ? window.location.href
+        : "https://example.com";
+    const encodedUrl = encodeURIComponent(currentUrl);
+    const text = "";
+
+    let shareUrl = "#";
+    switch (platform) {
+      case "facebook":
+        shareUrl = shareLinks.facebook(encodedUrl);
+        break;
+      case "twitter":
+        shareUrl = shareLinks.twitter(encodedUrl, text);
+        break;
+      case "linkedin":
+        shareUrl = shareLinks.linkedin(encodedUrl);
+        break;
+      case "whatsapp":
+        shareUrl = shareLinks.whatsapp(encodedUrl, text);
+        break;
+      default:
+        return;
+    }
+
+    window.open(shareUrl, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <>
@@ -87,12 +133,18 @@ function _updates_detail() {
               <Box ml="10px" display="flex" gap="25px" mt="10px">
                 {React.Children.toArray(
                   [
-                    "facebook-logo.svg",
-                    "twitter-logo.svg",
-                    "linkedin-logo.svg",
-                    "whatsapp-logo.svg",
-                  ].map((item) => (
-                    <img src={`/icons/${item}`} alt="icon" width="25px" />
+                    { name: "facebook", icon: "facebook-logo.svg" },
+                    { name: "twitter", icon: "twitter-logo.svg" },
+                    { name: "linkedin", icon: "linkedin-logo.svg" },
+                    { name: "whatsapp", icon: "whatsapp-logo.svg" },
+                  ].map(({ name, icon }) => (
+                    <img
+                      src={`/icons/${icon}`}
+                      alt={name}
+                      width="25px"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => handleShare(name)}
+                    />
                   ))
                 )}
               </Box>
@@ -118,7 +170,35 @@ function _updates_detail() {
 
               <Grid container justifyContent="space-between" mt="30px">
                 {React.Children.toArray(
-                  [...new Array(4)].map((item, key, arr) => (
+                  [
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/04/Strategi-Pemanfaatan-Lahan-Gambut-300x171.webp",
+                      title: "Strategi Pemanfaatan Lahan Gambut Berkelanjutan",
+                      date: "Apr 1, 2024",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2024/03/Pemanfaatan-Lahan-Gambut-300x200.jpg",
+                      title:
+                        "Pemanfaatan Lahan Gambut untuk Pertanian Berkelanjutan",
+                      date: "Mar 28, 2024",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2025/01/Sustainable-Peatland-Cultivation-Example-300x300.jpg",
+                      title:
+                        "Sustainable Peatland Cultivation Example for a Greener Future",
+                      date: "Jan 21, 2024",
+                    },
+                    {
+                      image:
+                        "https://tayjuhanafoundation.org/wp-content/uploads/2025/01/Peatland-Agriculture-Potential-for-Food-Production-300x300.jpg",
+                      title:
+                        "Peatland Agriculture Potential for Food Production",
+                      date: "Jan 21, 2025",
+                    },
+                  ].map((item, key, arr) => (
                     <Grid size={{ md: 5.8 }} sx={{ mb: 3 }}>
                       <Link href={`/updates/slug`}>
                         <Grid container justifyContent="space-between" mb={2.5}>
@@ -128,7 +208,7 @@ function _updates_detail() {
                               color="secondary"
                               gutterBottom
                             >
-                              December 23, 2023
+                              {item?.date}
                             </Typography>
                             <Typography
                               variant="h6"
@@ -140,12 +220,20 @@ function _updates_detail() {
                                 WebkitLineClamp: 3, // Membatasi ke 2 baris
                               }}
                             >
-                              Konteks Masa Lalu dalam Pembangunan Berkelanjutan
+                              {item?.title}
                             </Typography>
                           </Grid>
                           <Grid item size={{ md: 5.5 }}>
                             <CardActionArea>
-                              <Box bgcolor="lightgray" height="115px"></Box>
+                              <Box
+                                bgcolor="lightgray"
+                                height="115px"
+                                sx={{
+                                  backgroundImage: `url('${item.image}')`,
+                                  backgroundSize: "cover",
+                                  backgroundPosition: "center",
+                                }}
+                              ></Box>
                             </CardActionArea>
                           </Grid>
                         </Grid>

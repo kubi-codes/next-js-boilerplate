@@ -9,6 +9,7 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_home.headmaster";
+import Link from "next/link";
 
 function _home_headmaster() {
   const theme = useTheme();
@@ -57,9 +58,11 @@ function _home_headmaster() {
                   </Typography>
                 </Box>
 
-                <Button variant="contained" color="success">
-                  READ OUR STORY
-                </Button>
+                <Link href={`/our-story`}>
+                  <Button variant="contained" color="success">
+                    READ OUR STORY
+                  </Button>
+                </Link>
 
                 <Grid
                   container
