@@ -4,7 +4,7 @@ export default function UpdateDetails() {
   return <_updates_detail />;
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(props) {
   const capitalize = (str) => {
     return str
       .split("-") // Pisahkan slug berdasarkan "-"
@@ -12,9 +12,9 @@ export async function getServerSideProps() {
       .join(" "); // Gabungkan kembali dengan spasi
   };
 
-  const title = props.query?.slug
-    ? `${capitalize(props.query.slug)} | Tay Juhana Foundation`
-    : "Topic | Tay Juhana Foundation";
+  const title = props?.query?.slug
+    ? `${capitalize(props?.query?.slug)} | Tay Juhana Foundation`
+    : "Updates | Tay Juhana Foundation";
 
   return {
     props: {
