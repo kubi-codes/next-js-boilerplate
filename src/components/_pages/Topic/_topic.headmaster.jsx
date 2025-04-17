@@ -3,10 +3,21 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_topic.headmaster";
+import { useParams } from "next/navigation";
+
+const capitalize = (str) => {
+  return str
+    .split("-") // Pisahkan slug berdasarkan "-"
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Kapitalisasi setiap kata
+    .join(" "); // Gabungkan kembali dengan spasi
+};
 
 function _topic_headmaster() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const params = useParams();
+  const topic = capitalize(params?.slug ?? '');
 
   return (
     <>
@@ -25,7 +36,7 @@ function _topic_headmaster() {
           <Container sx={{ zIndex: 2 }}>
             <Box maxWidth="70%">
               <Typography variant="h1" color="#fff" gutterBottom>
-                TOPIC
+                {topic ? capitalize(topic) : "TOPIC"}
               </Typography>
               <Typography color="#fff">
                 Tay Juhana Foundation (TJF) is a nonprofit organization

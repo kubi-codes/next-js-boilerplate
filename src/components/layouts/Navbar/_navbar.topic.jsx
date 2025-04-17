@@ -13,10 +13,12 @@ import ChevronIcon from "@/components/shared/icons/chevronDown";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_navbar.topic";
+import { usePathname } from "next/navigation";
 
 function _navbar(props) {
   const [bgColor, setBgColor] = useState(props?.bgColor ?? "transparent");
   const [color, setColor] = useState(props?.color ?? "#fff");
+  const pathname = usePathname();
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -42,7 +44,7 @@ function _navbar(props) {
         component="nav"
         display={isMobile ? "none" : "flex"}
         alignItems="center"
-        height="12vh"
+        minHeight="12vh"
         position="fixed"
         width="100%"
         zIndex={10}
@@ -114,8 +116,18 @@ function _navbar(props) {
                           </Typography>
                         ) : null}
 
-                        <Link href={`/topic/${item.link}`}>
-                          <Typography color={color} variant="h6">
+                        <Link href={`/topic${item.link}`}>
+                          <Typography
+                            color={color}
+                            variant="h6"
+                            sx={{
+                              borderBottom:
+                                `/topic${item.link}` === pathname
+                                  ? "2px solid"
+                                  : "inherit",
+                              borderColor: color,
+                            }}
+                          >
                             {item.name}
                           </Typography>
                         </Link>

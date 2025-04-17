@@ -57,7 +57,7 @@ function _navbar(props) {
         component="nav"
         display={isMobile ? "none" : "flex"}
         alignItems="center"
-        height="8vh"
+        minHeight="8vh"
         position="fixed"
         width="100%"
         zIndex={10}
@@ -66,6 +66,7 @@ function _navbar(props) {
           bgColor === "white" ? "0px 4px 12px rgba(0, 0, 0, 0.1)" : "none"
         }
         transition="background-color 0.3s ease"
+        py="15px"
       >
         <Container>
           <Grid container alignItems="center">
@@ -94,6 +95,13 @@ function _navbar(props) {
                     <Link href={item.link}>
                       <Typography
                         color={bgColor === "white" ? "primary" : "#fff"}
+                        sx={{
+                          borderBottom:
+                            item.link === `/initiatives`
+                              ? "2px solid"
+                              : "inherit",
+                          borderColor: color,
+                        }}
                         variant="h6"
                       >
                         {item.name}

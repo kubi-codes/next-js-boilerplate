@@ -13,6 +13,7 @@ import ChevronIcon from "@/components/shared/icons/chevronDown";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_navbar.research";
+import { useSearchParams } from "next/navigation";
 
 function _navbar(props) {
   const [bgColor, setBgColor] = useState(props?.bgColor ?? "transparent");
@@ -20,6 +21,8 @@ function _navbar(props) {
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const search = useSearchParams();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +45,7 @@ function _navbar(props) {
         component="nav"
         display={isMobile ? "none" : "flex"}
         alignItems="center"
-        height="12vh"
+        minHeight="12vh"
         position="fixed"
         width="100%"
         zIndex={10}
@@ -53,6 +56,7 @@ function _navbar(props) {
             : "none"
         }
         transition="background-color 0.3s ease"
+        py="15px"
       >
         <Container>
           <Grid container alignItems="center">
@@ -103,8 +107,21 @@ function _navbar(props) {
                         <Typography fontSize="12px" color={color}>
                           {item.desc}
                         </Typography>
-                        <Link href={`/research/${item.link}`}>
-                          <Typography color={color} variant="h6">
+                        <Link
+                          href={`/research/publication?variant=${item.name}`}
+                        >
+                          <Typography
+                            color={color}
+                            variant="h6"
+                            sx={{
+                              borderBottom:
+                                item.name === search.get("variant")
+                                  ? "2px solid"
+                                  : "inherit",
+                              borderColor: (props) =>
+                                props.palette.primary.main,
+                            }}
+                          >
                             {item.name}
                           </Typography>
                         </Link>

@@ -12,7 +12,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import GlobeIcon from "@/components/shared/icons/globe";
 import ChevronIcon from "@/components/shared/icons/chevronDown";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileView from "./mobile/_navbar";
@@ -28,6 +28,8 @@ function _navbar(props) {
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const pathname = usePathname().split("/")?.[1];
 
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -61,7 +63,8 @@ function _navbar(props) {
         component="nav"
         display={isMobile ? "none" : "flex"}
         alignItems="center"
-        height="9.5vh"
+        minHeight="9.5vh"
+        py="15px"
         position="fixed"
         width="100%"
         zIndex={10}
@@ -137,6 +140,13 @@ function _navbar(props) {
                         ) : (
                           <Typography
                             color={bgColor === "white" ? "primary" : "#fff"}
+                            sx={{
+                              borderBottom:
+                                item.link === `/${pathname}`
+                                  ? "2px solid"
+                                  : "inherit",
+                              borderColor: color,
+                            }}
                             variant="h6"
                           >
                             {item.name}

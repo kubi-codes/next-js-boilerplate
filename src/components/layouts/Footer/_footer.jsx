@@ -124,7 +124,7 @@ function _footer() {
 
           <Box component="hr" sx={{ borderColor: "#fff", mt: 4, mb: 2 }} />
           <Box display="flex" justifyContent="space-between">
-            <Link href="#">
+            <Link href="/privacy-policy">
               <Typography color="#fff">Privacy Policy</Typography>
             </Link>
             <Typography color="#fff">

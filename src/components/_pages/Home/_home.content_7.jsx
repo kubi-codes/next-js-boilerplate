@@ -21,7 +21,8 @@ function _home_content_7() {
       <Box
         sx={{
           backgroundImage: `url('/images/bg-grid.png')`,
-          paddingY: "40px",
+          paddingBottom: "100px",
+          paddingTop: '40px'
         }}
         display={isMobile ? "none" : "block"}
       >
@@ -30,7 +31,7 @@ function _home_content_7() {
             Our Partners
           </Typography>
 
-          <Grid container justifyContent="space-between" alignItems="center">
+          <Grid container justifyContent="space-between">
             <Grid item size={{ md: 3 }}>
               <Box
                 sx={{
@@ -64,11 +65,16 @@ function _home_content_7() {
               ></Box>
             </Grid>
 
-            <Grid item size={{ md: 2 }}>
+            <Grid
+              item
+              size={{ md: 2 }}
+              sx={{ display: "flex", alignItems: "center" }}
+            >
               <Box
                 bgcolor={(props) => props.palette.warning.main}
                 padding="21px"
-                width="30vw"
+                width="25vw"
+                sx={{ position: "absolute", right: 0 }}
               >
                 <Link href={`/contact-us`}>
                   <Button
@@ -77,6 +83,7 @@ function _home_content_7() {
                       color: "#fff",
                       textAlign: "left",
                       alignItems: "flex-end",
+                      lineHeight: '34px', maxWidth: '400px'
                     }}
                     endIcon={
                       <img
@@ -86,8 +93,7 @@ function _home_content_7() {
                       />
                     }
                   >
-                    Join Us to Securing Our <br />
-                    <br /> Future Food Together
+                    Join Us to Securing Our Future Food Together
                   </Button>
                 </Link>
               </Box>
