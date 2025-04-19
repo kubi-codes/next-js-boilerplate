@@ -5,17 +5,11 @@ import {
   Button,
 } from "@mui/material";
 import React from "react";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import MobileView from "./mobile/_career.detail";
 
 function _career_detail() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
   return (
     <>
-      <Box pt="7%" minHeight="80vh" display={isMobile ? "none" : "block"}>
+      <Box pt="20%" minHeight="100vh">
         <Container>
           <Typography variant="h1" align="center" color="primary">
             Lorem Ipsum
@@ -69,8 +63,6 @@ function _career_detail() {
           </Box>
         </Container>
       </Box>
-
-      {isMobile && <MobileView />}
     </>
   );
 }

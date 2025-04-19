@@ -126,7 +126,15 @@ function _navbar(props) {
                 { name: "Career", link: "/career" },
               ].map((item) => (
                 <Link href={item.link}>
-                  <Typography color="#fff" variant="h6">
+                  <Typography
+                    color="#fff"
+                    variant="h6"
+                    sx={{
+                      borderBottom:
+                        item.link === "/initiatives" ? "2px solid" : "inherit",
+                      display: "inline",
+                    }}
+                  >
                     {item.name}
                   </Typography>
                 </Link>

@@ -10,7 +10,7 @@ function _headmaster() {
         display="flex"
         alignItems="center"
         sx={{
-          backgroundImage: `url('/images/bg-collabowritting.jpg')`,
+          backgroundImage: `url('/images/image-5.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "right",
         }}
@@ -22,7 +22,7 @@ function _headmaster() {
           width: "80vw",
           height: "10vh",
           position: "absolute",
-          bottom: "11vh",
+          bottom: "8vh",
         }}
       >
         <Box position="relative">

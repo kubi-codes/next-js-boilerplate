@@ -17,7 +17,7 @@ function _initiatives_headmaster() {
           display="flex"
           alignItems="center"
           sx={{
-            backgroundImage: `url('/images/bg-food-security.jpg')`,
+            backgroundImage: `url('/images/image-5.jpg')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

@@ -4,6 +4,10 @@ import {
   Container,
   Grid2 as Grid,
   Typography,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
 } from "@mui/material";
 import React from "react";
 import { useTheme } from "@mui/material/styles";
@@ -25,6 +29,39 @@ function _career_content_2() {
 
           <Grid container justifyContent="space-between" sx={{ mt: "100px" }}>
             <Grid size={{ md: 3 }}>
+              <List sx={{ mb: 4, px: "0px !important" }}>
+                {[
+                  "All Position ( 4 )",
+                  "Marketing ( 1 )",
+                  "Volunteer ( 1 )",
+                  "Project Officer ( 1 )",
+                  "Admin ( 1 )",
+                ].map((item) => (
+                  <ListItem key={item} sx={{ px: "0px !important" }}>
+                    <ListItemButton
+                      sx={
+                        item === "All Position ( 4 )"
+                          ? { borderLeft: "6px solid #128C33" }
+                          : {}
+                      }
+                      selected={item === "All Position ( 4 )"}
+                    >
+                      <ListItemText
+                        primary={
+                          <Typography
+                            fontWeight={
+                              item === "All Position ( 4 )" ? "bold" : 300
+                            }
+                          >
+                            {item}
+                          </Typography>
+                        }
+                      />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+
               <Box mb={4}>
                 <Typography>
                   We are always seeking talented people. In case you cannot find

@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import Link from "next/link";
 
 function _career_content_2() {
   return (
@@ -18,7 +19,7 @@ function _career_content_2() {
         </Typography>
 
         {React.Children.toArray(
-          [...new Array(5)].map(() => (
+          [...new Array(5)].map((_, index) => (
             <Box bgcolor="#F5F5F5" padding="20px" borderRadius="8px" mb="20px">
               <Typography variant="h5" color="primary" gutterBottom>
                 Position Name Here
@@ -31,9 +32,15 @@ function _career_content_2() {
               </Typography>
 
               <Box display="flex" justifyContent="flex-end" mt={4}>
-                <Button variant="contained" color="warning" sx={{ py: "14px" }}>
-                  See Position
-                </Button>
+                <Link href={`/career/${index}`}>
+                  <Button
+                    variant="contained"
+                    color="warning"
+                    sx={{ py: "14px" }}
+                  >
+                    See Position
+                  </Button>
+                </Link>
               </Box>
             </Box>
           ))

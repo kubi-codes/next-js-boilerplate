@@ -22,7 +22,7 @@ function _headmaster() {
           width: "80vw",
           height: "10vh",
           position: "absolute",
-          bottom: "11vh",
+          bottom: "8vh",
           right: "0px",
         }}
       >
