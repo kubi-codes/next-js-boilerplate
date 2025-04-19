@@ -366,7 +366,17 @@ function _research_detail() {
                         {item.date}
                       </Typography>
                       <Link href={`/`} passHref>
-                        <Typography variant="h6" fontSize="18px">
+                        <Typography
+                          variant="h6"
+                          fontSize="18px"
+                          sx={{
+                            display: "-webkit-box",
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            WebkitLineClamp: 3, // Membatasi ke 2 baris
+                          }}
+                        >
                           {item.title}
                         </Typography>
                       </Link>

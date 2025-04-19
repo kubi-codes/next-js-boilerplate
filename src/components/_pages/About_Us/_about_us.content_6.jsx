@@ -40,8 +40,8 @@ function _about_us_content_6() {
                 height: "255px",
                 borderRadius: "50%",
                 backgroundImage: `url('/images/Layer 1 copy 1.png')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             />
           </Box>
@@ -69,13 +69,15 @@ function _about_us_content_6() {
           </Grid>
 
           <Box display="flex" justifyContent="center" mt={4}>
-            <Button
-              variant="contained"
-              color="warning"
-              onClick={() => setSeeMore(!seeMore)}
-            >
-              {seeMore ? "Read Short Bio" : "Read Full Bio"}
-            </Button>
+            {!seeMore && (
+              <Button
+                variant="contained"
+                color="warning"
+                onClick={() => setSeeMore(!seeMore)}
+              >
+                {seeMore ? "Read Short Bio" : "Read Full Bio"}
+              </Button>
+            )}
           </Box>
         </Container>
       </Box>

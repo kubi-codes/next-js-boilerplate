@@ -15,13 +15,9 @@ import {
 } from "@mui/material";
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Link from "next/link";
 
 function _research_detail() {
-  const [isTopicShow, setIsTopicShow] = React.useState(true);
-  const [isCategoryShow, setIsCategoryShow] = React.useState(true);
 
   return (
     <Box pt="100px" pb="5%">
@@ -54,46 +50,51 @@ function _research_detail() {
           {React.Children.toArray(
             [
               {
-                image: "/images/magazine-example.jpg",
+                image:
+                  "https://tayjuhanafoundation.org/wp-content/uploads/2024/11/LANDLIFE-1-pdf.jpg",
                 label: "Peatland Agriculture Sustainability",
                 title:
-                  "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                date: "Dec, 2025",
+                  "LAND & LIFE | Edisi #1: Masih adakah lahan di masa depan?",
+                date: "Nov, 2024",
               },
               {
-                image: "/images/magazine-example.jpg",
+                image:
+                  "https://tayjuhanafoundation.org/wp-content/uploads/2024/01/TJF-Greenboard-Isu-3-pdf.jpg",
                 label: "Peatland Agriculture Sustainability",
                 title:
-                  "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                date: "Dec, 2025",
+                  "TJF Greenboard | Isu 3: Menjaga Ketahanan Pangan di Tengah Gempuran Perubahan Iklim",
+                date: "Jan, 2024",
               },
               {
-                image: "/images/magazine-example.jpg",
+                image:
+                  "https://tayjuhanafoundation.org/wp-content/uploads/2024/01/annual-report-2023organized-pdf.jpg",
                 label: "Peatland Agriculture Sustainability",
                 title:
-                  "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                date: "Dec, 2025",
+                  "Annual Report 2023: Enhancing Resilience in Food Security",
+                date: "Jan, 2023",
               },
               {
-                image: "/images/magazine-example.jpg",
+                image:
+                  "https://tayjuhanafoundation.org/wp-content/uploads/2023/02/cover-annual-report-2022-18pages-196x300.jpg",
                 label: "Peatland Agriculture Sustainability",
-                title:
-                  "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                date: "Dec, 2025",
+                title: "Annual Report 2022: Securing Our Food from Crisis",
+                date: "Feb, 2023",
               },
               {
-                image: "/images/magazine-example.jpg",
+                image:
+                  "https://tayjuhanafoundation.org/wp-content/uploads/2023/01/TJF-Brief-Dec-2022-1-pdf.jpg",
                 label: "Peatland Agriculture Sustainability",
                 title:
-                  "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                date: "Dec, 2025",
+                  "Re-visiting Government of Indonesia Strategies on Food Crisis and Farmers’ Resilience",
+                date: "Dec, 2022",
               },
               {
-                image: "/images/magazine-example.jpg",
+                image:
+                  "https://tayjuhanafoundation.org/wp-content/uploads/2022/06/TJF-Brief-June-2022-pdf.jpg",
                 label: "Peatland Agriculture Sustainability",
                 title:
-                  "Integrated water management practice in tropical peatland agriculture has low carbon emissions and subsidence rates",
-                date: "Dec, 2025",
+                  "What Could be the Strategy to Strengthen Our Food System? A case study from Russia – Ukraine war",
+                date: "Jun, 2022",
               },
             ].map((item) => (
               <Grid item size={{ xs: 5.8 }} mb={3}>
@@ -105,7 +106,10 @@ function _research_detail() {
                       mb={1}
                       sx={{
                         backgroundImage: `url('${item.image}')`,
-                        backgroundSize: "cover",
+                        backgroundSize: "100% 100%",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        border: "1px solid lightgray",
                       }}
                     ></Box>
                   </CardActionArea>
@@ -117,7 +121,17 @@ function _research_detail() {
                   {item.date}
                 </Typography>
                 <Link href={`/`} passHref>
-                  <Typography variant="h6" fontSize="12px">
+                  <Typography
+                    variant="h6"
+                    fontSize="12px"
+                    sx={{
+                      display: "-webkit-box",
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      WebkitLineClamp: 3, // Membatasi ke 2 baris
+                    }}
+                  >
                     {item.title}
                   </Typography>
                 </Link>
@@ -125,7 +139,13 @@ function _research_detail() {
             ))
           )}
 
-          <Box display="flex" width="100%" justifyContent="center" mt="30px" mb="50px">
+          <Box
+            display="flex"
+            width="100%"
+            justifyContent="center"
+            mt="30px"
+            mb="50px"
+          >
             <Pagination
               count={10}
               siblingCount={0}

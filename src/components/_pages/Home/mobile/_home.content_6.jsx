@@ -22,17 +22,28 @@ function _home_content_6() {
           Discover weekly insights on sustainablefarming in suboptimal lands and
           join usin building a greener future.
         </Typography>
-        <Button
-          variant="contained"
-          color="success"
-          sx={{ px: "32px", py: "18px", mb: 3 }}
-        >
-          Browse
-        </Button>
+        <Link href={`/updates`}>
+          <Button
+            variant="contained"
+            color="success"
+            sx={{ px: "32px", py: "18px", mb: 3 }}
+          >
+            Browse
+          </Button>
+        </Link>
 
-        <Link href="#">
+        <Link href={`/updates/slug`}>
           <CardActionArea>
-            <Box bgcolor="lightgray" height="400px" position="relative">
+            <Box
+              bgcolor="lightgray"
+              height="400px"
+              position="relative"
+              sx={{
+                backgroundImage: `url('https://tayjuhanafoundation.org/wp-content/uploads/2025/03/4-1024x573.png')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
               <Box
                 bgcolor="#fff"
                 height="100px"
@@ -44,7 +55,7 @@ function _home_content_6() {
                 padding="10px 20px"
               >
                 <Typography variant="body2" color="secondary" gutterBottom>
-                  February 12, 2024
+                  March 20, 2025
                 </Typography>
                 <Typography
                   variant="h6"
@@ -57,7 +68,7 @@ function _home_content_6() {
                     WebkitLineClamp: 2, // Membatasi ke 2 baris
                   }}
                 >
-                  Rekontruksi Lahan Pertanian dengan Lahan Suboptimal
+                  Maximizing Nature’s Concealed Potential in Wetland Agriculture
                 </Typography>
               </Box>
             </Box>
@@ -66,24 +77,46 @@ function _home_content_6() {
 
         <Box mt="40px">
           {React.Children.toArray(
-            [...new Array(3)].map((item, key, arr) => (
+            [
+              {
+                image:
+                  "https://tayjuhanafoundation.org/wp-content/uploads/2024/12/lahan-gambut-untuk-pertanian.webp",
+                title: "Water Management Process in Peatland for Agriculture",
+                date: "Dec 20, 2024",
+              },
+              {
+                image:
+                  "https://tayjuhanafoundation.org/wp-content/uploads/2024/12/jurnal-pertanian-lahan-suboptimal.webp",
+                title:
+                  "Journal of Suboptimal Land Agriculture: Optimization of Land Management",
+                date: "Dec 20, 2024",
+              },
+              {
+                image:
+                  "https://tayjuhanafoundation.org/wp-content/uploads/2024/12/de2a2a06-7721-413a-aaf5-2721dd00a034.webp",
+                title: "National Peatland Management Strategy",
+                date: "Dec 4, 2024",
+              },
+            ].map((item, key, arr) => (
               <Box>
-                <Box
-                  component="hr"
-                  sx={{
-                    mt: 2,
-                    borderColor: (props) => props.palette.secondary.main,
-                    borderTop: "1px",
-                    borderLeft: "0px",
-                    borderRight: "0px",
-                    // borderBottom: "1px",
-                  }}
-                />
+                <Link href={`/updates/slug`}>
+                  <Box
+                    component="hr"
+                    sx={{
+                      mt: 2,
+                      borderColor: (props) => props.palette.secondary.main,
+                      borderTop: "1px",
+                      borderLeft: "0px",
+                      borderRight: "0px",
+                      // borderBottom: "1px",
+                    }}
+                  />
+                </Link>
 
-                <Link href={"#"}>
+                <Link href={`/updates/slug`}>
                   <Box mt="20px" mb="20px">
                     <Typography variant="body2" color="secondary" gutterBottom>
-                      December 23, 2023
+                      {item.date}
                     </Typography>
                     <Typography
                       variant="h6"
@@ -96,11 +129,19 @@ function _home_content_6() {
                         mb: 1,
                       }}
                     >
-                      Konteks Masa Lalu dalam Pembangunan Berkelanjutan
+                      {item.title}
                     </Typography>
 
                     <CardActionArea>
-                      <Box bgcolor="lightgray" height="170px"></Box>
+                      <Box
+                        bgcolor="lightgray"
+                        height="170px"
+                        sx={{
+                          backgroundImage: `url('${item.image}')`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                        }}
+                      ></Box>
                     </CardActionArea>
                   </Box>
                 </Link>

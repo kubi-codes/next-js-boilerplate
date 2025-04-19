@@ -98,7 +98,7 @@ function _navbar(props) {
       >
         <Box
           bgcolor={(props) => props.palette.primary.main}
-          width="55vw"
+          width="70vw"
           height="100vh"
           padding="10px"
         >

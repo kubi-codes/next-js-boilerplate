@@ -9,18 +9,38 @@ import Link from "next/link";
 import React from "react";
 import CircleNext from "@/components/shared/icons/CircleNext";
 import CirclePrev from "@/components/shared/icons/CirclePrev";
+import { useParams } from "next/navigation";
+
+const capitalize = (str) => {
+  return str
+    .split("-") // Pisahkan slug berdasarkan "-"
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Kapitalisasi setiap kata
+    .join(" "); // Gabungkan kembali dengan spasi
+};
 
 function _topic_detail_content_1() {
+  const params = useParams();
+  const topic = capitalize(params?.slug);
+
   return (
     <Container>
       <Box py="7%">
         <Typography variant="h5" color="primary" mb="20px" mt="20px">
-          Food Security <br /> Latest Updates
+          {topic} <br /> Latest Updates
         </Typography>
 
-        <Link href="#">
+        <Link href={`/topic/${params?.slug}/slug`}>
           <CardActionArea>
-            <Box bgcolor="lightgray" height="400px" position="relative">
+            <Box
+              bgcolor="lightgray"
+              height="400px"
+              position="relative"
+              sx={{
+                backgroundImage: `url('https://tayjuhanafoundation.org/wp-content/uploads/2025/03/4-1024x573.png')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
               <Box
                 bgcolor="#fff"
                 height="100px"
@@ -32,7 +52,7 @@ function _topic_detail_content_1() {
                 padding="10px 20px"
               >
                 <Typography variant="body2" color="secondary" gutterBottom>
-                  February 12, 2024
+                  March 20, 2025
                 </Typography>
                 <Typography
                   variant="h6"
@@ -45,7 +65,7 @@ function _topic_detail_content_1() {
                     WebkitLineClamp: 2, // Membatasi ke 2 baris
                   }}
                 >
-                  Rekontruksi Lahan Pertanian dengan Lahan Suboptimal
+                  Maximizing Nature’s Concealed Potential in Wetland Agriculture
                 </Typography>
               </Box>
             </Box>
@@ -54,8 +74,30 @@ function _topic_detail_content_1() {
 
         <Box mt="40px">
           {React.Children.toArray(
-            [...new Array(3)].map((item, key, arr) => (
-              <Link href={"#"}>
+            [
+              {
+                image:
+                  "https://tayjuhanafoundation.org/wp-content/uploads/2024/10/DSC07729-1024x580.jpg",
+                title:
+                  "Tay Juhana Foundation Achieves Success at World Coconut Day 2024",
+                date: "Oct 8, 2024",
+              },
+              {
+                image:
+                  "https://tayjuhanafoundation.org/wp-content/uploads/2022/08/DSC01072-2-1-1024x684.jpg",
+                title:
+                  "Peran Lahan Gambut dalam Memenuhi Kebutuhan Pangan Lokal",
+                date: "Aug 29, 2022",
+              },
+              {
+                image:
+                  "https://tayjuhanafoundation.org/wp-content/uploads/2022/02/btc-1-80-1024x1024.jpg",
+                title:
+                  "Wetlands Day #bringthecaption Challenge: Retell the Nostalgic Pictures with Joni",
+                date: "Feb 11, 2022",
+              },
+            ].map((item, key, arr) => (
+              <Link href={`/topic/${params?.slug}/slug`}>
                 <Box>
                   <Box
                     component="hr"
@@ -70,7 +112,7 @@ function _topic_detail_content_1() {
                   />
 
                   <Typography variant="body2" color="secondary" gutterBottom>
-                    December 23, 2023
+                    {item.date}
                   </Typography>
                   <Typography
                     variant="h6"
@@ -83,11 +125,19 @@ function _topic_detail_content_1() {
                     }}
                     gutterBottom
                   >
-                    Konteks Masa Lalu dalam Pembangunan Berkelanjutan
+                    {item.title}
                   </Typography>
 
                   <CardActionArea>
-                    <Box bgcolor="lightgray" height="180px"></Box>
+                    <Box
+                      bgcolor="lightgray"
+                      height="180px"
+                      sx={{
+                        backgroundImage: `url('${item.image}')`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    ></Box>
                   </CardActionArea>
                 </Box>
               </Link>

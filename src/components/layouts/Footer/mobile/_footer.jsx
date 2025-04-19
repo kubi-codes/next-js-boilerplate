@@ -71,14 +71,30 @@ function _footer() {
             Connect With Us
           </Typography>
 
-          <Box display="flex" gap="30px" mt="10px" justifyContent="center">
+          <Box display="flex" gap="30px" mt="10px" justifyContent="center" alignItems="center">
             {React.Children.toArray(
               [
-                "instagram.svg",
-                "facebook.svg",
-                "youtube.svg",
-                "linkedin.svg",
-              ].map((item) => <img src={`/icons/${item}`} />)
+                {
+                  icon: "instagram.svg",
+                  link: "https://www.instagram.com/tayjuhanafoundation",
+                },
+                {
+                  icon: "facebook.svg",
+                  link: "https://www.facebook.com/tayjuhanafoundation",
+                },
+                {
+                  icon: "youtube.svg",
+                  link: "https://www.youtube.com/channel/UCLkknVMDMFg17Q01g5Ky00A",
+                },
+                {
+                  icon: "linkedin.svg",
+                  link: "https://www.linkedin.com/company/tayjuhanafoundation/",
+                },
+              ].map((item) => (
+                <Link href={item.link} target="_blank">
+                  <img src={`/icons/${item.icon}`} alt={item} />
+                </Link>
+              ))
             )}
           </Box>
         </Container>

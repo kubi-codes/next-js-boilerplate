@@ -11,11 +11,13 @@ import React, { useEffect, useState } from "react";
 import GlobeIcon from "@/components/shared/icons/globe";
 import ChevronIcon from "@/components/shared/icons/chevronDown";
 import MenuIcon from "@/components/shared/icons/menu";
+import { usePathname } from "next/navigation";
 
 function _navbar(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [bgColor, setBgColor] = useState(props?.bgColor ?? "transparent");
   const [color, setColor] = useState(props?.color ?? "#fff");
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,7 +90,7 @@ function _navbar(props) {
       >
         <Box
           bgcolor={(props) => props.palette.primary.main}
-          width="55vw"
+          width="70vw"
           height="100vh"
           padding="10px"
         >
@@ -150,8 +152,18 @@ function _navbar(props) {
                     </Typography>
                   ) : null}
 
-                  <Link href={`/topic/${item.link}`}>
-                    <Typography color="#fff" variant="h6">
+                  <Link href={`/topic${item.link}`}>
+                    <Typography
+                      color="#fff"
+                      variant="h6"
+                      sx={{
+                        borderBottom:
+                          `/topic${item.link}` === pathname
+                            ? "2px solid"
+                            : "inherit",
+                            display: 'inline'
+                      }}
+                    >
                       {item.name}
                     </Typography>
                   </Link>

@@ -11,7 +11,7 @@ function _about_us_content_1() {
 
   const videoId = "oyDz7GAsfCg"; // ID video YouTube
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-  const iframeSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  const iframeSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&disablekb=1`;
 
   return (
     <>
@@ -30,7 +30,7 @@ function _about_us_content_1() {
             <Grid item size={{ md: 9 }}>
               <Box position="relative">
                 {!isPlaying ? (
-                  <>
+                  <Box zIndex={3}>
                     <Box
                       component="img"
                       src="/icons/play-error.svg"
@@ -57,7 +57,7 @@ function _about_us_content_1() {
                       }}
                       onClick={() => setIsPlaying(true)}
                     />
-                  </>
+                  </Box>
                 ) : (
                   <Box
                     component="iframe"
@@ -68,6 +68,7 @@ function _about_us_content_1() {
                     frameBorder="0"
                     allow="autoplay; encrypted-media"
                     allowFullScreen
+                    zIndex={2}
                   />
                 )}
               </Box>

@@ -23,22 +23,22 @@ function _about_us_content_3() {
           {React.Children.toArray(
             [
               {
-                img: "",
+                img: "/images/our-mission/Group 81.png",
                 title: "Conducting Research",
                 body: "Catalyze research and development to advance sustainable agricultural innovation on suboptimal wetland, lowland, and flatland.",
               },
               {
-                img: "",
+                img: "/images/our-mission/Group 83.png",
                 title: "Consulting",
                 body: "Provide consultancy for independent and collaborative works on sustainable agriculture practice of suboptimal wetland, lowland, and flatland.",
               },
               {
-                img: "",
+                img: "/images/our-mission/Group 89.png",
                 title: "Educating",
                 body: "Educate all the relevant stakeholders on effective water management system in wetland agriculture.",
               },
               {
-                img: "",
+                img: "/images/our-mission/Group 87.png",
                 title: "Advocating",
                 body: "Facilitate the advocacy to stimulate change towards food resilience through relevant policy recommendations.",
               },
@@ -46,12 +46,16 @@ function _about_us_content_3() {
               <Grid item size={{ md: 4.5 }}>
                 <Box display="flex" gap="30px" alignItems="center">
                   <Box
-                    bgcolor="lightgray"
                     height="70px"
                     minWidth="70px"
                     maxWidth="70px"
                     display="block"
+                    sx={{
+                      backgroundImage: `url('${item.img}')`,
+                      backgroundSize: "contain",
+                    }}
                   />
+
                   <Box>
                     <Typography
                       variant="h6"

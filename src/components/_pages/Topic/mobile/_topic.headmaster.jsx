@@ -1,7 +1,18 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
+import { useParams } from "next/navigation";
+
+const capitalize = (str) => {
+  return str
+    .split("-") // Pisahkan slug berdasarkan "-"
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Kapitalisasi setiap kata
+    .join(" "); // Gabungkan kembali dengan spasi
+};
 
 function _topic_headmaster() {
+  const params = useParams();
+  const topic = capitalize(params?.slug ?? '');
+
   return (
     <Box position="relative">
       <Box
@@ -17,7 +28,7 @@ function _topic_headmaster() {
       >
         <Container sx={{ zIndex: 2 }}>
           <Typography variant="h1" color="#fff" gutterBottom>
-            TOPIC
+            {topic ? capitalize(topic) : "TOPIC"}
           </Typography>
           <Typography color="#fff">
             Tay Juhana Foundation (TJF) is a nonprofit organization dedicated to

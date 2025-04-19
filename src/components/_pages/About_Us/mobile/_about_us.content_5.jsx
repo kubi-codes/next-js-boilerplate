@@ -25,13 +25,20 @@ function _about_us_content_5() {
           fontSize="32px"
           color="primary"
         >
-          READ OUR STORY ABOUT FOOD FIGHTERS!
+          READ OUR STORY
+          <br /> ABOUT <br />
+          FOOD FIGHTERS!
         </Typography>
       </Container>
 
       <Box bgcolor={(props) => props.palette.warning.main} padding="5px">
         <Button
-          sx={{ fontSize: "16px", color: "#fff", justifyContent: 'flex-end', display: 'flex' }}
+          sx={{
+            fontSize: "16px",
+            color: "#fff",
+            justifyContent: "flex-end",
+            display: "flex",
+          }}
           endIcon={
             <img
               src="/icons/circle-arrow-right-white.svg"

@@ -6,6 +6,7 @@ import {
   Button,
 } from "@mui/material";
 import React from "react";
+import Link from "next/link";
 
 function _home_content_7() {
   return (
@@ -44,24 +45,27 @@ function _home_content_7() {
           paddingY="15px"
           width="100vw"
         >
-          <Button
-            sx={{
-              fontSize: "24px",
-              color: "#fff",
-              textAlign: "left",
-              alignItems: "flex-end",
-            }}
-            endIcon={
-              <img
-                src="/icons/circle-arrow-right-white.svg"
-                alt="icons"
-                width="20px"
-              />
-            }
-          >
-            Join Us to Securing Our <br />
-            <br /> Future Food Together
-          </Button>
+          <Link href={`/contact-us`}>
+            <Button
+            fullWidth
+              sx={{
+                fontSize: "24px",
+                color: "#fff",
+                textAlign: "left",
+                alignItems: "flex-end",
+              }}
+              endIcon={
+                <img
+                  src="/icons/circle-arrow-right-white.svg"
+                  alt="icons"
+                  width="20px"
+                />
+              }
+            >
+              Join Us to Securing Our <br />
+              <br /> Future Food Together
+            </Button>
+          </Link>
         </Box>
       </Box>
     </>
